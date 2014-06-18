@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+
+
+@interface ViewController : UIViewController<UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+
+@property (weak, nonatomic) IBOutlet UIView *loginView;
+
+- (IBAction)bgTapClose:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *regButton;
 
 @end

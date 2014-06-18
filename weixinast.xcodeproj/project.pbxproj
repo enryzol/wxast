@@ -21,6 +21,7 @@
 		5F221ADE19512CE5009F96DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F221AC019512CE4009F96DE /* UIKit.framework */; };
 		5F221AE619512CE5009F96DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F221AE419512CE5009F96DE /* InfoPlist.strings */; };
 		5F221AE819512CE5009F96DE /* weixinastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F221AE719512CE5009F96DE /* weixinastTests.m */; };
+		5FD0A1121951694100D08304 /* RegController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD0A1111951694100D08304 /* RegController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		5F221AE319512CE5009F96DE /* weixinastTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "weixinastTests-Info.plist"; sourceTree = "<group>"; };
 		5F221AE519512CE5009F96DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5F221AE719512CE5009F96DE /* weixinastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weixinastTests.m; sourceTree = "<group>"; };
+		5FD0A1101951694100D08304 /* RegController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegController.h; path = view/RegController.h; sourceTree = "<group>"; };
+		5FD0A1111951694100D08304 /* RegController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegController.m; path = view/RegController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		5F221AC219512CE4009F96DE /* weixinast */ = {
 			isa = PBXGroup;
 			children = (
+				5FD0A10F195168E800D08304 /* tpl */,
 				5F221ACB19512CE4009F96DE /* AppDelegate.h */,
 				5F221ACC19512CE4009F96DE /* AppDelegate.m */,
 				5F221ACE19512CE4009F96DE /* Main.storyboard */,
@@ -150,6 +154,15 @@
 				5F221AE419512CE5009F96DE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FD0A10F195168E800D08304 /* tpl */ = {
+			isa = PBXGroup;
+			children = (
+				5FD0A1101951694100D08304 /* RegController.h */,
+				5FD0A1111951694100D08304 /* RegController.m */,
+			);
+			name = tpl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FD0A1121951694100D08304 /* RegController.m in Sources */,
 				5F221AD319512CE4009F96DE /* ViewController.m in Sources */,
 				5F221ACD19512CE4009F96DE /* AppDelegate.m in Sources */,
 				5F221AC919512CE4009F96DE /* main.m in Sources */,
@@ -456,6 +470,7 @@
 				5F221AED19512CE5009F96DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F221AEE19512CE5009F96DE /* Build configuration list for PBXNativeTarget "weixinastTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +479,7 @@
 				5F221AF019512CE5009F96DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
