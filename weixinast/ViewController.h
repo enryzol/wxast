@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 
 - (IBAction)bgTapClose:(id)sender;
+- (IBAction)LoginAct:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *regButton;
 

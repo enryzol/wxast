@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "RegController.h"
+#import "HomeViewController.h"
+
 
 @interface ViewController ()
 
@@ -112,7 +114,27 @@
 
 
 
+- (IBAction)LoginAct:(id)sender {
+    
+    //[self performSegueWithIdentifier:@"LoginPush" sender:self];
+    
+    HomeViewController *hvw = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    
+    //[self presentViewController:hvw animated:YES completion:^{}];
+    
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:hvw];
+    nc.navigationBarHidden = YES;
+    [self presentViewController:nc animated:YES completion:^{}];
+    
+}
 
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    
+//    
+//    
+//}
 
 
 
