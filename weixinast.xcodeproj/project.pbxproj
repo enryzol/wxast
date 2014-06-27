@@ -28,6 +28,7 @@
 		5F19FD6819594D2800143FCE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F19FD6719594D2800143FCE /* CFNetwork.framework */; };
 		5F19FD6A19594D3500143FCE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F19FD6919594D3500143FCE /* SystemConfiguration.framework */; };
 		5F19FD6C19594D5000143FCE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F19FD6B19594D5000143FCE /* Security.framework */; };
+		5F19FD7519596AD300143FCE /* AlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F19FD7419596AD300143FCE /* AlbumTableViewCell.m */; };
 		5F221ABD19512CE4009F96DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F221ABC19512CE4009F96DE /* Foundation.framework */; };
 		5F221ABF19512CE4009F96DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F221ABE19512CE4009F96DE /* CoreGraphics.framework */; };
 		5F221AC119512CE4009F96DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F221AC019512CE4009F96DE /* UIKit.framework */; };
@@ -44,9 +45,24 @@
 		5F221AE819512CE5009F96DE /* weixinastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F221AE719512CE5009F96DE /* weixinastTests.m */; };
 		5FBF26831957F97000A587D6 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF26821957F97000A587D6 /* AlbumViewController.m */; };
 		5FD0A1121951694100D08304 /* RegController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD0A1111951694100D08304 /* RegController.m */; };
+		5FD2C2B4195A5D9900E4DB3D /* icon-error.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2AC195A5D9900E4DB3D /* icon-error.png */; };
+		5FD2C2B5195A5D9900E4DB3D /* icon-error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2AD195A5D9900E4DB3D /* icon-error@2x.png */; };
+		5FD2C2B6195A5D9900E4DB3D /* icon-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2AE195A5D9900E4DB3D /* icon-info.png */; };
+		5FD2C2B7195A5D9900E4DB3D /* icon-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2AF195A5D9900E4DB3D /* icon-info@2x.png */; };
+		5FD2C2B8195A5D9900E4DB3D /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2B0195A5D9900E4DB3D /* icon-success.png */; };
+		5FD2C2B9195A5D9900E4DB3D /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2B1195A5D9900E4DB3D /* icon-success@2x.png */; };
+		5FD2C2BA195A5D9900E4DB3D /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C2B3195A5D9900E4DB3D /* TWMessageBarManager.m */; };
+		5FD2C2BD195A6A9D00E4DB3D /* AlbumEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C2BC195A6A9D00E4DB3D /* AlbumEditViewController.m */; };
+		5FDB1171195D38E100F3E370 /* AlbumPicEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */; };
 		5FDCEEB21953D07800057CB5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB11953D07800057CB5 /* HomeViewController.m */; };
 		5FDCEEB61953D4BF00057CB5 /* ButtonHomeNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB51953D4BF00057CB5 /* ButtonHomeNav.m */; };
 		5FDCEEBA1953E5BB00057CB5 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB91953E5BB00057CB5 /* Common.m */; };
+		5FE44A9E195BF177007E51E2 /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE44A94195BF177007E51E2 /* PECropRectView.m */; };
+		5FE44A9F195BF177007E51E2 /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE44A96195BF177007E51E2 /* PECropView.m */; };
+		5FE44AA0195BF177007E51E2 /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE44A98195BF177007E51E2 /* PECropViewController.m */; };
+		5FE44AA1195BF177007E51E2 /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5FE44A99195BF177007E51E2 /* PEPhotoCropEditor.bundle */; };
+		5FE44AA2195BF177007E51E2 /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE44A9B195BF177007E51E2 /* PEResizeControl.m */; };
+		5FE44AA3195BF177007E51E2 /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE44A9D195BF177007E51E2 /* UIImage+PECrop.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +116,8 @@
 		5F19FD6719594D2800143FCE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5F19FD6919594D3500143FCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5F19FD6B19594D5000143FCE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5F19FD7319596AD200143FCE /* AlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumTableViewCell.h; path = icon/AlbumTableViewCell.h; sourceTree = "<group>"; };
+		5F19FD7419596AD300143FCE /* AlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumTableViewCell.m; path = icon/AlbumTableViewCell.m; sourceTree = "<group>"; };
 		5F221AB919512CE4009F96DE /* weixinast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weixinast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F221ABC19512CE4009F96DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5F221ABE19512CE4009F96DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,12 +141,35 @@
 		5FBF26821957F97000A587D6 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumViewController.m; path = view/AlbumViewController.m; sourceTree = "<group>"; };
 		5FD0A1101951694100D08304 /* RegController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegController.h; path = view/RegController.h; sourceTree = "<group>"; };
 		5FD0A1111951694100D08304 /* RegController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegController.m; path = view/RegController.m; sourceTree = "<group>"; };
+		5FD2C2AC195A5D9900E4DB3D /* icon-error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-error.png"; sourceTree = "<group>"; };
+		5FD2C2AD195A5D9900E4DB3D /* icon-error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-error@2x.png"; sourceTree = "<group>"; };
+		5FD2C2AE195A5D9900E4DB3D /* icon-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-info.png"; sourceTree = "<group>"; };
+		5FD2C2AF195A5D9900E4DB3D /* icon-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-info@2x.png"; sourceTree = "<group>"; };
+		5FD2C2B0195A5D9900E4DB3D /* icon-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success.png"; sourceTree = "<group>"; };
+		5FD2C2B1195A5D9900E4DB3D /* icon-success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success@2x.png"; sourceTree = "<group>"; };
+		5FD2C2B2195A5D9900E4DB3D /* TWMessageBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWMessageBarManager.h; sourceTree = "<group>"; };
+		5FD2C2B3195A5D9900E4DB3D /* TWMessageBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMessageBarManager.m; sourceTree = "<group>"; };
+		5FD2C2BB195A6A9D00E4DB3D /* AlbumEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumEditViewController.h; path = view/AlbumEditViewController.h; sourceTree = "<group>"; };
+		5FD2C2BC195A6A9D00E4DB3D /* AlbumEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumEditViewController.m; path = view/AlbumEditViewController.m; sourceTree = "<group>"; };
+		5FDB116F195D38E100F3E370 /* AlbumPicEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumPicEditViewController.h; path = view/AlbumPicEditViewController.h; sourceTree = "<group>"; };
+		5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumPicEditViewController.m; path = view/AlbumPicEditViewController.m; sourceTree = "<group>"; };
 		5FDCEEB01953D07800057CB5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = view/HomeViewController.h; sourceTree = "<group>"; };
 		5FDCEEB11953D07800057CB5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = view/HomeViewController.m; sourceTree = "<group>"; };
 		5FDCEEB41953D4BF00057CB5 /* ButtonHomeNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonHomeNav.h; path = icon/ButtonHomeNav.h; sourceTree = "<group>"; };
 		5FDCEEB51953D4BF00057CB5 /* ButtonHomeNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonHomeNav.m; path = icon/ButtonHomeNav.m; sourceTree = "<group>"; };
 		5FDCEEB81953E5BB00057CB5 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = common/Common.h; sourceTree = "<group>"; };
 		5FDCEEB91953E5BB00057CB5 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = common/Common.m; sourceTree = "<group>"; };
+		5FE44A93195BF177007E51E2 /* PECropRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropRectView.h; sourceTree = "<group>"; };
+		5FE44A94195BF177007E51E2 /* PECropRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropRectView.m; sourceTree = "<group>"; };
+		5FE44A95195BF177007E51E2 /* PECropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropView.h; sourceTree = "<group>"; };
+		5FE44A96195BF177007E51E2 /* PECropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropView.m; sourceTree = "<group>"; };
+		5FE44A97195BF177007E51E2 /* PECropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropViewController.h; sourceTree = "<group>"; };
+		5FE44A98195BF177007E51E2 /* PECropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropViewController.m; sourceTree = "<group>"; };
+		5FE44A99195BF177007E51E2 /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
+		5FE44A9A195BF177007E51E2 /* PEResizeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEResizeControl.h; sourceTree = "<group>"; };
+		5FE44A9B195BF177007E51E2 /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEResizeControl.m; sourceTree = "<group>"; };
+		5FE44A9C195BF177007E51E2 /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
+		5FE44A9D195BF177007E51E2 /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +210,8 @@
 		5F19FD26195929EB00143FCE /* plugin */ = {
 			isa = PBXGroup;
 			children = (
+				5FE44A92195BF177007E51E2 /* PEPhotoCropEditor */,
+				5FD2C2AA195A5D9900E4DB3D /* TWMessageBarManager */,
 				5F19FD4519594D1100143FCE /* MKNetworkKit */,
 				5F19FD401959480500143FCE /* Http */,
 				5F19FD2719592A9300143FCE /* MJRefresh */,
@@ -341,8 +384,36 @@
 				5FDCEEB11953D07800057CB5 /* HomeViewController.m */,
 				5FBF26811957F97000A587D6 /* AlbumViewController.h */,
 				5FBF26821957F97000A587D6 /* AlbumViewController.m */,
+				5FD2C2BB195A6A9D00E4DB3D /* AlbumEditViewController.h */,
+				5FD2C2BC195A6A9D00E4DB3D /* AlbumEditViewController.m */,
+				5FDB116F195D38E100F3E370 /* AlbumPicEditViewController.h */,
+				5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */,
 			);
 			name = tpl;
+			sourceTree = "<group>";
+		};
+		5FD2C2AA195A5D9900E4DB3D /* TWMessageBarManager */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2C2AB195A5D9900E4DB3D /* Icons */,
+				5FD2C2B2195A5D9900E4DB3D /* TWMessageBarManager.h */,
+				5FD2C2B3195A5D9900E4DB3D /* TWMessageBarManager.m */,
+			);
+			name = TWMessageBarManager;
+			path = lib/TWMessageBarManager;
+			sourceTree = "<group>";
+		};
+		5FD2C2AB195A5D9900E4DB3D /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2C2AC195A5D9900E4DB3D /* icon-error.png */,
+				5FD2C2AD195A5D9900E4DB3D /* icon-error@2x.png */,
+				5FD2C2AE195A5D9900E4DB3D /* icon-info.png */,
+				5FD2C2AF195A5D9900E4DB3D /* icon-info@2x.png */,
+				5FD2C2B0195A5D9900E4DB3D /* icon-success.png */,
+				5FD2C2B1195A5D9900E4DB3D /* icon-success@2x.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		5FDCEEB31953D40900057CB5 /* icon */ = {
@@ -350,6 +421,8 @@
 			children = (
 				5FDCEEB41953D4BF00057CB5 /* ButtonHomeNav.h */,
 				5FDCEEB51953D4BF00057CB5 /* ButtonHomeNav.m */,
+				5F19FD7319596AD200143FCE /* AlbumTableViewCell.h */,
+				5F19FD7419596AD300143FCE /* AlbumTableViewCell.m */,
 			);
 			name = icon;
 			sourceTree = "<group>";
@@ -361,6 +434,25 @@
 				5FDCEEB91953E5BB00057CB5 /* Common.m */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		5FE44A92195BF177007E51E2 /* PEPhotoCropEditor */ = {
+			isa = PBXGroup;
+			children = (
+				5FE44A93195BF177007E51E2 /* PECropRectView.h */,
+				5FE44A94195BF177007E51E2 /* PECropRectView.m */,
+				5FE44A95195BF177007E51E2 /* PECropView.h */,
+				5FE44A96195BF177007E51E2 /* PECropView.m */,
+				5FE44A97195BF177007E51E2 /* PECropViewController.h */,
+				5FE44A98195BF177007E51E2 /* PECropViewController.m */,
+				5FE44A99195BF177007E51E2 /* PEPhotoCropEditor.bundle */,
+				5FE44A9A195BF177007E51E2 /* PEResizeControl.h */,
+				5FE44A9B195BF177007E51E2 /* PEResizeControl.m */,
+				5FE44A9C195BF177007E51E2 /* UIImage+PECrop.h */,
+				5FE44A9D195BF177007E51E2 /* UIImage+PECrop.m */,
+			);
+			name = PEPhotoCropEditor;
+			path = lib/PEPhotoCropEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,9 +532,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F221AD519512CE4009F96DE /* Images.xcassets in Resources */,
+				5FD2C2B6195A5D9900E4DB3D /* icon-info.png in Resources */,
+				5FD2C2B8195A5D9900E4DB3D /* icon-success.png in Resources */,
 				5F221AC719512CE4009F96DE /* InfoPlist.strings in Resources */,
+				5FD2C2B5195A5D9900E4DB3D /* icon-error@2x.png in Resources */,
+				5FD2C2B9195A5D9900E4DB3D /* icon-success@2x.png in Resources */,
 				5F19FD3819592A9300143FCE /* MJRefresh.bundle in Resources */,
+				5FE44AA1195BF177007E51E2 /* PEPhotoCropEditor.bundle in Resources */,
 				5F221AD019512CE4009F96DE /* Main.storyboard in Resources */,
+				5FD2C2B4195A5D9900E4DB3D /* icon-error.png in Resources */,
+				5FD2C2B7195A5D9900E4DB3D /* icon-info@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,11 +561,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F19FD6619594D1100143FCE /* Reachability.m in Sources */,
+				5FDB1171195D38E100F3E370 /* AlbumPicEditViewController.m in Sources */,
 				5F19FD3F19592A9300143FCE /* UIView+Extension.m in Sources */,
 				5F19FD431959482000143FCE /* Http.m in Sources */,
 				5F19FD3B19592A9300143FCE /* MJRefreshFooterView.m in Sources */,
 				5FBF26831957F97000A587D6 /* AlbumViewController.m in Sources */,
 				5F19FD6419594D1100143FCE /* MKNetworkEngine.m in Sources */,
+				5FD2C2BD195A6A9D00E4DB3D /* AlbumEditViewController.m in Sources */,
 				5F19FD3D19592A9300143FCE /* UIScrollView+Extension.m in Sources */,
 				5F19FD5F19594D1100143FCE /* NSDate+RFC1123.m in Sources */,
 				5FD0A1121951694100D08304 /* RegController.m in Sources */,
@@ -474,14 +575,21 @@
 				5F221AD319512CE4009F96DE /* ViewController.m in Sources */,
 				5F19FD6119594D1100143FCE /* NSString+MKNetworkKitAdditions.m in Sources */,
 				5FDCEEB61953D4BF00057CB5 /* ButtonHomeNav.m in Sources */,
+				5F19FD7519596AD300143FCE /* AlbumTableViewCell.m in Sources */,
 				5F19FD3A19592A9300143FCE /* MJRefreshConst.m in Sources */,
+				5FD2C2BA195A5D9900E4DB3D /* TWMessageBarManager.m in Sources */,
+				5FE44A9F195BF177007E51E2 /* PECropView.m in Sources */,
+				5FE44A9E195BF177007E51E2 /* PECropRectView.m in Sources */,
 				5F19FD3C19592A9300143FCE /* MJRefreshHeaderView.m in Sources */,
+				5FE44AA2195BF177007E51E2 /* PEResizeControl.m in Sources */,
 				5F19FD6219594D1100143FCE /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
+				5FE44AA3195BF177007E51E2 /* UIImage+PECrop.m in Sources */,
 				5F19FD6319594D1100143FCE /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				5F19FD5E19594D1100143FCE /* NSData+MKBase64.m in Sources */,
 				5F221ACD19512CE4009F96DE /* AppDelegate.m in Sources */,
 				5FDCEEB21953D07800057CB5 /* HomeViewController.m in Sources */,
 				5F19FD6019594D1100143FCE /* NSDictionary+RequestEncoding.m in Sources */,
+				5FE44AA0195BF177007E51E2 /* PECropViewController.m in Sources */,
 				5F19FD6519594D1100143FCE /* MKNetworkOperation.m in Sources */,
 				5F19FD3919592A9300143FCE /* MJRefreshBaseView.m in Sources */,
 				5F221AC919512CE4009F96DE /* main.m in Sources */,

@@ -13,6 +13,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    
+    self.CacheEngin = [[MKNetworkEngine alloc] initWithHostName:@"img.host1.o-tap.cn"];
+    [self.CacheEngin useCache];
+    
+    self.Engin = [[MKNetworkEngine alloc] initWithHostName:@"lcm.appspeed.net"];
+    
     return YES;
 }
 							

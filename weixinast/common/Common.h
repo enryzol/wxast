@@ -13,4 +13,6 @@
 
 +(CGColorRef) getColorFromRed:(int)red Green:(int)green Blue:(int)blue Alpha:(int)alpha ;
 
++(UIImage*)imageFromURL:(NSString*)Url;
+
 @end

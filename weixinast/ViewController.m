@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "RegController.h"
 #import "HomeViewController.h"
-
+#import "common/Common.h"
 
 @interface ViewController ()
 
@@ -30,6 +30,8 @@
     
     self.username.delegate = self;
     self.password.delegate = self;
+    
+    [Common imageFromURL:@"http://www.sss.com/sss.png"];
     
 }
 

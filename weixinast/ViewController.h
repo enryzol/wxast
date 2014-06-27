@@ -10,7 +10,7 @@
 
 
 
-@interface ViewController : UIViewController<UITextFieldDelegate>
+@interface ViewController : UIViewController<UITextFieldDelegate,UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;

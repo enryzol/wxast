@@ -9,6 +9,9 @@
 #import "AlbumViewController.h"
 #import "MJRefresh.h"
 #import "Http.h"
+#import "Common.h"
+#import "AlbumTableViewCell.h"
+#import "AlbumEditViewController.h"
 
 @interface AlbumViewController ()
 
@@ -35,13 +38,22 @@
     
     //[self.abTableView.layer.frame.size.height = ]
     CGRect frame = self.abTableView.layer.frame;
-    frame.size.height = self.view.frame.size.height - 80;
+    frame.origin.y = 0;
+    frame.size.height = self.view.frame.size.height;
     self.abTableView.layer.frame = frame;
     
     [self.abTableView addHeaderWithTarget:self action:@selector(headerReFreshing)];
     [self.abTableView addFooterWithTarget:self action:@selector(footerReFreshing)];
     
     [self loadDataFromServer];
+    
+//    NSThread *loadData = [[NSThread alloc] initWithTarget:self selector:@selector(loadDataFromServer) object:nil];
+//    [loadData start];
+    
+  
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        [self loadDataFromServer];
+//    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +83,8 @@
         [self.abTableView reloadData];
         [self.abTableView headerEndRefreshing];
         
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"Reflesh Success" type:TWMessageBarMessageTypeSuccess duration:0.8f];
+        
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         
         [self.abTableView headerEndRefreshing];
@@ -96,20 +110,56 @@
     return [TableViewData count];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    cell.textLabel.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"title"];
-    // Configure the cell...
-    
-    return cell;
+    return 120;
     
 }
+
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%@" , [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"sid"]];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+       
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        AlbumTableViewCell *cellview = [[AlbumTableViewCell alloc]
+                                        initWithFrame:CGRectMake(0, 0, 320, 120)
+                                        Image:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"img"]
+                                        Title:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"title"]
+                                        Desc:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"desc"]];
+        
+        
+        cellview.backgroundColor = [UIColor clearColor];
+        cellview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        [cell addSubview:cellview];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    AlbumEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumEditViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.groupid = [[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"groupid"] integerValue];
+    [self.navigationItem setTitle:@"图集列表"];
+
+}
+
+
+
+
+
 
 
 

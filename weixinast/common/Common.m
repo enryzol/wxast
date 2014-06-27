@@ -7,6 +7,7 @@
 //
 
 #import "Common.h"
+#import "AppDelegate.h"
 
 @implementation Common
 
@@ -18,19 +19,52 @@
     CGFloat b = (CGFloat) blue/255.0;
     CGFloat a = (CGFloat) alpha;
     
-//    NSLog(@"%f",r);
-//    CGFloat components[4] = {r,g,b,a};
-//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-//    
-//    //CGColorRef color = (__bridge CGColorRef)(CFBridgingRelease(CGColorCreate(colorSpace, components)));
-//    //CGColorSpaceRelease(colorSpace);
-//    
-//    CGColor col = [CGColorCreate(colorSpace, components)];
-    
-//    return [[UIColor yellowColor] CGColor];
     return [[UIColor colorWithRed:r green:g blue:b alpha:a] CGColor];
-//    return color;
-    
+
 }
+
+
++(UIImage*)imageFromURL:(NSString*)Url{
+    
+//    NSArray *tmp = [Url componentsSeparatedByString:@"/"];
+//    
+//    int i;
+//    NSString *Host = [[NSString alloc] init];
+//    NSString *File = [NSString stringWithFormat:@"%@",[tmp objectAtIndex:[tmp count]-1]];
+//    for (i = 0; i<[tmp count]-1; i++) {
+//        NSLog(@"%@",[tmp objectAtIndex:i]);
+//        Host = [Host stringByAppendingFormat:@"%@/",[tmp objectAtIndex:i]];
+//    }
+    
+    NSURL *imageURL = [NSURL URLWithString:Url];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage *image = [UIImage imageWithData:imageData];
+   
+
+//    NSString *file = [Url stringByReplacingOccurrencesOfString:@"http://img.host1.o-tap.cn/" withString:@"/"];
+//    
+//    MKNetworkOperation *op = [[MKNetworkOperation alloc] initWithURLString:file params:nil httpMethod:@"GET"];
+//    
+//    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+//        
+//        UIImage *image = [UIImage imageWithData:[completedOperation responseData]];
+//        
+//        return image;
+//    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+//        
+//        
+//    }];
+//    
+//    [ApplicationDelegate.CacheEngin enqueueOperation:op];
+
+    
+//    MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:@""];
+//    MKNetworkOperation *op = [[MKNetworkOperation alloc] initWithURLString:@"" params:nil httpMethod:@"GET"];
+//    [engine operationWithURLString:(NSString *) params:(NSDictionary *) httpMethod:(NSString *)]
+    
+    
+    return image;
+}
+
 
 @end

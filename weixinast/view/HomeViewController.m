@@ -35,6 +35,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
+    
     int height = 295;
     if(self.view.frame.size.height < 520){
         height = 225;
