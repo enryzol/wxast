@@ -95,8 +95,6 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    
-    NSLog(@"ffffff");
     CGRect frame = textField.frame;
     int offset = frame.origin.y + 32 - (self.view.frame.size.height - 216.0);//键盘高度216
     NSTimeInterval animationDuration = 0.30f;

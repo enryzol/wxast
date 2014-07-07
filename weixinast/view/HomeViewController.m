@@ -10,6 +10,7 @@
 #import "ButtonHomeNav.h"
 #import "Common.h"
 #import "AlbumViewController.h"
+#import "BookViewController.h"
 
 @interface HomeViewController ()
 
@@ -36,6 +37,8 @@
     // Do any additional setup after loading the view.
     
     self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.toolbar.translucent = NO;
     
     int height = 295;
     if(self.view.frame.size.height < 520){
@@ -44,15 +47,16 @@
         [self adjustNavHeight:self.NavMiddle];
         [self adjustNavHeight:self.NavRight];
     }
-     NSLog(@" height = %d" , height);
+    NSLog(@" height = %d" , height);
+    
     HomeScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - height, 320, height)];
     HomeScrollView.backgroundColor = [UIColor whiteColor];
     HomeScrollView.pagingEnabled = YES;
-    //HomeScrollView.showsHorizontalScrollIndicator = YES;
+    HomeScrollView.showsHorizontalScrollIndicator = YES;
     HomeScrollView.showsVerticalScrollIndicator = YES;
     [HomeScrollView setContentSize:CGSizeMake(320*3, height)];
     HomeScrollView.delegate = self;
-    
+    HomeScrollView.bounces = NO;
     
     
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 80, 80)];
@@ -64,6 +68,8 @@
     UIButton *btn_1 = [[UIButton alloc] initWithFrame:CGRectMake(120, 20, 80, 80)];
     btn_1.backgroundColor = [UIColor orangeColor];
     [HomeScrollView addSubview:btn_1];
+    
+    [btn_1 addTarget:self action:@selector(LinkBook:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *btn_2 = [[UIButton alloc] initWithFrame:CGRectMake(220, 20, 80, 80)];
     btn_2.backgroundColor = [UIColor orangeColor];
@@ -82,7 +88,7 @@
     [HomeScrollView addSubview:btn2];
     
     
-    [self changeNavTo:0];
+    
     //[self.view addSubview:btn];
     [self.view addSubview:HomeScrollView];
     
@@ -94,7 +100,9 @@
     [self.NavMiddle Title:@"消息" Count:27 Notice:0];
     [self.NavRight Title:@"统计" Count:309 Notice:15];
     
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    [self changeNavTo:0];
 }
 
 -(void)changeNavTo:(int)i{
@@ -130,7 +138,6 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
-   
     int i = 0;
     i = scrollView.contentOffset.x / self.view.frame.size.width;
     [self changeNavTo:i];
@@ -141,13 +148,13 @@
 #pragma mark -push 
 
 -(void)LinkAlbum:(id)sender{
-    
     AlbumViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumViewController"];
-    
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
     [self.navigationController pushViewController:ac animated:YES];
-    
+}
+
+-(void)LinkBook:(id)sender{
+    BookViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:@"BookViewController"];
+    [self.navigationController pushViewController:ac animated:YES];
 }
 
 
@@ -161,5 +168,35 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)NavLeftClick:(id)sender {
+    [HomeScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    [self changeNavTo:0];
+}
+
+- (IBAction)NavMiddleClick:(id)sender {
+    [HomeScrollView setContentOffset:CGPointMake(320, 0) animated:YES];
+    [self changeNavTo:1];
+}
+
+- (IBAction)NavRightClick:(id)sender {
+    [HomeScrollView setContentOffset:CGPointMake(640, 0) animated:YES];
+    [self changeNavTo:2];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

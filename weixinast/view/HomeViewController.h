@@ -17,4 +17,10 @@
 @property (weak, nonatomic) IBOutlet ButtonHomeNav *NavRight;
 
 
+- (IBAction)NavLeftClick:(id)sender;
+- (IBAction)NavMiddleClick:(id)sender;
+- (IBAction)NavRightClick:(id)sender;
+
+
+
 @end

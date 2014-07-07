@@ -1,27 +1,25 @@
 //
-//  AlbumViewController.m
+//  BookViewController.m
 //  weixinast
 //
-//  Created by Jackie on 14-6-23.
+//  Created by Jackie on 14-7-7.
 //  Copyright (c) 2014年 Jackie. All rights reserved.
 //
 
-#import "AlbumViewController.h"
+#import "BookViewController.h"
 #import "MJRefresh.h"
-#import "Http.h"
-#import "Common.h"
 #import "AlbumTableViewCell.h"
-#import "AlbumEditViewController.h"
+
 #import "AppDelegate.h"
 
-@interface AlbumViewController ()
+
+@interface BookViewController (){
+    NSMutableArray *TableViewData ;
+}
 
 @end
 
-@implementation AlbumViewController{
-    
-    NSMutableArray *TableViewData ;
-}
+@implementation BookViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,10 +35,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.toolbar.translucent = NO;
-    
-    
     [self.abTableView addHeaderWithTarget:self action:@selector(headerReFreshing)];
     [self.abTableView addFooterWithTarget:self action:@selector(footerReFreshing)];
     
@@ -48,7 +42,6 @@
     
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
     [self.NavBar setBackgroundColor:[UIColor blueColor]];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,12 +50,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
-    return UIBarPositionTopAttached;
-}
-
-#pragma mark - load data 
+#pragma mark - load data
 
 -(void)loadDataFromServer{
     
@@ -124,7 +112,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-       
+        
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
         AlbumTableViewCell *cellview = [[AlbumTableViewCell alloc]
@@ -149,11 +137,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    AlbumEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumEditViewController"];
-    [self.navigationController pushViewController:vc animated:YES];
-    vc.groupid = [[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"groupid"] integerValue];
-    [self.navigationItem setTitle:@"图集列表"];
-
+//    AlbumEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumEditViewController"];
+//    [self.navigationController pushViewController:vc animated:YES];
+//    vc.groupid = [[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"groupid"] integerValue];
+//    [self.navigationItem setTitle:@"图集列表"];
+    
 }
 
 
@@ -169,4 +157,6 @@
 - (IBAction)NavBarLeftButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
 @end

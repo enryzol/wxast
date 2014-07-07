@@ -18,4 +18,10 @@
 @property (strong, nonatomic) MKNetworkEngine *CacheEngin;
 @property (strong, nonatomic) MKNetworkEngine *Engin;
 
+@property (strong , nonatomic) NSString *_deviceToken;
+
+@property NSString *HostName;
+@property NSString *Package;
+@property NSString *PostUrl;
+
 @end

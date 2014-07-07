@@ -14,6 +14,10 @@
     
     NSString *_img , *_title , *_desc;
     
+    UIView *ImageView;
+    
+    UIActivityIndicatorView *indicator;
+    
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -62,22 +66,44 @@
     
     [self addSubview:label1];
     
+    
+    ImageView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 80, 80)];
+    indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(40, 40, 16, 16)];
+    indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    indicator.center = CGPointMake(40, 40);
+    [ImageView addSubview:indicator];
+    [indicator startAnimating];
+    
+    [self addSubview:ImageView];
 
     //异步加载图片
     MKNetworkOperation *op = [[MKNetworkOperation alloc] initWithURLString:_img params:nil httpMethod:@"GET"];
-
+    
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         
         UIImage *img = [UIImage imageWithData:[completedOperation responseData]];
         UIImageView *imgview = [[UIImageView alloc] initWithImage:img];
         imgview.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [ImageView addSubview:imgview];
+
         CGRect frame = imgview.frame;
         frame.size.height = 80;
         frame.size.width = 80;
-        frame.origin.x = 20 ;
-        frame.origin.y = 20 ;
+        frame.origin.x = 0 ;
+        frame.origin.y = 0 ;
         imgview.frame = frame;
-        [self addSubview:imgview];
+
+        [indicator stopAnimating];
+        
+        
+        //NSLog(@"%@",_img);
+        
+        if([completedOperation isCachedResponse]){
+            //NSLog(@" from cache");
+        }else{
+            //NSLog(@" from server");
+        }
 
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         
@@ -87,30 +113,6 @@
     
     [ApplicationDelegate.CacheEngin enqueueOperation:op];
     
-    
-    
-//    UIImage *img = [Common imageFromURL:@"http://img.host1.o-tap.cn/u/app//default/noexist.png"];
-    
-    
-    //UIImage *img = [Common imageFromURL:_img];
-//    UIImageView *imgview = [[UIImageView alloc] initWithImage:img];
-//    imgview.contentMode = UIViewContentModeScaleAspectFit;
-//    CGRect frame = imgview.frame;
-//    frame.size.height = 80;
-//    frame.size.width = 80;
-//    frame.origin.x = 20 ;
-//    frame.origin.y = 20 ;
-//    imgview.frame = frame;
-//    [self addSubview:imgview];
-    
-    NSLog(@"drawRect imgview");
-    
-
-    
-    
-    
-    
-    //[self.layer setBackgroundColor:[[UIColor yellowColor] CGColor]];
 }
 
 

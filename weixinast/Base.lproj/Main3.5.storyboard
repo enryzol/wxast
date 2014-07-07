@@ -9,7 +9,7 @@
             <objects>
                 <viewController storyboardIdentifier="RegController" id="Hxp-az-lrw" customClass="RegController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tEO-Oe-rpB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u2l-Ym-WS0">
@@ -85,7 +85,7 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="center" id="4U4-Ug-BQY" customClass="UIControl">
@@ -125,7 +125,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bts-9C-bGR">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bts-9C-bGR">
                                         <rect key="frame" x="139" y="243" width="24" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -167,41 +167,44 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="Mkg-GS-pjd" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Akk-Ve-KLG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RWR-fE-b2G">
+                                <rect key="frame" x="60" y="77" width="206" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="logout 3.5">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eXB-Qb-ifz" customClass="ButtonHomeNav">
                                 <rect key="frame" x="0.0" y="225" width="106" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.64272852359772203" green="0.9553404990546579" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="NavLeftClick:" destination="Mkg-GS-pjd" eventType="touchUpInside" id="CIZ-Xt-ikh"/>
+                                    <action selector="NavLeftClick:" destination="Mkg-GS-pjd" eventType="touchUpInside" id="H4J-CY-T9X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XkI-d0-Y7o" customClass="ButtonHomeNav">
                                 <rect key="frame" x="107" y="225" width="106" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="NavMiddleClick:" destination="Mkg-GS-pjd" eventType="touchUpInside" id="Y4B-fC-yMe"/>
+                                    <action selector="NavMiddleClick:" destination="Mkg-GS-pjd" eventType="touchUpInside" id="8ao-2Y-wea"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8vH-Oo-dbt" customClass="ButtonHomeNav">
                                 <rect key="frame" x="214" y="225" width="106" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="NavRightClick:" destination="Mkg-GS-pjd" eventType="touchUpInside" id="fV4-pb-fqr"/>
+                                    <action selector="NavRightClick:" destination="Mkg-GS-pjd" eventType="touchUpInside" id="YnU-4C-DEm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,54 +221,16 @@
             </objects>
             <point key="canvasLocation" x="224" y="58"/>
         </scene>
-        <!--Book View Controller-->
-        <scene sceneID="9pr-wa-V0l">
-            <objects>
-                <viewController storyboardIdentifier="BookViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fKN-nI-dNy" customClass="BookViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v5l-gM-8TR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="87W-ur-gNA">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <navigationBar contentMode="scaleToFill" id="0V3-YR-H9v">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="预约列表" id="Cue-2t-lf2">
-                                        <barButtonItem key="leftBarButtonItem" title="返回" id="iWL-8C-kOY">
-                                            <connections>
-                                                <action selector="NavBarLeftButton:" destination="fKN-nI-dNy" id="KpR-np-ppj"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="NavBar" destination="0V3-YR-H9v" id="ipZ-cx-agP"/>
-                        <outlet property="abTableView" destination="87W-ur-gNA" id="beI-Fz-w0a"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PvZ-fB-0iI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="703" y="649"/>
-        </scene>
         <!--Album View Controller-->
         <scene sceneID="zs3-cp-Neg">
             <objects>
                 <viewController storyboardIdentifier="AlbumViewController" id="t3x-aB-XPv" customClass="AlbumViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KNh-z9-cWw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="136" sectionHeaderHeight="22" sectionFooterHeight="22" id="FRN-gS-oAw">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="446"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -273,18 +238,14 @@
                                     <outlet property="delegate" destination="t3x-aB-XPv" id="9MN-05-1Ul"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" id="AZF-GT-FmI">
+                            <navigationBar contentMode="scaleToFill" id="oph-nZ-yKx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                                </textAttributes>
                                 <items>
-                                    <navigationItem title="图集列表" id="4uW-8g-tgb">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; 首页" id="iMl-Yr-2Qm">
-                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <navigationItem title="图集列表" id="wIe-u5-2za">
+                                        <barButtonItem key="leftBarButtonItem" title="首页" id="Ygr-cS-gBM">
                                             <connections>
-                                                <action selector="NavBarLeftButton:" destination="t3x-aB-XPv" id="fKL-u8-YI4"/>
+                                                <action selector="NavBarLeftButton:" destination="t3x-aB-XPv" id="rUt-cN-gZl"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -293,9 +254,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="NavBar" destination="AZF-GT-FmI" id="lko-ch-Sqn"/>
+                        <outlet property="NavBar" destination="oph-nZ-yKx" id="IH8-sZ-15q"/>
                         <outlet property="abTableView" destination="FRN-gS-oAw" id="Ey2-0u-uzt"/>
                     </connections>
                 </viewController>
@@ -308,19 +268,19 @@
             <objects>
                 <viewController storyboardIdentifier="AlbumEditViewController" automaticallyAdjustsScrollViewInsets="NO" id="1cM-Kh-qhs" customClass="AlbumEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pv8-Py-tQR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="scaleToFill" id="dtt-qY-uvh">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" id="cvk-hy-lQk" customClass="UIControl">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                    <view contentMode="scaleToFill" id="LIg-gc-gZX" customClass="UIControl">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <connections>
-                                            <action selector="bgTapClose:" destination="1cM-Kh-qhs" eventType="touchUpInside" id="NLw-dJ-1fd"/>
+                                            <action selector="bgTapClose:" destination="1cM-Kh-qhs" eventType="touchUpInside" id="ChX-ef-Twn"/>
                                         </connections>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关键字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a7V-9k-oZK">
@@ -383,24 +343,24 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectimg:" destination="1cM-Kh-qhs" eventType="touchUpInside" id="5YS-Ze-k7k"/>
+                                            <action selector="selectimg:" destination="1cM-Kh-qhs" eventType="touchUpInside" id="Ye1-jz-7hy"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </scrollView>
-                            <navigationBar contentMode="scaleToFill" id="c9m-gX-rox">
+                            <navigationBar contentMode="scaleToFill" id="kKY-zo-LA9">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem id="0Ji-wU-yHA">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; 图集列表" id="XFK-SB-cg5">
+                                    <navigationItem title="图集" id="cr9-Dm-6D5">
+                                        <barButtonItem key="leftBarButtonItem" title="列表" id="B7s-5f-O9U">
                                             <connections>
-                                                <action selector="NavBarLeftButton:" destination="1cM-Kh-qhs" id="tPa-aG-XHq"/>
+                                                <action selector="NavBarLeftButton:" destination="1cM-Kh-qhs" id="D6j-zp-FGA"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="    " id="r6s-gu-1LU">
+                                        <barButtonItem key="rightBarButtonItem" title="   " id="ck7-1D-fHr">
                                             <connections>
-                                                <action selector="NavBarRightButton:" destination="1cM-Kh-qhs" id="AGP-RZ-PIu"/>
+                                                <action selector="NavBarRightButton:" destination="1cM-Kh-qhs" id="Mjb-88-Goh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -411,11 +371,11 @@
                     </view>
                     <connections>
                         <outlet property="CtnScrollView" destination="dtt-qY-uvh" id="ZGf-kJ-6EX"/>
-                        <outlet property="NavBar" destination="c9m-gX-rox" id="c52-G9-5NF"/>
-                        <outlet property="NavBarRightButton" destination="r6s-gu-1LU" id="d8a-UR-MfM"/>
-                        <outlet property="desc" destination="lOu-VD-O6u" id="jmB-Ld-tQd"/>
+                        <outlet property="NavBar" destination="kKY-zo-LA9" id="cha-3z-BSy"/>
+                        <outlet property="NavBarRightButton" destination="ck7-1D-fHr" id="cp7-er-LDg"/>
+                        <outlet property="desc" destination="lOu-VD-O6u" id="MuL-nk-oLD"/>
                         <outlet property="imgTableView" destination="FdC-WX-HUY" id="Uto-Kl-ase"/>
-                        <outlet property="keyword" destination="bCl-mz-uWR" id="kLp-7x-Stv"/>
+                        <outlet property="keyword" destination="bCl-mz-uWR" id="6J5-M0-3cd"/>
                         <outlet property="name" destination="6KF-fY-sGe" id="kLD-dV-pJR"/>
                         <outlet property="uploadimg" destination="pIr-I0-Vp0" id="KWg-3T-jGV"/>
                     </connections>
@@ -427,64 +387,64 @@
         <!--Album Pic Edit View Controller-->
         <scene sceneID="8Ns-lX-k9V">
             <objects>
-                <viewController storyboardIdentifier="AlbumPicEditViewController" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="yPs-9V-l1J" customClass="AlbumPicEditViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlbumPicEditViewController" id="yPs-9V-l1J" customClass="AlbumPicEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iao-Hs-4H1" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排序" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2BP-o0-Y7E">
-                                <rect key="frame" x="27" y="320" width="34" height="21"/>
+                                <rect key="frame" x="30" y="209" width="34" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="8o0-iw-G8D">
-                                <rect key="frame" x="77" y="311" width="133" height="30"/>
+                                <rect key="frame" x="96" y="205" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vCd-bh-HOX">
-                                <rect key="frame" x="23" y="435" width="34" height="21"/>
+                                <rect key="frame" x="30" y="254" width="34" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kUw-fs-UVw">
-                                <rect key="frame" x="65" y="354" width="208" height="128"/>
+                                <rect key="frame" x="83" y="243" width="208" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.90325944187293883" blue="0.90358180496976503" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IW8-eq-TR1">
-                                <rect key="frame" x="27" y="518" width="91" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="U72-qK-uaX">
+                                <rect key="frame" x="83" y="394" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="保存">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveimg:" destination="yPs-9V-l1J" eventType="touchUpInside" id="Zpd-AM-tye"/>
+                                    <action selector="saveimg:" destination="yPs-9V-l1J" eventType="touchUpInside" id="MNm-Rz-K3z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uJu-PH-Xhz">
-                                <rect key="frame" x="41" y="87" width="205" height="177"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UMf-Ak-RiH">
+                                <rect key="frame" x="53" y="55" width="194" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
+                                <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectimg:" destination="yPs-9V-l1J" eventType="touchUpInside" id="noR-S3-Yu4"/>
+                                    <action selector="selectimg:" destination="yPs-9V-l1J" eventType="touchUpInside" id="Jkf-md-vRj"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" id="6vH-ro-Q1s">
+                            <navigationBar contentMode="scaleToFill" id="yRv-E6-CSe">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem id="6kz-v3-K1C">
-                                        <barButtonItem key="leftBarButtonItem" title="返回列表" id="CPn-1a-16A">
+                                    <navigationItem id="sLF-Zc-S8A">
+                                        <barButtonItem key="leftBarButtonItem" title="返回" id="fsN-fl-lrX">
                                             <connections>
-                                                <action selector="NavBarLeftButton:" destination="yPs-9V-l1J" id="VZ4-od-W5z"/>
+                                                <action selector="NavBarLeftButton:" destination="yPs-9V-l1J" id="CFU-dI-UmG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -497,9 +457,9 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="NavBar" destination="6vH-ro-Q1s" id="yxa-1F-zv2"/>
+                        <outlet property="NavBar" destination="yRv-E6-CSe" id="FLS-6H-u0R"/>
                         <outlet property="desc" destination="kUw-fs-UVw" id="gwg-FJ-f14"/>
-                        <outlet property="imgview" destination="uJu-PH-Xhz" id="CZ5-zf-ntw"/>
+                        <outlet property="imgview" destination="UMf-Ak-RiH" id="sim-BS-mns"/>
                         <outlet property="orderby" destination="8o0-iw-G8D" id="gKs-Xl-Aas"/>
                     </connections>
                 </viewController>
@@ -514,6 +474,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

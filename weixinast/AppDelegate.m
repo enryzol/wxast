@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 
-@implementation AppDelegate
+@implementation AppDelegate{
+
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -18,10 +20,65 @@
     self.CacheEngin = [[MKNetworkEngine alloc] initWithHostName:@"img.host1.o-tap.cn"];
     [self.CacheEngin useCache];
     
-    self.Engin = [[MKNetworkEngine alloc] initWithHostName:@"lcm.appspeed.net"];
+    self.Engin = [[MKNetworkEngine alloc] initWithHostName:@"i.o-tap.cn"];
+    
+    NSString *sb ;
+    if(IS_4inch){
+        sb = @"Main";
+    }else{
+        sb = @"Main3.5";
+    }
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sb bundle:nil];
+    self.window.rootViewController = [storyboard instantiateInitialViewController];
+    [self.window makeKeyAndVisible];
+    
+    self.HostName = @"http://i.o-tap.cn/";
+    self.Package = @"Ts139986226324746";
+    self.PostUrl = @"/mobile/post/i/Ts139986226324746/";
+    
+    //添加推送注册
+    //判断是否由远程消息通知触发应用程序启动
+    if ([launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]!=nil) {
+        //获取应用程序消息通知标记数（即小红圈中的数字）
+        int badge = (int)[UIApplication sharedApplication].applicationIconBadgeNumber;
+        if (badge>0) {
+            //如果应用程序消息通知标记数（即小红圈中的数字）大于0，清除标记。
+            badge--;
+            //清除标记。清除小红圈中数字，小红圈中数字为0，小红圈才会消除。
+            [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        }
+    }
+    //消息推送注册
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge];
     
     return YES;
 }
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    
+    //NSString *token = [NSString stringWithFormat:@"%@", deviceToken];
+    //获取终端设备标识，这个标识需要通过接口发送到服务器端，服务器端推送消息到APNS时需要知道终端的标识，APNS通过注册的终端标识找到终端设备。
+    
+    NSString *token = [[NSString stringWithFormat:@"%@",deviceToken] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    self._deviceToken = token;
+    NSLog(@"My token is:%@", token);
+    
+    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+    NSString *ss = [userinfo valueForKey:@"isReceiveNotification"];
+    int i = 1;
+    if([ss isEqualToString:@"NO"]){
+        i = 0;
+    }
+    NSLog(@"%@",self._deviceToken);
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"didFailToRegisterForRemoteNotificationsWithError - %@" , error);
+}
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

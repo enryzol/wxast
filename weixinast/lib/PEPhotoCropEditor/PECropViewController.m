@@ -54,26 +54,21 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.toolbar.translucent = NO;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self
                                                                                           action:@selector(cancel:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                           target:self
-                                                                                           action:@selector(done:)];
-
-    if (!self.toolbarItems) {
-        UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                       target:nil
-                                                                                       action:nil];
-        UIBarButtonItem *constrainButton = [[UIBarButtonItem alloc] initWithTitle:PELocalizedString(@"Constrain", nil)
-                                                                            style:UIBarButtonItemStyleBordered
-                                                                           target:self
-                                                                           action:@selector(constrain:)];
-        self.toolbarItems = @[flexibleSpace, constrainButton, flexibleSpace];
-    }
-    self.navigationController.toolbarHidden = self.toolbarHidden;
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+//                                                                                           target:self
+//                                                                                           action:@selector(done:)];
     
+//    self.navigationController.toolbarHidden = self.toolbarHidden;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                                               target:self
+                                                                                                               action:@selector(done:)];
+    //[self.navigationController.navigationItem ri]
     self.cropView.image = self.image;
 }
 
@@ -156,6 +151,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
 
 - (void)cancel:(id)sender
 {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     if ([self.delegate respondsToSelector:@selector(cropViewControllerDidCancel:)]) {
         [self.delegate cropViewControllerDidCancel:self];
     }
@@ -163,6 +159,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
 
 - (void)done:(id)sender
 {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     if ([self.delegate respondsToSelector:@selector(cropViewController:didFinishCroppingImage:)]) {
         [self.delegate cropViewController:self didFinishCroppingImage:self.cropView.croppedImage];
     }
@@ -184,7 +181,8 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
                         PELocalizedString(@"5 x 7", nil),
                         PELocalizedString(@"8 x 10", nil),
                         PELocalizedString(@"16 x 9", nil), nil];
-    [self.actionSheet showFromToolbar:self.navigationController.toolbar];
+    //[self.actionSheet showFromToolbar:self.navigationController.toolbar];
+    //[self.actionSheet show]
 }
 
 #pragma mark -

@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "objectInputAdjustAndUploadImage.h"
 
-@interface AlbumPicEditViewController : UIViewController
+@interface AlbumPicEditViewController : objectInputAdjustAndUploadImage
+
+@property (weak, nonatomic) IBOutlet UITextField *orderby;
+@property (weak, nonatomic) IBOutlet UITextView *desc;
+
+@property (weak, nonatomic) IBOutlet UIButton *imgview;
+@property (weak, nonatomic) IBOutlet UINavigationBar *NavBar;
+
+
+@property int pid;
+
+-(IBAction)saveimg:(id)sender;
+
+-(IBAction)selectimg:(id)sender;
+
+- (IBAction)NavBarLeftButton:(id)sender;
 
 @end
