@@ -221,6 +221,48 @@
             </objects>
             <point key="canvasLocation" x="224" y="58"/>
         </scene>
+        <!--Book View Controller-->
+        <scene sceneID="gI2-Jg-pdh">
+            <objects>
+                <viewController storyboardIdentifier="BookViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vDI-nA-Mgz" customClass="BookViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pAr-qs-uLO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="G3f-Hp-VKk">
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vDI-nA-Mgz" id="UCt-Ob-hCi"/>
+                                    <outlet property="delegate" destination="vDI-nA-Mgz" id="hn7-Yy-YMk"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" id="JeX-1w-RmI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="预约列表" id="lKF-mz-AYY">
+                                        <barButtonItem key="leftBarButtonItem" title="首页" id="X22-pg-5oF">
+                                            <connections>
+                                                <action selector="NavBarLeftButton:" destination="vDI-nA-Mgz" id="GlM-GT-F0C"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="NavBar" destination="JeX-1w-RmI" id="pXd-SE-fgn"/>
+                        <outlet property="abTableView" destination="G3f-Hp-VKk" id="A55-MW-DB9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PL5-Yg-mXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="741" y="426"/>
+        </scene>
         <!--Album View Controller-->
         <scene sceneID="zs3-cp-Neg">
             <objects>

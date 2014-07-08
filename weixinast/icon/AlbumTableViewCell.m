@@ -14,6 +14,8 @@
     
     NSString *_img , *_title , *_desc;
     
+    UILabel *Lable_img , *Label_title , *Label_desc;
+    
     UIView *ImageView;
     
     UIActivityIndicatorView *indicator;
@@ -52,19 +54,27 @@
 {
     // Drawing code
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(120, 20, 200, 50)];
+    if([self.Style isEqualToString:@"style01"]){
+        
+        Label_desc = [[UILabel alloc] initWithFrame:CGRectMake(120, 20, 200, 50)];
+        Label_desc.text = _desc;
+        [Label_desc setFont:[UIFont fontWithName:@"System" size:12.0f]];
+        [Label_desc setTextColor:[UIColor colorWithRed:10.0f/255.0f green:10.0f/255.0f blue:10.0f/255.0f alpha:1]];
+        [self addSubview:Label_desc];
+        
+    }else{
+        Label_title = [[UILabel alloc] initWithFrame:CGRectMake(120, 20, 200, 50)];
+        Label_title.text = _title;
+        [self addSubview:Label_title];
+        
+        Label_desc = [[UILabel alloc] initWithFrame:CGRectMake(120, 60, 200, 50)];
+        Label_desc.text = _desc;
+        [Label_desc setFont:[UIFont fontWithName:@"System" size:8.0f]];
+        [Label_desc setTextColor:[UIColor colorWithRed:100.0f/255.0f green:100.0f/255.0f blue:100.0f/255.0f alpha:1]];
+        [self addSubview:Label_desc];
+    }
+   
     
-    label.text = _title;
-    
-    [self addSubview:label];
-    
-    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(120, 60, 200, 50)];
-    
-    label1.text = _desc;
-    [label1 setFont:[UIFont fontWithName:@"System" size:8.0f]];
-    [label1 setTextColor:[UIColor colorWithRed:100.0f/255.0f green:100.0f/255.0f blue:100.0f/255.0f alpha:1]];
-    
-    [self addSubview:label1];
     
     
     ImageView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 80, 80)];
@@ -95,9 +105,6 @@
         imgview.frame = frame;
 
         [indicator stopAnimating];
-        
-        
-        //NSLog(@"%@",_img);
         
         if([completedOperation isCachedResponse]){
             //NSLog(@" from cache");

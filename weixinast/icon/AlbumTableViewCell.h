@@ -13,4 +13,7 @@
 
 - (id)initWithFrame:(CGRect)frame Image:(NSString*)img Title:(NSString*)title Desc:(NSString*)desc;
 
+
+@property (nonatomic) NSString *Style ;
+
 @end

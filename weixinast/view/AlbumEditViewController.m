@@ -127,7 +127,7 @@
             TableViewData = jsonObject[@"list"];
             [self.imgTableView reloadData];
             
-            NSLog(@"%@",jsonObject);
+            //NSLog(@"%@",jsonObject);
         }];
         
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
@@ -182,6 +182,8 @@
         
         cellview.backgroundColor = [UIColor clearColor];
         cellview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        cellview.Style = @"style01";
         
         [cell addSubview:cellview];
         

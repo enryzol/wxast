@@ -59,7 +59,8 @@
     sheet.tag = 255;
     
     
-    [sheet showInView:[UIApplication sharedApplication].keyWindow];
+    [sheet showFromRect:self.view.frame inView:self.view animated:YES];
+//    [sheet showInView:[UIApplication sharedApplication].keyWindow];
     //[sheet showInView:self.view];
 }
 
@@ -111,11 +112,12 @@
     controller.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     controller.toolbarHidden = YES;
     
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+//    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+/*
     CGFloat width  = image.size.width;
     CGFloat height = image.size.height;
     CGFloat length = MIN(width, height);
-    
+*/    
     controller.keepingCropAspectRatio = self.keepingCropAspectRatio;
     
     /*
