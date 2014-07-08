@@ -29,6 +29,8 @@
         sb = @"Main3.5";
     }
     
+    NSLog(@"This is Share Branch.");
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sb bundle:nil];
     self.window.rootViewController = [storyboard instantiateInitialViewController];
     [self.window makeKeyAndVisible];
