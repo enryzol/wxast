@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <ShareSDK/ShareSDK.h>
+#import "WXApi.h"
 
 @implementation AppDelegate{
 
@@ -53,6 +55,13 @@
     }
     //消息推送注册
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge];
+    
+    [ShareSDK registerApp:@"241320e5a09f"];
+    
+    [ShareSDK connectWeChatWithAppId:@"wx556e88d078c07290" wechatCls:[WXApi class]];
+    [ShareSDK connectSMS];
+    [ShareSDK connectMail];
+    [ShareSDK connectCopy];
     
     return YES;
 }

@@ -12,6 +12,9 @@
 #import "AlbumViewController.h"
 #import "BookViewController.h"
 
+#import <ShareSDK/ShareSDK.h>
+#import "WXApi.h"
+
 @interface HomeViewController ()
 
 @end
@@ -74,6 +77,9 @@
     UIButton *btn_2 = [[UIButton alloc] initWithFrame:CGRectMake(220, 20, 80, 80)];
     btn_2.backgroundColor = [UIColor orangeColor];
     [HomeScrollView addSubview:btn_2];
+    
+    [btn_2 addTarget:self action:@selector(Share) forControlEvents:UIControlEventTouchUpInside];
+    
     
     UIButton *btn_3 = [[UIButton alloc] initWithFrame:CGRectMake(20, 120, 80, 80)];
     btn_3.backgroundColor = [UIColor orangeColor];
@@ -157,6 +163,36 @@
     [self.navigationController pushViewController:ac animated:YES];
 }
 
+-(void)Share{
+    NSLog(@"share");
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK"  ofType:@"jpg"];
+    
+    //构造分享内容
+    id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
+                                       defaultContent:@"默认分享内容，没内容时显示"
+                                                image:[ShareSDK imageWithPath:imagePath]
+                                                title:@"ShareSDK"
+                                                  url:@"http://www.sharesdk.cn"
+                                          description:@"这是一条测试信息"
+                                            mediaType:SSPublishContentMediaTypeNews];
+    [ShareSDK showShareActionSheet:nil
+                         shareList:nil
+                           content:publishContent
+                     statusBarTips:YES
+                       authOptions:nil
+                      shareOptions: nil
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                if (state == SSResponseStateSuccess)
+                                {
+                                    NSLog(@"分享成功");
+                                }
+                                else if (state == SSResponseStateFail)
+                                {
+                                    NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
+                                }
+                            }];
+}
 
 /*
 #pragma mark - Navigation
