@@ -13,9 +13,9 @@
 #import "BookViewController.h"
 
 #import <ShareSDK/ShareSDK.h>
-#import "WXApi.h"
+#import "ZBarReaderViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController ()<ZBarReaderDelegate>
 
 @end
 
@@ -84,6 +84,9 @@
     UIButton *btn_3 = [[UIButton alloc] initWithFrame:CGRectMake(20, 120, 80, 80)];
     btn_3.backgroundColor = [UIColor orangeColor];
     [HomeScrollView addSubview:btn_3];
+    
+    [btn_3 addTarget:self action:@selector(scanQRCode) forControlEvents:UIControlEventTouchUpInside];
+    
     
     UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(320, 0, 100, 50)];
     btn1.backgroundColor = [UIColor blackColor];
@@ -166,8 +169,8 @@
 -(void)Share{
     NSLog(@"share");
     
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK"  ofType:@"jpg"];
-    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"0"  ofType:@"png"];
+
     //构造分享内容
     id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
                                        defaultContent:@"默认分享内容，没内容时显示"
@@ -194,6 +197,44 @@
                             }];
 }
 
+-(void)scanQRCode{
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    ZBarImageScanner *scanner = reader.scanner;
+    
+    [scanner setSymbology: ZBAR_I25
+                   config: ZBAR_CFG_ENABLE
+                       to: 0];
+    
+    [self presentViewController:reader animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+    NSLog(@"info=%@",info);
+    // 得到条形码结果
+    id<NSFastEnumeration> results =
+    [info objectForKey: ZBarReaderControllerResults];
+    ZBarSymbol *symbol = nil;
+    for(symbol in results)
+        // EXAMPLE: just grab the first barcode
+        break;
+    NSString *code = [NSString stringWithString:symbol.data];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    NSLog(@"code=%@",code);
+    
+    [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:code type:TWMessageBarMessageTypeSuccess duration:2.0f];
+    
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
 /*
 #pragma mark - Navigation
 

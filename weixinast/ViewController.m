@@ -31,7 +31,10 @@
     self.username.delegate = self;
     self.password.delegate = self;
     
-    [Common imageFromURL:@"http://www.sss.com/sss.png"];
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"0"  ofType:@"png"];
+    
+    NSLog(@"%@" , imagePath);
     
 }
 
