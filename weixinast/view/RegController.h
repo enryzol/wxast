@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "objectInputAdjustAndUploadImage.h"
 
-@interface RegController : UIViewController
+@interface RegController : objectInputAdjustAndUploadImage
 
 @property (weak, nonatomic) IBOutlet UIButton *close;
+
+@property (weak, nonatomic) IBOutlet UITextField *Account;
+@property (weak, nonatomic) IBOutlet UITextField *Password;
+@property (weak, nonatomic) IBOutlet UITextField *Bpassword;
+@property (weak, nonatomic) IBOutlet UITextField *Email;
+
+
+- (IBAction)RegNewAction:(id)sender;
+
+- (IBAction)bgTapClose:(id)sender;
 
 @end

@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *abTableView;
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *NavBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *NavLeftButton;
 
 
 - (IBAction)NavBarLeftButton:(id)sender;

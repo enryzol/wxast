@@ -50,7 +50,6 @@
         [self adjustNavHeight:self.NavMiddle];
         [self adjustNavHeight:self.NavRight];
     }
-    NSLog(@" height = %d" , height);
     
     HomeScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - height, 320, height)];
     HomeScrollView.backgroundColor = [UIColor whiteColor];

@@ -10,8 +10,8 @@
 #import "MJRefresh.h"
 #import "Http.h"
 #import "Common.h"
-#import "AlbumTableViewCell.h"
-#import "AlbumEditViewController.h"
+#import "AlbumBoardTableViewCell.h"
+#import "AlbumNEditViewController.h"
 #import "AppDelegate.h"
 
 @interface AlbumViewController ()
@@ -47,7 +47,7 @@
     [self loadDataFromServer];
     
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
-    [self.NavBar setBackgroundColor:[UIColor blueColor]];
+    [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
     
 }
 
@@ -97,9 +97,7 @@
 #pragma mark - table delegate
 
 -(void)headerReFreshing{
-    
     [self loadDataFromServer];
-    
 }
 
 -(void)footerReFreshing{
@@ -107,6 +105,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSLog(@"tableview count %d" , [TableViewData count]);
     return [TableViewData count];
 }
 
@@ -120,40 +119,21 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%@" , [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"sid"]];
+    static NSString *CellIdentifier = @"AlbumBoardCell";
+    AlbumBoardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-       
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
-        AlbumTableViewCell *cellview = [[AlbumTableViewCell alloc]
-                                        initWithFrame:CGRectMake(0, 0, 320, 120)
-                                        Image:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"img"]
-                                        Title:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"title"]
-                                        Desc:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"desc"]];
-        
-        
-        cellview.backgroundColor = [UIColor clearColor];
-        cellview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        [cell addSubview:cellview];
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
+    cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"title"];
     
-    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [cell setImageWithURL:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"img"]];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    AlbumEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumEditViewController"];
+    AlbumNEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumNEditViewController"];
+//    vc.groupid = [[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"groupid"] integerValue];
     [self.navigationController pushViewController:vc animated:YES];
-    vc.groupid = [[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"groupid"] integerValue];
-    [self.navigationItem setTitle:@"图集列表"];
-
 }
 
 

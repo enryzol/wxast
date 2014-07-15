@@ -1,18 +1,20 @@
 //
-//  RegController.m
+//  DescEditViewController.m
 //  weixinast
 //
-//  Created by Jackie on 14-6-18.
+//  Created by Jackie on 14-7-14.
 //  Copyright (c) 2014年 Jackie. All rights reserved.
 //
 
-#import "RegController.h"
+#import "DescEditViewController.h"
+#import "AlbumNEditViewController.h"
+#import "Const.h"
 
-@interface RegController ()
+@interface DescEditViewController ()
 
 @end
 
-@implementation RegController
+@implementation DescEditViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,18 +30,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.Account.delegate = self;
-    self.Bpassword.delegate = self;
-    self.Password.delegate = self;
-    self.Email.delegate = self;
+    [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
+    [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
+ 
+    
+    self.Subject.text = self.SubjectStr;
+    self.textarea.text = self.ContentStr;
     
     
-}
-
--(void) closeWindow{
     
-    [self dismissViewControllerAnimated:YES completion:^{}];
-    
+    NSLog(@"%@" , self.ContentStr);
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +47,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+-(void)test:(NSString*)str{
+    
+    self.Subject.text = str;
+    
+}
+
 
 /*
 #pragma mark - Navigation
@@ -63,20 +71,38 @@
 #pragma mark 解决虚拟键盘挡住UITextField的方法
 
 - (IBAction)bgTapClose:(id)sender {
-    [self.Account resignFirstResponder];
-    [self.Password resignFirstResponder];
-    [self.Bpassword resignFirstResponder];
-    [self.Email resignFirstResponder];
-    
-    NSLog(@"bgTapClose");
-    NSTimeInterval animationDuration = 0.30f;
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
-    self.view.frame = rect;
+    [self.textarea resignFirstResponder];
 }
 
 
-- (IBAction)RegNewAction:(id)sender {
+- (IBAction)NavLeftButtonAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)NavRightButtonAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.delegate CommonReturn:self.textarea.text Tag:1];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

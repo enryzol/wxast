@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "RegController.h"
-#import "HomeViewController.h"
+#import "NHomeViewController.h"
 #import "common/Common.h"
 
 @interface ViewController ()
@@ -31,10 +31,6 @@
     self.username.delegate = self;
     self.password.delegate = self;
     
-    
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"0"  ofType:@"png"];
-    
-    NSLog(@"%@" , imagePath);
     
 }
 
@@ -121,7 +117,7 @@
     
     //[self performSegueWithIdentifier:@"LoginPush" sender:self];
     
-    HomeViewController *hvw = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    NHomeViewController *hvw = [self.storyboard instantiateViewControllerWithIdentifier:@"NHomeViewController"];
     
     //[self presentViewController:hvw animated:YES completion:^{}];
     
