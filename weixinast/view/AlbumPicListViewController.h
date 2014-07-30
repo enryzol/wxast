@@ -15,7 +15,8 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *NavBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *NavBarRightButton;
-@property int groupid ;
+@property NSString * groupid ;
+@property NSDictionary * Album;
 
 - (IBAction)NavRightButtonAction:(id)sender;
 - (IBAction)NavLeftButtonAction:(id)sender;

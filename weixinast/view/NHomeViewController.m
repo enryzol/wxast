@@ -8,12 +8,17 @@
 
 #import "NHomeViewController.h"
 #import "AlbumViewController.h"
+#import "UserViewController.h"
+#import "Api.h"
 
 @interface NHomeViewController ()
 
 @end
 
-@implementation NHomeViewController
+@implementation NHomeViewController{
+    
+    NSDictionary *User ;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +33,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    User = [[NSDictionary alloc] init];
+    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+    User = [userinfo objectForKey:@"user"];
+    
+    self.LoginNameLabel.text = [User objectForKey:@"name"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,12 +74,25 @@
 }
 
 - (IBAction)UserAction:(id)sender {
-    NSLog(@"UserAction");
+    UserViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UserViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)MessageAction:(id)sender {
 }
 
 - (IBAction)SettingAction:(id)sender {
+    
+    NSLog(@"SettingAction");
+    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+    
+    [userinfo removeObjectForKey:@"LToken"];
+    [userinfo removeObjectForKey:@"user"];
+    
+    [userinfo synchronize];
+    
+    [self dismissViewControllerAnimated:YES completion:^{}];
+    
+    
 }
 @end

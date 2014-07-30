@@ -8,9 +8,11 @@
 
 #import "AlbumPicListViewController.h"
 #import "AlbumBoardTableViewCell.h"
-
+#import "AlbumPicEditViewController.h"
 #import "AppDelegate.h"
 #import "MJRefresh.h"
+#import "Api.h"
+#import "Function.h"
 
 
 @interface AlbumPicListViewController ()<UIActionSheetDelegate,UIAlertViewDelegate>
@@ -43,7 +45,12 @@
     
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
     [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
+    self.NavBar.topItem.title = [self.Album objectForKey:@"title"];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self loadDataFromServer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,10 +74,12 @@
 
 -(void)loadDataFromServer{
     
-    NSString *url = [NSString stringWithFormat:@"/mobile/group/i/%@/g/1/%d",ApplicationDelegate.Package,self.groupid];
+    
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/aglist/?LToken=%@&group=%@",[Api LToken],self.groupid];
     
     NSLog(@"%@",url);
-    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:nil httpMethod:@"GET"];
+    
+    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:nil httpMethod:@"GET" ssl:YES];
     
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         
@@ -82,12 +91,11 @@
         
         TableViewData = json[@"list"];
         
-        //NSLog(@"%@",TableViewData);
+        NSLog(@"%@",json);
         
         [self.tableview reloadData];
         [self.tableview headerEndRefreshing];
         
-        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"Reflesh Success" type:TWMessageBarMessageTypeSuccess duration:0.8f];
         
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         
@@ -135,6 +143,7 @@
     
     UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"编辑" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除图片" otherButtonTitles:@"编辑图片",@"图片排序", nil];
     
+    [as setTag:indexPath.row];
     [as showInView:[UIApplication sharedApplication].keyWindow];
     
 }
@@ -173,10 +182,15 @@
     
     if(buttonIndex == 0){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@" 确定删除图片？" message:@"图片删除将无法恢复" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"删除", nil];
-        [alert setTag:100];
+        [alert setTag:[actionSheet tag]];
         [alert show];
     }else if (buttonIndex == 1){
         
+        AlbumPicEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumPicEditViewController"];
+        
+        vc.PictureInfo = [TableViewData objectAtIndex:actionSheet.tag];
+        
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if (buttonIndex == 2){
         
@@ -190,18 +204,24 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    if(alertView.tag == 100){
+
         if(buttonIndex == 0){
             //cancel
             
             NSLog(@"cancel");
         }else{
             //delete
-            
             NSLog(@"delete");
+            
+            NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/DeletePic/?LToken=%@&sid=%@",[Api LToken] , [[TableViewData objectAtIndex:alertView.tag] objectForKey:@"sid"]];
+            
+            [[Function sharedManager] Post:url Params:nil CompletionHandler:^(MKNetworkOperation *completed) {
+                [self loadDataFromServer];
+            }];
+            
         }
 
-    }
+
 }
 
 
@@ -210,8 +230,25 @@
     if(self.tableview.editing){
         [self.NavBarRightButton setImage:[UIImage imageNamed:@"ico_add_100w.png"]];
         [self.tableview setEditing:NO];
+        
+        NSString *OrderBy = @"";
+
+        for (int i = 0; i < [TableViewData count]; i++){
+            //NSLog(@"%@",[TableViewData objectAtIndex:i]);
+            
+            OrderBy = [OrderBy stringByAppendingFormat:@"||%@#%d", [[TableViewData objectAtIndex:i] objectForKey:@"sid"], i+1];
+            
+        }
+        
+        NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/SaveOrderBy/?LToken=%@",[Api LToken]];
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        [params setValue:OrderBy forKey:@"orderby"];
+        [[Function sharedManager] Post:url Params:params];
+        
     }else{
-        NSLog(@"add new");
+        AlbumPicEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumPicEditViewController"];
+        vc.groupid = self.groupid;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
     

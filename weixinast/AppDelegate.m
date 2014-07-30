@@ -22,7 +22,10 @@
     self.CacheEngin = [[MKNetworkEngine alloc] initWithHostName:@"img.host1.o-tap.cn"];
     [self.CacheEngin useCache];
     
-    self.Engin = [[MKNetworkEngine alloc] initWithHostName:@"i.o-tap.cn"];
+    self.Engin = [[MKNetworkEngine alloc] initWithHostName:@"api.o-tap.cn"];
+    
+    //self.Engin = [[MKNetworkEngine alloc] init];
+    //[self.Engin ]
     
     NSString *sb ;
     if(IS_4inch){
@@ -35,7 +38,7 @@
     self.window.rootViewController = [storyboard instantiateInitialViewController];
     [self.window makeKeyAndVisible];
     
-    self.HostName = @"http://i.o-tap.cn/";
+    self.HostName = @"https://api.o-tap.cn/";
     self.Package = @"Ts139986226324746";
     self.PostUrl = @"/mobile/post/i/Ts139986226324746/";
     
@@ -86,6 +89,9 @@
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
     NSLog(@"didFailToRegisterForRemoteNotificationsWithError - %@" , error);
+    
+    self._deviceToken = @"VirtualDevice";
+    
 }
 
 							

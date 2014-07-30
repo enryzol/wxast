@@ -17,5 +17,6 @@
 
 
 - (IBAction)NavBarLeftButton:(id)sender;
+- (IBAction)NavBarRightButton:(id)sender;
 
 @end

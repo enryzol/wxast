@@ -9,6 +9,8 @@
 #import "AlbumPicEditViewController.h"
 #import "AppDelegate.h"
 #import "Common.h"
+#import "Function.h"
+#import "Api.h"
 
 @interface AlbumPicEditViewController ()<UITextFieldDelegate,UITextViewDelegate>
 
@@ -35,13 +37,19 @@
     self.navigationController.toolbar.translucent = NO;
     
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
-    [self.NavBar setBackgroundColor:[UIColor greenColor]];
+    [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
     
-    self.orderby.delegate = self;
+    self.href.delegate = self;
     self.desc.delegate = self;
     
+    self.desc.text = [self.PictureInfo objectForKey:@"desc"];
+    self.href.text = [self.PictureInfo objectForKey:@"link"];
     
-    self.orderby.text = [NSString stringWithFormat:@"pid=%d",self.pid];
+    [self.ImagePreView setImageWithURL:[self.PictureInfo objectForKey:@"img"] Radius:5];
+    
+    NSLog(@"%@",self.PictureInfo);
+    
+    NSLog(@"%@",[self.PictureInfo objectForKey:@"sid"]);
     
 }
 
@@ -53,7 +61,7 @@
 
 
 -(IBAction)selectimg:(id)sender{
-    [super setKeepingCropAspectRatio:YES];
+    [super setKeepingCropAspectRatio:NO];
     [super setCrop:CGRectMake(0, 0, 500, 500)];
     [super selectimg:sender];
 }
@@ -62,50 +70,62 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)LoadData{
+- (IBAction)NavBarRightButton:(id)sender {
     
-    NSString *url = [NSString stringWithFormat:@"/mobile/group/i/%@/g/%d",ApplicationDelegate.Package,self.pid];
     
-    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:nil httpMethod:@"GET"];
+    if(img == nil && self.PictureInfo == nil){
+        
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"添加失败" description:@"请添加一张图片" type:TWMessageBarMessageTypeError];
+        return ;
+    }
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/SavePicture/?LToken=%@",[Api LToken]];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setValue:[self.PictureInfo objectForKey:@"sid"] forKey:@"sid"];
+    [params setValue:self.href.text forKey:@"link"];
+    [params setValue:self.desc.text forKey:@"desc"];
+    [params setValue:self.groupid forKey:@"groupid"];
+    
+    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:params httpMethod:@"POST" ssl:YES];
+    
+    if(img != nil){
+        [op addData:UIImageJPEGRepresentation(img, 1.0f) forKey:@"img"];
+    }
+    
     
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         
-        [completedOperation responseJSONWithCompletionHandler:^(id jsonObject) {
-            self.orderby.text = jsonObject[@"orderby"];
-            self.desc.text = jsonObject[@"desc"];
-            
-            [self.imgview setBackgroundImage:[Common imageFromURL:jsonObject[@"img"]] forState:UIControlStateNormal];
-            
-            //NSLog(@"%@",jsonObject);
-        }];
+        //id json = [completedOperation responseJSON];
+        NSLog(@"%@",[completedOperation responseString]);
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"图集" description:@"数据保存成功" type:TWMessageBarMessageTypeSuccess duration:1.0f];
+        
+        [[Function sharedManager] AlertViewHide];
+        
+        if([self.PictureInfo objectForKey:@"sid"] == nil){
+            [self.navigationController popViewControllerAnimated:YES];
+        }
         
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        NSLog(@"%@",error);
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"图集" description:@"数据保存失败" type:TWMessageBarMessageTypeError duration:1.0f];
         
+        [[Function sharedManager] AlertViewHide];
     }];
+  
+    [[Function sharedManager] AlertViewShow:@"正在保存数据,请稍候"];
     
     [ApplicationDelegate.Engin enqueueOperation:op];
+    
+}
+
+-(void)LoadData{
+    
+    
 }
 
 
 - (IBAction)saveimg:(id)sender{
     
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    [params setValue:@"savealbumpic" forKey:@"do"];
-    [params setValue:self.desc.text forKey:@"desc"];
-    [params setValue:self.orderby.text forKey:@"orderby"];
-    [params setValue:[NSString stringWithFormat:@"%d",self.pid] forKey:@"pid"];
-    
-    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:ApplicationDelegate.PostUrl params:params httpMethod:@"POST"];
-    
-    [op addData:UIImageJPEGRepresentation(img, 1.0f) forKey:@"img"];
-    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
-        NSLog(@"POST请求完成 %@" , [completedOperation responseString]);
-        
-    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
-        NSLog(@"POST请求出错");
-    }];
-    
-    [ApplicationDelegate.Engin enqueueOperation:op];
 }
 
 
@@ -124,7 +144,7 @@
 #pragma mark 解决虚拟键盘挡住UITextField的方法
 
 - (IBAction)bgTapClose:(id)sender {
-    [self.orderby resignFirstResponder];
+    [self.href resignFirstResponder];
     [self.desc resignFirstResponder];
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];

@@ -37,6 +37,11 @@
                BlueprintName = "weixinastTests"
                ReferencedContainer = "container:weixinast.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "weixinastTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

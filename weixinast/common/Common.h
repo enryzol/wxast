@@ -15,4 +15,6 @@
 
 +(UIImage*)imageFromURL:(NSString*)Url;
 
+
+
 @end

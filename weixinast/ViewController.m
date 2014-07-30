@@ -10,12 +10,18 @@
 #import "RegController.h"
 #import "NHomeViewController.h"
 #import "common/Common.h"
+#import "AppDelegate.h"
+#import "Api.h"
+#import "Function.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+
+    
+}
 
 - (void)viewDidLoad
 {
@@ -31,6 +37,23 @@
     self.username.delegate = self;
     self.password.delegate = self;
     
+    self.username.text = @"";
+    self.password.text = @"";
+    
+
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.username.text = @"";
+    self.password.text = @"";
+}
+-(void)viewDidAppear:(BOOL)animated{
+
+    BOOL CheckUser = [Api CheckUser];
+    if(CheckUser){
+        [self LoginSuccess];
+    }
     
 }
 
@@ -115,26 +138,76 @@
 
 - (IBAction)LoginAct:(id)sender {
     
-    //[self performSegueWithIdentifier:@"LoginPush" sender:self];
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Check/Login/"];
     
-    NHomeViewController *hvw = [self.storyboard instantiateViewControllerWithIdentifier:@"NHomeViewController"];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setValue:self.username.text forKey:@"name"];
+    [params setValue:self.password.text forKey:@"password"];
+    [params setValue:ApplicationDelegate._deviceToken forKey:@"deviceToken"];
     
-    //[self presentViewController:hvw animated:YES completion:^{}];
+    NSLog(@"%@",params);
     
+    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:params httpMethod:@"POST" ssl:YES];
     
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:hvw];
-    nc.navigationBarHidden = YES;
-    [self presentViewController:nc animated:YES completion:^{}];
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        
+        [[Function sharedManager] AlertViewHide];
+        
+        id json = [completedOperation responseJSON];
+        
+        NSString *status = json[@"status"];
+        if([status isEqualToString:@"error"]){
+            
+            [[TWMessageBarManager sharedInstance] hideAllAnimated:NO];
+            
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"登录失败" description:@"用户名或密码错误" type:TWMessageBarMessageTypeError duration:1.0f];
+            
+            return ;
+        }else if ([status isEqualToString:@"success"]){
+            [[TWMessageBarManager sharedInstance] hideAllAnimated:YES];
+            
+            NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+            
+            NSString *LToken = json[@"LToken"];
+            if(![LToken isEqualToString:@""] && LToken != NULL){
+                [userinfo setObject:LToken forKey:@"LToken"];
+                [userinfo synchronize];
+                NSLog(@"%@",LToken);
+            }
+            
+            NSDictionary *User = json[@"info"];
+            [userinfo setObject:User forKey:@"user"];
+            [userinfo synchronize];
+            
+            [self LoginSuccess];
+            
+        }
+        
+        //NSLog(@"%@",json);
+        NSLog(@"responseString - %@",[completedOperation responseString]);
+        
+        
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"登录失败" description:@"无法连接到服务器" type:TWMessageBarMessageTypeError duration:1.0f];
+        
+        [[Function sharedManager] AlertViewHide];
+        
+    }];
+    
+    [[Function sharedManager] AlertViewShow:@"正在登录中,请稍候"];
+    
+    [ApplicationDelegate.Engin enqueueOperation:op];
+    
     
 }
 
-
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    
-//    
-//    
-//}
-
+-(void)LoginSuccess{
+    NHomeViewController *hvw = [self.storyboard instantiateViewControllerWithIdentifier:@"NHomeViewController"];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:hvw];
+    nc.navigationBarHidden = YES;
+    [self presentViewController:nc animated:YES completion:^{}];
+}
 
 
 

@@ -59,6 +59,8 @@ static const CGFloat MarginRight = MarginLeft;
 
 - (void)commonInit
 {
+    CGFloat s = MarginBottom;
+    s = MarginRight;
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.backgroundColor = [UIColor clearColor];
     

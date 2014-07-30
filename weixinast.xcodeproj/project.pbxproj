@@ -71,6 +71,9 @@
 		5FD43BBB196F7DC500AE8DFC /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD43BBA196F7DC500AE8DFC /* libiconv.dylib */; };
 		5FDB1171195D38E100F3E370 /* AlbumPicEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */; };
 		5FDB117A195D48FF00F3E370 /* Main3.5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDB1178195D48FF00F3E370 /* Main3.5.storyboard */; };
+		5FDB420919754FD800C94840 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB420819754FD800C94840 /* UserViewController.m */; };
+		5FDB420C1975541B00C94840 /* UserMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB420B1975541B00C94840 /* UserMessageViewController.m */; };
+		5FDB420F19755EDE00C94840 /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB420E19755EDE00C94840 /* UserListViewController.m */; };
 		5FDCEEB21953D07800057CB5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB11953D07800057CB5 /* HomeViewController.m */; };
 		5FDCEEB61953D4BF00057CB5 /* ButtonHomeNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB51953D4BF00057CB5 /* ButtonHomeNav.m */; };
 		5FDCEEBA1953E5BB00057CB5 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB91953E5BB00057CB5 /* Common.m */; };
@@ -110,7 +113,6 @@
 		5FE29DDF196FD9A600E51307 /* img_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29DBC196FD9A600E51307 /* img_tmp.jpg */; };
 		5FE29DE0196FD9A600E51307 /* line_1px.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29DBD196FD9A600E51307 /* line_1px.png */; };
 		5FE29DE1196FD9A600E51307 /* line_bgbottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29DBE196FD9A600E51307 /* line_bgbottom.png */; };
-		5FE40391196C12B400CBB434 /* DouBanConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4036D196C12B400CBB434 /* DouBanConnection.framework */; };
 		5FE40392196C12B400CBB434 /* MailConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4036E196C12B400CBB434 /* MailConnection.framework */; };
 		5FE40393196C12B400CBB434 /* QQConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4036F196C12B400CBB434 /* QQConnection.framework */; };
 		5FE40394196C12B400CBB434 /* QZoneConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE40370196C12B400CBB434 /* QZoneConnection.framework */; };
@@ -151,6 +153,9 @@
 		5FE4D7D9196BCC0400B17A07 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4D7D8196BCC0400B17A07 /* AssetsLibrary.framework */; };
 		5FE4D7DB196BCC0B00B17A07 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4D7DA196BCC0B00B17A07 /* AddressBook.framework */; };
 		5FE4D7DD196BCC1000B17A07 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4D7DC196BCC1000B17A07 /* MessageUI.framework */; };
+		5FEF8B0919873EEC006E350C /* ImageViewFromUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF8B0819873EEC006E350C /* ImageViewFromUrl.m */; };
+		5FF6CD1E1988987D00654304 /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6CD1D1988987D00654304 /* Function.m */; };
+		5FFA1C3F198611BA00F5A702 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA1C3E198611BA00F5A702 /* Api.m */; };
 		5FFD48611963B4F400B27054 /* objectInputAdjustAndUploadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD48601963B4F400B27054 /* objectInputAdjustAndUploadImage.m */; };
 /* End PBXBuildFile section */
 
@@ -288,6 +293,12 @@
 		5FDB116F195D38E100F3E370 /* AlbumPicEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumPicEditViewController.h; path = view/AlbumPicEditViewController.h; sourceTree = "<group>"; };
 		5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumPicEditViewController.m; path = view/AlbumPicEditViewController.m; sourceTree = "<group>"; };
 		5FDB1179195D48FF00F3E370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main3.5.storyboard; sourceTree = "<group>"; };
+		5FDB420719754FD800C94840 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserViewController.h; path = view/UserViewController.h; sourceTree = "<group>"; };
+		5FDB420819754FD800C94840 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserViewController.m; path = view/UserViewController.m; sourceTree = "<group>"; };
+		5FDB420A1975541B00C94840 /* UserMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserMessageViewController.h; path = view/UserMessageViewController.h; sourceTree = "<group>"; };
+		5FDB420B1975541B00C94840 /* UserMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserMessageViewController.m; path = view/UserMessageViewController.m; sourceTree = "<group>"; };
+		5FDB420D19755EDE00C94840 /* UserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserListViewController.h; path = view/UserListViewController.h; sourceTree = "<group>"; };
+		5FDB420E19755EDE00C94840 /* UserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserListViewController.m; path = view/UserListViewController.m; sourceTree = "<group>"; };
 		5FDCEEB01953D07800057CB5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = view/HomeViewController.h; sourceTree = "<group>"; };
 		5FDCEEB11953D07800057CB5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = view/HomeViewController.m; sourceTree = "<group>"; };
 		5FDCEEB41953D4BF00057CB5 /* ButtonHomeNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonHomeNav.h; path = icon/ButtonHomeNav.h; sourceTree = "<group>"; };
@@ -330,7 +341,6 @@
 		5FE29DBC196FD9A600E51307 /* img_tmp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_tmp.jpg; sourceTree = "<group>"; };
 		5FE29DBD196FD9A600E51307 /* line_1px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_1px.png; sourceTree = "<group>"; };
 		5FE29DBE196FD9A600E51307 /* line_bgbottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_bgbottom.png; sourceTree = "<group>"; };
-		5FE4036D196C12B400CBB434 /* DouBanConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DouBanConnection.framework; sourceTree = "<group>"; };
 		5FE4036E196C12B400CBB434 /* MailConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MailConnection.framework; sourceTree = "<group>"; };
 		5FE4036F196C12B400CBB434 /* QQConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QQConnection.framework; sourceTree = "<group>"; };
 		5FE40370196C12B400CBB434 /* QZoneConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QZoneConnection.framework; sourceTree = "<group>"; };
@@ -382,6 +392,12 @@
 		5FE4D7D8196BCC0400B17A07 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		5FE4D7DA196BCC0B00B17A07 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5FE4D7DC196BCC1000B17A07 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5FEF8B0719873EEC006E350C /* ImageViewFromUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewFromUrl.h; path = icon/ImageViewFromUrl.h; sourceTree = "<group>"; };
+		5FEF8B0819873EEC006E350C /* ImageViewFromUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewFromUrl.m; path = icon/ImageViewFromUrl.m; sourceTree = "<group>"; };
+		5FF6CD1C1988987D00654304 /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Function.h; path = common/Function.h; sourceTree = "<group>"; };
+		5FF6CD1D1988987D00654304 /* Function.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Function.m; path = common/Function.m; sourceTree = "<group>"; };
+		5FFA1C3D198611BA00F5A702 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Api.h; path = lib/Http/Api.h; sourceTree = "<group>"; };
+		5FFA1C3E198611BA00F5A702 /* Api.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Api.m; path = lib/Http/Api.m; sourceTree = "<group>"; };
 		5FFD485F1963B4F400B27054 /* objectInputAdjustAndUploadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = objectInputAdjustAndUploadImage.h; path = lib/Class/objectInputAdjustAndUploadImage.h; sourceTree = "<group>"; };
 		5FFD48601963B4F400B27054 /* objectInputAdjustAndUploadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = objectInputAdjustAndUploadImage.m; path = lib/Class/objectInputAdjustAndUploadImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -407,7 +423,6 @@
 				5F19FD6C19594D5000143FCE /* Security.framework in Frameworks */,
 				5FE40395196C12B400CBB434 /* SinaWeiboConnection.framework in Frameworks */,
 				5FE4D7CB196BC89600B17A07 /* libz.1.2.5.dylib in Frameworks */,
-				5FE40391196C12B400CBB434 /* DouBanConnection.framework in Frameworks */,
 				5FE40392196C12B400CBB434 /* MailConnection.framework in Frameworks */,
 				5FE4D7C9196BC86300B17A07 /* libicucore.dylib in Frameworks */,
 				5FE40398196C12B400CBB434 /* YiXinConnection.framework in Frameworks */,
@@ -660,18 +675,24 @@
 				5FBF26821957F97000A587D6 /* AlbumViewController.m */,
 				5FD2C2BB195A6A9D00E4DB3D /* AlbumEditViewController.h */,
 				5FD2C2BC195A6A9D00E4DB3D /* AlbumEditViewController.m */,
-				5FDB116F195D38E100F3E370 /* AlbumPicEditViewController.h */,
-				5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */,
 				5F0FA5631973851A008E138E /* AlbumNEditViewController.h */,
 				5F0FA5641973851A008E138E /* AlbumNEditViewController.m */,
 				5F0084B8197410C100946FB2 /* AlbumPicListViewController.h */,
 				5F0084B9197410C100946FB2 /* AlbumPicListViewController.m */,
+				5FDB116F195D38E100F3E370 /* AlbumPicEditViewController.h */,
+				5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */,
 				5F02E2CF196A86440066544C /* BookViewController.h */,
 				5F02E2D0196A86440066544C /* BookViewController.m */,
 				5F2390EB1971627A008F8911 /* NHomeViewController.h */,
 				5F2390EC1971627A008F8911 /* NHomeViewController.m */,
 				5F0FA5661973C2F9008E138E /* DescEditViewController.h */,
 				5F0FA5671973C2F9008E138E /* DescEditViewController.m */,
+				5FDB420719754FD800C94840 /* UserViewController.h */,
+				5FDB420819754FD800C94840 /* UserViewController.m */,
+				5FDB420A1975541B00C94840 /* UserMessageViewController.h */,
+				5FDB420B1975541B00C94840 /* UserMessageViewController.m */,
+				5FDB420D19755EDE00C94840 /* UserListViewController.h */,
+				5FDB420E19755EDE00C94840 /* UserListViewController.m */,
 			);
 			name = tpl;
 			sourceTree = "<group>";
@@ -776,6 +797,8 @@
 				5F19FD7419596AD300143FCE /* AlbumTableViewCell.m */,
 				5F2390F119718408008F8911 /* AlbumBoardTableViewCell.h */,
 				5F2390F219718408008F8911 /* AlbumBoardTableViewCell.m */,
+				5FEF8B0719873EEC006E350C /* ImageViewFromUrl.h */,
+				5FEF8B0819873EEC006E350C /* ImageViewFromUrl.m */,
 			);
 			name = icon;
 			sourceTree = "<group>";
@@ -790,6 +813,10 @@
 				5FD280B3196658F1005B1B3D /* HttpPost.m */,
 				5F0084B01974068200946FB2 /* Const.h */,
 				5F0084B11974068200946FB2 /* Const.m */,
+				5FFA1C3D198611BA00F5A702 /* Api.h */,
+				5FFA1C3E198611BA00F5A702 /* Api.m */,
+				5FF6CD1C1988987D00654304 /* Function.h */,
+				5FF6CD1D1988987D00654304 /* Function.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -851,7 +878,6 @@
 		5FE4036C196C12B400CBB434 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				5FE4036D196C12B400CBB434 /* DouBanConnection.framework */,
 				5FE4036E196C12B400CBB434 /* MailConnection.framework */,
 				5FE4036F196C12B400CBB434 /* QQConnection.framework */,
 				5FE40370196C12B400CBB434 /* QZoneConnection.framework */,
@@ -1154,10 +1180,14 @@
 				5FE44AA2195BF177007E51E2 /* PEResizeControl.m in Sources */,
 				5F19FD6219594D1100143FCE /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				5FE44AA3195BF177007E51E2 /* UIImage+PECrop.m in Sources */,
+				5FDB420C1975541B00C94840 /* UserMessageViewController.m in Sources */,
 				5F19FD6319594D1100143FCE /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				5F0084BA197410C100946FB2 /* AlbumPicListViewController.m in Sources */,
+				5FDB420919754FD800C94840 /* UserViewController.m in Sources */,
+				5FDB420F19755EDE00C94840 /* UserListViewController.m in Sources */,
 				5F19FD5E19594D1100143FCE /* NSData+MKBase64.m in Sources */,
 				5F2390ED1971627A008F8911 /* NHomeViewController.m in Sources */,
+				5FEF8B0919873EEC006E350C /* ImageViewFromUrl.m in Sources */,
 				5FD280B4196658F1005B1B3D /* HttpPost.m in Sources */,
 				5F2390F319718408008F8911 /* AlbumBoardTableViewCell.m in Sources */,
 				5F221ACD19512CE4009F96DE /* AppDelegate.m in Sources */,
@@ -1169,6 +1199,8 @@
 				5F0FA5681973C2F9008E138E /* DescEditViewController.m in Sources */,
 				5F0084B21974068200946FB2 /* Const.m in Sources */,
 				5F221AC919512CE4009F96DE /* main.m in Sources */,
+				5FFA1C3F198611BA00F5A702 /* Api.m in Sources */,
+				5FF6CD1E1988987D00654304 /* Function.m in Sources */,
 				5FDCEEBA1953E5BB00057CB5 /* Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1317,10 +1349,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Connection",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Core",
-					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/GooglePlusSDK",
-					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/Pinterest.embeddedframework",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/QQConnectSDK",
-					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/RenRenSDK",
 					"$(PROJECT_DIR)/weixinast/ShareSDK",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/UI",
 				);
@@ -1331,7 +1360,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/SinaWeiboSDK",
-					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/TencentWeiboSDK",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/WeChatSDK",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/YiXinSDK",
 					"$(PROJECT_DIR)/weixinast/lib/ZBarSDK",
@@ -1353,10 +1381,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Connection",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Core",
-					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/GooglePlusSDK",
-					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/Pinterest.embeddedframework",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/QQConnectSDK",
-					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/RenRenSDK",
 					"$(PROJECT_DIR)/weixinast/ShareSDK",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/UI",
 				);
@@ -1367,7 +1392,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/SinaWeiboSDK",
-					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/TencentWeiboSDK",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/WeChatSDK",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/YiXinSDK",
 					"$(PROJECT_DIR)/weixinast/lib/ZBarSDK",

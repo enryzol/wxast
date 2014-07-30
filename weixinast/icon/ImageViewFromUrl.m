@@ -1,88 +1,89 @@
 //
-//  AlbumBoardTableViewCell.m
+//  ImageViewFromUrl.m
 //  weixinast
 //
-//  Created by Jackie on 14-7-12.
+//  Created by Jackie on 14-7-29.
 //  Copyright (c) 2014年 Jackie. All rights reserved.
 //
 
-#import "AlbumBoardTableViewCell.h"
+#import "ImageViewFromUrl.h"
 #import "AppDelegate.h"
 
-@implementation AlbumBoardTableViewCell{
+@implementation ImageViewFromUrl{
     UIActivityIndicatorView *indicator;
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
-        NSLog(@"%@",self.uniqueID);
     }
     return self;
 }
 
-- (void)awakeFromNib
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect
 {
-    // Initialization code
+    // Drawing code
+}
+*/
+
+-(id)initWithFrame:(CGRect)frame Url:(NSString*)url Radius:(int)radius{
+    
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        
+        
+        [self setImageWithURL:url Radius:radius];
+        
+    }
+    return self;
     
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-
--(void)setImageWithURL:(NSString*)url{
+-(void)setImageWithURL:(NSString*)url Radius:(int)radius{
     
-    if([url isEqualToString:@""] || url == nil || [self.uniqueID isEqualToString:@""]){
-        self.Image.image = nil;
+    if([url isEqualToString:@""] || url == nil){
         return ;
     }
+    
+    NSLog(@"imageviewfromurl - %@",url);
     
     indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(40, 40, 16, 16)];
     indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     indicator.center = CGPointMake(40, 40);
-    [self.Image addSubview:indicator];
+    [self addSubview:indicator];
     [indicator startAnimating];
     
-    self.Image.image = nil;
-    
-    NSLog(@"setImageWithURL - %@" , url);
 
+    
     
     //异步加载图片
     MKNetworkOperation *op = [[MKNetworkOperation alloc] initWithURLString:url params:nil httpMethod:@"GET"];
     
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         
-        if([url isEqualToString:self.uniqueID]){
+
             UIImage *img = [UIImage imageWithData:[completedOperation responseData]];
             
-            self.Image.image = img;
-            
-            self.Image.layer.cornerRadius = 5.0f;
-            [self.Image.layer setBorderWidth:0];
-            [self.Image.layer setBorderColor:[[UIColor whiteColor] CGColor]];
-            [self.Image.layer setMasksToBounds:YES];
-            
+            self.image = img;
+            self.layer.cornerRadius = radius;
+            [self.layer setBorderWidth:0];
+            [self.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+            [self.layer setMasksToBounds:YES];
             
             [indicator stopAnimating];
-            
+        
             if([completedOperation isCachedResponse]){
                 NSLog(@" from cache");
             }else{
                 NSLog(@" from server");
             }
-        }
         
-//        NSLog(@"%@" , self.uniqueID);
-
         
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         
@@ -93,4 +94,6 @@
     [ApplicationDelegate.CacheEngin enqueueOperation:op];
     
 }
+
+
 @end
