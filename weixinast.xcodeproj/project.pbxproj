@@ -50,6 +50,10 @@
 		5F221AE819512CE5009F96DE /* weixinastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F221AE719512CE5009F96DE /* weixinastTests.m */; };
 		5F2390ED1971627A008F8911 /* NHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2390EC1971627A008F8911 /* NHomeViewController.m */; };
 		5F2390F319718408008F8911 /* AlbumBoardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2390F219718408008F8911 /* AlbumBoardTableViewCell.m */; };
+		5F3416821989D60500EEAA1F /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3416811989D60500EEAA1F /* SettingViewController.m */; };
+		5F34168B1989E0C400EEAA1F /* SettingPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F34168A1989E0C400EEAA1F /* SettingPushViewController.m */; };
+		5F34168E1989E3CC00EEAA1F /* SettingUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F34168D1989E3CC00EEAA1F /* SettingUserInfoViewController.m */; };
+		5F341694198A1A6700EEAA1F /* Func_PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F341693198A1A6700EEAA1F /* Func_PickerView.m */; };
 		5FBF26831957F97000A587D6 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF26821957F97000A587D6 /* AlbumViewController.m */; };
 		5FD0A1121951694100D08304 /* RegController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD0A1111951694100D08304 /* RegController.m */; };
 		5FD280B4196658F1005B1B3D /* HttpPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD280B3196658F1005B1B3D /* HttpPost.m */; };
@@ -69,6 +73,9 @@
 		5FD43BB8196F7D0600AE8DFC /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD43BB1196F7D0600AE8DFC /* zbar-helpicons.png */; };
 		5FD43BB9196F7D0600AE8DFC /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD43BB2196F7D0600AE8DFC /* zbar-samples.png */; };
 		5FD43BBB196F7DC500AE8DFC /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD43BBA196F7DC500AE8DFC /* libiconv.dylib */; };
+		5FD62386198B633E00961F71 /* SettingPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD62385198B633E00961F71 /* SettingPasswordViewController.m */; };
+		5FDA615E198F1EC500FE44FD /* UserBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA615D198F1EC500FE44FD /* UserBlockViewController.m */; };
+		5FDA6161198F5B9700FE44FD /* Func_AlertComfirm.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA6160198F5B9700FE44FD /* Func_AlertComfirm.m */; };
 		5FDB1171195D38E100F3E370 /* AlbumPicEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */; };
 		5FDB117A195D48FF00F3E370 /* Main3.5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDB1178195D48FF00F3E370 /* Main3.5.storyboard */; };
 		5FDB420919754FD800C94840 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB420819754FD800C94840 /* UserViewController.m */; };
@@ -246,6 +253,14 @@
 		5F2390EC1971627A008F8911 /* NHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NHomeViewController.m; path = view/NHomeViewController.m; sourceTree = "<group>"; };
 		5F2390F119718408008F8911 /* AlbumBoardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumBoardTableViewCell.h; path = icon/AlbumBoardTableViewCell.h; sourceTree = "<group>"; };
 		5F2390F219718408008F8911 /* AlbumBoardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumBoardTableViewCell.m; path = icon/AlbumBoardTableViewCell.m; sourceTree = "<group>"; };
+		5F3416801989D60500EEAA1F /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = view/SettingViewController.h; sourceTree = "<group>"; };
+		5F3416811989D60500EEAA1F /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = view/SettingViewController.m; sourceTree = "<group>"; };
+		5F3416891989E0C400EEAA1F /* SettingPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingPushViewController.h; path = view/SettingPushViewController.h; sourceTree = "<group>"; };
+		5F34168A1989E0C400EEAA1F /* SettingPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingPushViewController.m; path = view/SettingPushViewController.m; sourceTree = "<group>"; };
+		5F34168C1989E3CC00EEAA1F /* SettingUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingUserInfoViewController.h; path = view/SettingUserInfoViewController.h; sourceTree = "<group>"; };
+		5F34168D1989E3CC00EEAA1F /* SettingUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingUserInfoViewController.m; path = view/SettingUserInfoViewController.m; sourceTree = "<group>"; };
+		5F341692198A1A6700EEAA1F /* Func_PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Func_PickerView.h; path = common/Func_PickerView.h; sourceTree = "<group>"; };
+		5F341693198A1A6700EEAA1F /* Func_PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Func_PickerView.m; path = common/Func_PickerView.m; sourceTree = "<group>"; };
 		5FBF26811957F97000A587D6 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumViewController.h; path = view/AlbumViewController.h; sourceTree = "<group>"; };
 		5FBF26821957F97000A587D6 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumViewController.m; path = view/AlbumViewController.m; sourceTree = "<group>"; };
 		5FD0A1101951694100D08304 /* RegController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegController.h; path = view/RegController.h; sourceTree = "<group>"; };
@@ -290,6 +305,12 @@
 		5FD43BB1196F7D0600AE8DFC /* zbar-helpicons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-helpicons.png"; sourceTree = "<group>"; };
 		5FD43BB2196F7D0600AE8DFC /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
 		5FD43BBA196F7DC500AE8DFC /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		5FD62384198B633E00961F71 /* SettingPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingPasswordViewController.h; path = view/SettingPasswordViewController.h; sourceTree = "<group>"; };
+		5FD62385198B633E00961F71 /* SettingPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingPasswordViewController.m; path = view/SettingPasswordViewController.m; sourceTree = "<group>"; };
+		5FDA615C198F1EC500FE44FD /* UserBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserBlockViewController.h; path = view/UserBlockViewController.h; sourceTree = "<group>"; };
+		5FDA615D198F1EC500FE44FD /* UserBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserBlockViewController.m; path = view/UserBlockViewController.m; sourceTree = "<group>"; };
+		5FDA615F198F5B9700FE44FD /* Func_AlertComfirm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Func_AlertComfirm.h; path = common/Func_AlertComfirm.h; sourceTree = "<group>"; };
+		5FDA6160198F5B9700FE44FD /* Func_AlertComfirm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Func_AlertComfirm.m; path = common/Func_AlertComfirm.m; sourceTree = "<group>"; };
 		5FDB116F195D38E100F3E370 /* AlbumPicEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumPicEditViewController.h; path = view/AlbumPicEditViewController.h; sourceTree = "<group>"; };
 		5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumPicEditViewController.m; path = view/AlbumPicEditViewController.m; sourceTree = "<group>"; };
 		5FDB1179195D48FF00F3E370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main3.5.storyboard; sourceTree = "<group>"; };
@@ -693,6 +714,16 @@
 				5FDB420B1975541B00C94840 /* UserMessageViewController.m */,
 				5FDB420D19755EDE00C94840 /* UserListViewController.h */,
 				5FDB420E19755EDE00C94840 /* UserListViewController.m */,
+				5FDA615C198F1EC500FE44FD /* UserBlockViewController.h */,
+				5FDA615D198F1EC500FE44FD /* UserBlockViewController.m */,
+				5F3416801989D60500EEAA1F /* SettingViewController.h */,
+				5F3416811989D60500EEAA1F /* SettingViewController.m */,
+				5F3416891989E0C400EEAA1F /* SettingPushViewController.h */,
+				5F34168A1989E0C400EEAA1F /* SettingPushViewController.m */,
+				5F34168C1989E3CC00EEAA1F /* SettingUserInfoViewController.h */,
+				5F34168D1989E3CC00EEAA1F /* SettingUserInfoViewController.m */,
+				5FD62384198B633E00961F71 /* SettingPasswordViewController.h */,
+				5FD62385198B633E00961F71 /* SettingPasswordViewController.m */,
 			);
 			name = tpl;
 			sourceTree = "<group>";
@@ -817,6 +848,10 @@
 				5FFA1C3E198611BA00F5A702 /* Api.m */,
 				5FF6CD1C1988987D00654304 /* Function.h */,
 				5FF6CD1D1988987D00654304 /* Function.m */,
+				5F341692198A1A6700EEAA1F /* Func_PickerView.h */,
+				5F341693198A1A6700EEAA1F /* Func_PickerView.m */,
+				5FDA615F198F5B9700FE44FD /* Func_AlertComfirm.h */,
+				5FDA6160198F5B9700FE44FD /* Func_AlertComfirm.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -1159,6 +1194,7 @@
 				5F19FD431959482000143FCE /* Http.m in Sources */,
 				5F19FD3B19592A9300143FCE /* MJRefreshFooterView.m in Sources */,
 				5FBF26831957F97000A587D6 /* AlbumViewController.m in Sources */,
+				5F34168E1989E3CC00EEAA1F /* SettingUserInfoViewController.m in Sources */,
 				5F19FD6419594D1100143FCE /* MKNetworkEngine.m in Sources */,
 				5FD2C2BD195A6A9D00E4DB3D /* AlbumEditViewController.m in Sources */,
 				5F19FD3D19592A9300143FCE /* UIScrollView+Extension.m in Sources */,
@@ -1166,12 +1202,16 @@
 				5FD0A1121951694100D08304 /* RegController.m in Sources */,
 				5FFD48611963B4F400B27054 /* objectInputAdjustAndUploadImage.m in Sources */,
 				5F19FD3E19592A9300143FCE /* UIScrollView+MJRefresh.m in Sources */,
+				5FDA6161198F5B9700FE44FD /* Func_AlertComfirm.m in Sources */,
+				5FDA615E198F1EC500FE44FD /* UserBlockViewController.m in Sources */,
+				5F341694198A1A6700EEAA1F /* Func_PickerView.m in Sources */,
 				5F221AD319512CE4009F96DE /* ViewController.m in Sources */,
 				5F19FD6119594D1100143FCE /* NSString+MKNetworkKitAdditions.m in Sources */,
 				5FDCEEB61953D4BF00057CB5 /* ButtonHomeNav.m in Sources */,
 				5F02E2D1196A86440066544C /* BookViewController.m in Sources */,
 				5F0FA5651973851A008E138E /* AlbumNEditViewController.m in Sources */,
 				5F19FD7519596AD300143FCE /* AlbumTableViewCell.m in Sources */,
+				5F34168B1989E0C400EEAA1F /* SettingPushViewController.m in Sources */,
 				5F19FD3A19592A9300143FCE /* MJRefreshConst.m in Sources */,
 				5FD2C2BA195A5D9900E4DB3D /* TWMessageBarManager.m in Sources */,
 				5FE44A9F195BF177007E51E2 /* PECropView.m in Sources */,
@@ -1182,6 +1222,7 @@
 				5FE44AA3195BF177007E51E2 /* UIImage+PECrop.m in Sources */,
 				5FDB420C1975541B00C94840 /* UserMessageViewController.m in Sources */,
 				5F19FD6319594D1100143FCE /* UIImageView+MKNetworkKitAdditions.m in Sources */,
+				5FD62386198B633E00961F71 /* SettingPasswordViewController.m in Sources */,
 				5F0084BA197410C100946FB2 /* AlbumPicListViewController.m in Sources */,
 				5FDB420919754FD800C94840 /* UserViewController.m in Sources */,
 				5FDB420F19755EDE00C94840 /* UserListViewController.m in Sources */,
@@ -1192,6 +1233,7 @@
 				5F2390F319718408008F8911 /* AlbumBoardTableViewCell.m in Sources */,
 				5F221ACD19512CE4009F96DE /* AppDelegate.m in Sources */,
 				5FDCEEB21953D07800057CB5 /* HomeViewController.m in Sources */,
+				5F3416821989D60500EEAA1F /* SettingViewController.m in Sources */,
 				5F19FD6019594D1100143FCE /* NSDictionary+RequestEncoding.m in Sources */,
 				5FE44AA0195BF177007E51E2 /* PECropViewController.m in Sources */,
 				5F19FD6519594D1100143FCE /* MKNetworkOperation.m in Sources */,

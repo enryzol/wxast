@@ -40,7 +40,8 @@
     self.username.text = @"";
     self.password.text = @"";
     
-
+    [self.username setReturnKeyType:UIReturnKeyDone];
+    [self.password setReturnKeyType:UIReturnKeyDone];
 
 }
 
@@ -57,15 +58,7 @@
     
 }
 
--(void)openRegView{
-    
-    RegController *vw = [self.storyboard instantiateViewControllerWithIdentifier:@"RegController"];
-    
-    vw.modalPresentationStyle = UIModalPresentationFormSheet;
-    
-    [self presentViewController:vw animated:YES completion:^{}];
-    
-}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -85,6 +78,7 @@
     [UIView setAnimationDuration:animationDuration];
     CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
     self.view.frame = rect;
+    [UIView commitAnimations];
 }
 
 - (void)keyboardWillShow:(NSNotification *)noti
@@ -133,11 +127,22 @@
 }
 #pragma mark -
 
-
+-(void)openRegView{
+    
+    
+    RegController *vw = [self.storyboard instantiateViewControllerWithIdentifier:@"RegController"];
+    
+    vw.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self presentViewController:vw animated:YES completion:^{}];
+    
+}
 
 
 - (IBAction)LoginAct:(id)sender {
     
+    
+
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Check/Login/"];
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
@@ -164,7 +169,7 @@
             
             return ;
         }else if ([status isEqualToString:@"success"]){
-            [[TWMessageBarManager sharedInstance] hideAllAnimated:YES];
+            [[TWMessageBarManager sharedInstance] hideAllAnimated:NO];
             
             NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
             

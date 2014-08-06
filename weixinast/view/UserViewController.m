@@ -9,6 +9,7 @@
 #import "UserViewController.h"
 #import "UserMessageViewController.h"
 #import "UserListViewController.h"
+#import "UserBlockViewController.h"
 
 @interface UserViewController ()
 
@@ -67,6 +68,9 @@
 }
 
 - (IBAction)UserBlockAction:(id)sender {
+    UserBlockViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UserBlockViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 

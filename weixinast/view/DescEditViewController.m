@@ -74,7 +74,6 @@
     [self.textarea resignFirstResponder];
 }
 
-
 - (IBAction)NavLeftButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

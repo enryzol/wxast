@@ -27,17 +27,29 @@
     if (self = [super init]) {
         
         alertView = [[UIAlertView alloc] initWithTitle:nil message:@"" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+
     }
     return self;
 }
 
+
+-(BOOL)CheckJSONNull:(id)Value{
+    if(Value == (id)[NSNull null]){
+        return false;
+    }else{
+        return YES;
+    }
+}
+
+
 -(void)AlertViewShow:(NSString*)title{
+
     [alertView setTitle:title];
     [alertView show];
 }
 
 -(void)AlertViewHide{
-    [alertView dismissWithClickedButtonIndex:0 animated:YES];
+    [alertView dismissWithClickedButtonIndex:0 animated:NO];
 }
 
 -(void)Post:(NSString*)url Params:(NSDictionary*)Param{
@@ -82,6 +94,24 @@
     
     [ApplicationDelegate.Engin enqueueOperation:op];
 }
+
+-(void)Post:(NSString*)url Params:(NSDictionary*)Param Message:(NSString*)message CompletionHandler:(void (^)(MKNetworkOperation *completed))completionHandler ErrorHander:(void (^)(NSError *error))ErrorHander{
+    
+    [self AlertViewShow:message];
+    
+    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:Param httpMethod:@"POST" ssl:YES];
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        [self AlertViewHide];
+        completionHandler(completedOperation);
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        [self AlertViewHide];
+        ErrorHander(error);
+    }];
+    
+    [ApplicationDelegate.Engin enqueueOperation:op];
+    
+}
+
 
 
 

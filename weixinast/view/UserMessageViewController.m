@@ -10,14 +10,18 @@
 #import "AlbumBoardTableViewCell.h"
 #import "MJRefresh.h"
 #import "AppDelegate.h"
+#import "Function.h"
+#import "Api.h"
+#import "Func_AlertComfirm.h"
 
-@interface UserMessageViewController ()<UIActionSheetDelegate>
+@interface UserMessageViewController ()<UIActionSheetDelegate,UIAlertViewDelegate>
 
 @end
 
 @implementation UserMessageViewController{
     
     NSMutableArray *TableViewData;
+    Func_AlertComfirm * alertComfirm;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,6 +46,7 @@
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
     [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
     
+    alertComfirm = [[Func_AlertComfirm alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,35 +56,82 @@
 }
 
 
-#pragma mark - tableview degelate
+#pragma mark - server 
+
 -(void)loadDataFromServer{
-    NSString *url = [NSString stringWithFormat:@"/mobile/album/i/%@/p/1/",ApplicationDelegate.Package];
-    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:nil httpMethod:@"GET"];
     
-    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+    
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/Message/?LToken=%@",[Api LToken]];
+    
+    NSLog(@"%@",url);
+    
+    [[Function sharedManager] Post:url Params:nil Message:@"正在加载数据" CompletionHandler:^(MKNetworkOperation *completed) {
         
-        id json = [completedOperation responseJSON];
+        NSLog(@"%@",[completed responseString]);
         
-        if(TableViewData == nil){
-            TableViewData = [[NSMutableArray alloc] init];
+        id json = [completed responseJSON];
+        
+        if([[Function sharedManager] CheckJSONNull:json[@"list"]]){
+            TableViewData = json[@"list"];
+        }else{
+            TableViewData = nil;
         }
-        
-        TableViewData = json;
-        
         [self.tableview reloadData];
         [self.tableview headerEndRefreshing];
         
-        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:@"Reflesh Success" type:TWMessageBarMessageTypeSuccess duration:0.8f];
-        
-    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
-        
+    } ErrorHander:^(NSError *error) {
+        NSLog(@"%@",error);
         [self.tableview headerEndRefreshing];
-        
     }];
     
-    [ApplicationDelegate.Engin enqueueOperation:op];
+    
 }
 
+-(void)DeleteMessage:(NSString*)Mid{
+    
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/MessageDelete/?LToken=%@&mid=%@",[Api LToken],Mid];
+    
+    NSLog(@"%@",url);
+    
+    [[Function sharedManager] Post:url Params:nil CompletionHandler:^(MKNetworkOperation *completed) {
+        
+        [self.tableview reloadData];
+        
+    } ErrorHander:^(NSError *error) {
+        [self.tableview headerEndRefreshing];
+    }];
+
+}
+
+-(void)MessageBlock:(NSString*)Mid Hour:(NSString*)hour{
+    
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/MessageBlock/?LToken=%@&mid=%@&block=%@",[Api LToken],Mid,hour];
+    
+    NSLog(@"%@",url);
+    
+    [[Function sharedManager] Post:url Params:nil Message:@"正在设置" CompletionHandler:^(MKNetworkOperation *completed) {
+        
+    } ErrorHander:^(NSError *error) {
+        [self.tableview headerEndRefreshing];
+    }];
+    
+}
+
+-(void)UserSetMid:(NSString*)Mid Note:(NSString*)note{
+    
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/Setnote/?LToken=%@&mid=%@",[Api LToken],Mid];
+    NSLog(@"%@",url);
+    NSDictionary *prama = @{@"note": note};
+    
+    [[Function sharedManager] Post:url Params:prama Message:@"正在设置" CompletionHandler:^(MKNetworkOperation *completed) {
+        
+    } ErrorHander:^(NSError *error) {
+        [self.tableview headerEndRefreshing];
+    }];
+    
+}
+
+#pragma mark - tableview degelate
 -(void)headerReFreshing{
     [self loadDataFromServer];
 }
@@ -91,8 +143,6 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"tableview count %d" , [TableViewData count]);
-    return 4;
     return [TableViewData count];
 }
 
@@ -107,20 +157,18 @@
     static NSString *CellIdentifier = @"UserMessageCell";
     AlbumBoardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    //cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"title"];
-    //[cell setImageWithURL:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"img"]];
     
-    cell.Name.text = @"用户9999（Jackie）";
-    cell.Desc.text = @"说明：基于微信公众平台授权限制，非认证号仅提供新增用户关注时间，如果您需要更多信息，请登录微信公众平台查询。";
-    cell.Keyword.text = @"2014-09-10 11:08:28";
+    cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.Desc.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"message"];
+    cell.Keyword.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"ctime"];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitles:@"屏蔽该用户1小时",@"屏蔽该用户24小时",@"不再接收该用户消息", nil];
-    
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitles:@"屏蔽该用户6小时",@"屏蔽该用户24小时",@"不再接收该用户消息",@"备注该用户", nil];
+    [as setTag:indexPath.row];
     [as showInView:[UIApplication sharedApplication].keyWindow];
     
 }
@@ -130,6 +178,47 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
+    if (buttonIndex == 0) {
+        [self DeleteMessage:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"mid"]];
+        
+        NSLog(@"%d",actionSheet.tag);
+        NSMutableArray *tmp = [TableViewData mutableCopy];
+        [tmp removeObjectAtIndex:actionSheet.tag];
+        TableViewData = tmp;
+        [self.tableview reloadData];
+    }else if (buttonIndex == 1){
+        
+        [alertComfirm alertComfirmTitle:@"该操作将屏蔽用户消息6小时" Message:@"" SureHandler:^{
+            [self MessageBlock:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"mid"] Hour:@"6"];
+        }];
+        
+    }else if (buttonIndex == 2){
+        
+        
+        [alertComfirm alertComfirmTitle:@"该操作将屏蔽用户消息24小时" Message:@"" SureHandler:^{
+            [self MessageBlock:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"mid"] Hour:@"24"];
+        }];
+        
+    }else if (buttonIndex == 3){
+        
+        [alertComfirm alertComfirmTitle:@"该操作永久屏蔽该用户消息" Message:@"" SureHandler:^{
+            [self MessageBlock:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"mid"] Hour:@"9999"];
+        }];
+        
+    }else if (buttonIndex == 4){
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"请设置备注内容" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        
+        av.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [av setTag:actionSheet.tag];
+        [av show];
+    }
+    
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        [self UserSetMid:[[TableViewData objectAtIndex:alertView.tag] objectForKey:@"mid"] Note:[[alertView textFieldAtIndex:0] text]];
+    }
 }
 
 /*

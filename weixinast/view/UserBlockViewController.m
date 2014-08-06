@@ -1,23 +1,24 @@
 //
-//  UserListViewController.m
+//  UserBlockViewController.m
 //  weixinast
 //
-//  Created by Jackie on 14-7-15.
+//  Created by Jackie on 14-8-4.
 //  Copyright (c) 2014年 Jackie. All rights reserved.
 //
 
-#import "UserListViewController.h"
+#import "UserBlockViewController.h"
 #import "AlbumBoardTableViewCell.h"
 #import "MJRefresh.h"
 #import "AppDelegate.h"
 #import "Function.h"
 #import "Api.h"
 
-@interface UserListViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate>
+
+@interface UserBlockViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation UserListViewController{
+@implementation UserBlockViewController{
     NSMutableArray *TableViewData;
 }
 
@@ -41,7 +42,7 @@
     
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
     [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,18 +50,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 #pragma mark - tableview degelate
 -(void)loadDataFromServer{
@@ -78,19 +67,19 @@
         if([[Function sharedManager] CheckJSONNull:json[@"list"]]){
             TableViewData = json[@"list"];
             [self.tableview reloadData];
-            [self.tableview headerEndRefreshing];
         }
         
-        self.NewFollerCount.text = json[@"count"];
         [self.tableview headerEndRefreshing];
+        
         
     } ErrorHander:^(NSError *error) {
         NSLog(@"%@",error);
         [self.tableview headerEndRefreshing];
-
+        
     }];
-
+    
 }
+
 
 -(void)headerReFreshing{
     [self loadDataFromServer];
@@ -120,13 +109,12 @@
     //cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"title"];
     //[cell setImageWithURL:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"img"]];
     
-//    if ([[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"] isEqualToString:@""]) {
-//        cell.Name.text = @"用户";
-//    }else{
-//        cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"];
-//    }
+    if ([[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"] isEqualToString:@""]) {
+        cell.Name.text = @"用户";
+    }else{
+        cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"];
+    }
     
-    cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"];
     cell.Keyword.text =[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"ctime"];
     
     return cell;
@@ -148,9 +136,32 @@
 }
 
 
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
 - (IBAction)NavLeftButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

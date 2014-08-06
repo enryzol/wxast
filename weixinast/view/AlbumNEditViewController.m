@@ -154,6 +154,7 @@
     [UIView setAnimationDuration:animationDuration];
     CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
     self.view.frame = rect;
+    [UIView commitAnimations];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField

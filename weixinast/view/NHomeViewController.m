@@ -10,6 +10,9 @@
 #import "AlbumViewController.h"
 #import "UserViewController.h"
 #import "Api.h"
+#import "Function.h"
+#import "SettingViewController.h"
+#import "UserMessageViewController.h"
 
 @interface NHomeViewController ()
 
@@ -79,19 +82,23 @@
 }
 
 - (IBAction)MessageAction:(id)sender {
+    
+    UserMessageViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UserMessageViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+
+    
 }
 
 - (IBAction)SettingAction:(id)sender {
     
     NSLog(@"SettingAction");
-    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+
     
-    [userinfo removeObjectForKey:@"LToken"];
-    [userinfo removeObjectForKey:@"user"];
+    SettingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
     
-    [userinfo synchronize];
+    [self.navigationController pushViewController:vc animated:YES];
     
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    
     
     
 }
