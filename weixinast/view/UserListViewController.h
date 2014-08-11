@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *NavBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UITextField *NewFollerCount;
+@property (weak, nonatomic) IBOutlet UITextField *New7DaysFollerCount;
+
 
 - (IBAction)NavLeftButtonAction:(id)sender;
 

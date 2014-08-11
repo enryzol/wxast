@@ -14,7 +14,7 @@
     NSString *_title;
     NSString *_content;
     
-     void(^_SureHandler)();
+    void(^_SureHandler)();
     
 }
 

@@ -39,8 +39,6 @@
     [self.window makeKeyAndVisible];
     
     self.HostName = @"https://api.o-tap.cn/";
-    self.Package = @"Ts139986226324746";
-    self.PostUrl = @"/mobile/post/i/Ts139986226324746/";
     
     //添加推送注册
     //判断是否由远程消息通知触发应用程序启动
@@ -85,6 +83,13 @@
         i = 0;
     }
     NSLog(@"%@",self._deviceToken);
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
+    [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"新留言" description:[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]type:TWMessageBarMessageTypeInfo  duration:2.0f];
+    
+    
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{

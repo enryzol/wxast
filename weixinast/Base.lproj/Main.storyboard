@@ -1283,13 +1283,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="陈总宴请大盘鸡" textAlignment="right" minimumFontSize="17" id="lYi-iS-cDh">
-                                <rect key="frame" x="131" y="88" width="160" height="30"/>
+                                <rect key="frame" x="131" y="78" width="166" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sRt-xg-oPw">
-                                <rect key="frame" x="146" y="133" width="108" height="83"/>
+                                <rect key="frame" x="156" y="139" width="141" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1596,7 +1596,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem i" selectable="NO" id="P48-E0-7iq">
-                                                    <rect key="frame" x="107" y="9" width="193" height="73"/>
+                                                    <rect key="frame" x="107" y="9" width="163" height="102"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1693,10 +1693,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_pw_16w.png" id="bIM-yB-lca">
-                                <rect key="frame" x="-65" y="374" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_bgbottom.png" id="u6W-ci-tQZ">
                                 <rect key="frame" x="0.0" y="64" width="320" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1725,11 +1721,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="koa-Hs-qxJ" customClass="ImageViewFromUrl">
-                                <rect key="frame" x="60" y="90" width="200" height="270"/>
+                                <rect key="frame" x="27" y="90" width="273" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yho-vV-YZ2">
-                                <rect key="frame" x="60" y="90" width="200" height="270"/>
+                                <rect key="frame" x="27" y="90" width="273" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2199,10 +2195,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_pw_16w.png" id="Ns0-Cd-Eyc">
-                                <rect key="frame" x="-65" y="374" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_bgbottom.png" id="32i-Rq-zkN">
                                 <rect key="frame" x="0.0" y="64" width="320" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2211,12 +2203,23 @@
                                 <rect key="frame" x="20" y="120" width="280" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_1px.png" id="0W3-DD-eML">
+                                <rect key="frame" x="20" y="169" width="280" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_1px.png" id="Drg-Dm-qLp">
                                 <rect key="frame" x="20" y="505" width="280" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昨天新增关注用户" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CtU-Tw-hfw">
                                 <rect key="frame" x="20" y="87" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近7天新增关注用户" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yJ1-5X-HDc">
+                                <rect key="frame" x="20" y="136" width="154" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2248,6 +2251,17 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_mgsbox_red_100w.png" id="MeK-Th-VAc">
+                                <rect key="frame" x="261" y="127" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="16" id="Kti-k9-Avn">
+                                <rect key="frame" x="260" y="128" width="43" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <navigationBar contentMode="scaleToFill" id="uV0-cR-S8I">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -2267,16 +2281,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tvq-pc-plZ">
-                                <rect key="frame" x="0.0" y="121" width="320" height="385"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tvq-pc-plZ">
+                                <rect key="frame" x="0.0" y="173" width="320" height="333"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserListCell" rowHeight="50" id="3gj-fm-7IE" customClass="AlbumBoardTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="50"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserListCell" rowHeight="53" id="3gj-fm-7IE" customClass="AlbumBoardTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3gj-fm-7IE" id="Qro-50-Tfq">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户501" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zet-qf-xmD">
@@ -2314,6 +2328,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="NavBar" destination="uV0-cR-S8I" id="XCp-I3-hrm"/>
+                        <outlet property="New7DaysFollerCount" destination="Kti-k9-Avn" id="v8C-9C-8qx"/>
                         <outlet property="NewFollerCount" destination="0l4-qY-dqP" id="pWJ-Km-B7X"/>
                         <outlet property="tableview" destination="Tvq-pc-plZ" id="Onn-h5-hdg"/>
                     </connections>
@@ -2631,10 +2646,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_pw_16w.png" id="Hpl-Oq-iye">
-                                <rect key="frame" x="-65" y="374" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_bgbottom.png" id="wjJ-di-7tV">
                                 <rect key="frame" x="0.0" y="64" width="320" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

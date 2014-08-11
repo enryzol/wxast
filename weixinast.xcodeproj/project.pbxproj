@@ -84,6 +84,8 @@
 		5FDCEEB21953D07800057CB5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB11953D07800057CB5 /* HomeViewController.m */; };
 		5FDCEEB61953D4BF00057CB5 /* ButtonHomeNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB51953D4BF00057CB5 /* ButtonHomeNav.m */; };
 		5FDCEEBA1953E5BB00057CB5 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB91953E5BB00057CB5 /* Common.m */; };
+		5FDD9AB319949C5400D9E816 /* Comm_Observe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDD9AB219949C5400D9E816 /* Comm_Observe.m */; };
+		5FDD9AB91994AC8100D9E816 /* CommAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDD9AB81994AC8100D9E816 /* CommAction.m */; };
 		5FE29D9A196FD89A00E51307 /* Sne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29D99196FD89A00E51307 /* Sne.storyboard */; };
 		5FE29DBF196FD9A600E51307 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29D9C196FD9A600E51307 /* 0.png */; };
 		5FE29DC0196FD9A600E51307 /* bg-btn_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29D9D196FD9A600E51307 /* bg-btn_big.png */; };
@@ -326,6 +328,10 @@
 		5FDCEEB51953D4BF00057CB5 /* ButtonHomeNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonHomeNav.m; path = icon/ButtonHomeNav.m; sourceTree = "<group>"; };
 		5FDCEEB81953E5BB00057CB5 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = common/Common.h; sourceTree = "<group>"; };
 		5FDCEEB91953E5BB00057CB5 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = common/Common.m; sourceTree = "<group>"; };
+		5FDD9AB119949C5400D9E816 /* Comm_Observe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Comm_Observe.h; path = common/Comm_Observe.h; sourceTree = "<group>"; };
+		5FDD9AB219949C5400D9E816 /* Comm_Observe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comm_Observe.m; path = common/Comm_Observe.m; sourceTree = "<group>"; };
+		5FDD9AB71994AC8100D9E816 /* CommAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommAction.h; path = common/CommAction.h; sourceTree = "<group>"; };
+		5FDD9AB81994AC8100D9E816 /* CommAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommAction.m; path = common/CommAction.m; sourceTree = "<group>"; };
 		5FE29D99196FD89A00E51307 /* Sne.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sne.storyboard; sourceTree = "<group>"; };
 		5FE29D9C196FD9A600E51307 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		5FE29D9D196FD9A600E51307 /* bg-btn_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-btn_big.png"; sourceTree = "<group>"; };
@@ -852,6 +858,10 @@
 				5F341693198A1A6700EEAA1F /* Func_PickerView.m */,
 				5FDA615F198F5B9700FE44FD /* Func_AlertComfirm.h */,
 				5FDA6160198F5B9700FE44FD /* Func_AlertComfirm.m */,
+				5FDD9AB119949C5400D9E816 /* Comm_Observe.h */,
+				5FDD9AB219949C5400D9E816 /* Comm_Observe.m */,
+				5FDD9AB71994AC8100D9E816 /* CommAction.h */,
+				5FDD9AB81994AC8100D9E816 /* CommAction.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -1189,6 +1199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F19FD6619594D1100143FCE /* Reachability.m in Sources */,
+				5FDD9AB319949C5400D9E816 /* Comm_Observe.m in Sources */,
 				5FDB1171195D38E100F3E370 /* AlbumPicEditViewController.m in Sources */,
 				5F19FD3F19592A9300143FCE /* UIView+Extension.m in Sources */,
 				5F19FD431959482000143FCE /* Http.m in Sources */,
@@ -1222,6 +1233,7 @@
 				5FE44AA3195BF177007E51E2 /* UIImage+PECrop.m in Sources */,
 				5FDB420C1975541B00C94840 /* UserMessageViewController.m in Sources */,
 				5F19FD6319594D1100143FCE /* UIImageView+MKNetworkKitAdditions.m in Sources */,
+				5FDD9AB91994AC8100D9E816 /* CommAction.m in Sources */,
 				5FD62386198B633E00961F71 /* SettingPasswordViewController.m in Sources */,
 				5F0084BA197410C100946FB2 /* AlbumPicListViewController.m in Sources */,
 				5FDB420919754FD800C94840 /* UserViewController.m in Sources */,

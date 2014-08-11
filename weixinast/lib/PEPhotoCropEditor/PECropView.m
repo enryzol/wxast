@@ -280,6 +280,7 @@ static const CGFloat MarginRight = MarginLeft;
     
     CGFloat x = CGRectGetMinX(imageCropRect) * scale + CGRectGetMinX(scrollViewFrame);
     CGFloat y = CGRectGetMinY(imageCropRect) * scale + CGRectGetMinY(scrollViewFrame);
+    
     CGFloat width = CGRectGetWidth(imageCropRect) * scale;
     CGFloat height = CGRectGetHeight(imageCropRect) * scale;
     

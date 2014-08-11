@@ -82,6 +82,7 @@
         }
         
         self.NewFollerCount.text = json[@"count"];
+        self.New7DaysFollerCount.text = json[@"count7"];
         [self.tableview headerEndRefreshing];
         
     } ErrorHander:^(NSError *error) {
@@ -91,13 +92,46 @@
     }];
 
 }
+-(void)loadMoreFromServer{
+    
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/Follow/?LToken=%@&count=%d",[Api LToken],[TableViewData count]];
+    
+    NSLog(@"%@",url);
+    
+    [[Function sharedManager] Post:url Params:nil Message:@"正在加载数据" CompletionHandler:^(MKNetworkOperation *completed) {
+        
+        NSLog(@"%@",[completed responseString]);
+        id json = [completed responseJSON];
+        
+        if([[Function sharedManager] CheckJSONNull:json[@"list"]]){
+            NSMutableArray *More = json[@"list"];
+            
+            NSMutableArray *_Tmp = [TableViewData mutableCopy];
+            [_Tmp addObjectsFromArray:More];
+            TableViewData = _Tmp;
+            [self.tableview reloadData];
+            [self.tableview footerEndRefreshing];
+        }
+        
+        [self.tableview footerEndRefreshing];
+        
+    } ErrorHander:^(NSError *error) {
+        NSLog(@"%@",error);
+        [self.tableview footerEndRefreshing];
+        
+    }];
+    
+}
+
 
 -(void)headerReFreshing{
     [self loadDataFromServer];
 }
 
 -(void)footerReFreshing{
-    [self.tableview footerEndRefreshing];
+    
+    [self loadMoreFromServer];
+
 }
 
 
@@ -117,15 +151,8 @@
     static NSString *CellIdentifier = @"UserListCell";
     AlbumBoardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    //cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"title"];
-    //[cell setImageWithURL:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"img"]];
-    
-//    if ([[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"] isEqualToString:@""]) {
-//        cell.Name.text = @"用户";
-//    }else{
-//        cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"];
-//    }
-    
+
+    cell.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20);
     cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"];
     cell.Keyword.text =[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"ctime"];
     
@@ -134,9 +161,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitles:@"屏蔽该用户1小时",@"屏蔽该用户24小时",@"不再接收该用户消息", nil];
-    
-    [as showInView:[UIApplication sharedApplication].keyWindow];
+
     
 }
 
@@ -144,6 +169,8 @@
 #pragma mark - actionsheet
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    
     
 }
 

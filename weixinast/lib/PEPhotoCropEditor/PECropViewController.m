@@ -127,6 +127,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
                              fminf(CGRectGetMaxY(cropViewCropRect) - CGRectGetMinY(cropViewCropRect), CGRectGetHeight(cropRect)));
     cropViewCropRect.size = size;
     self.cropView.cropRect = cropViewCropRect;
+    
 }
 
 - (void)setImageCropRect:(CGRect)imageCropRect
@@ -135,6 +136,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     _cropRect = CGRectZero;
     
     self.cropView.imageCropRect = imageCropRect;
+
 }
 
 - (void)resetCropRect

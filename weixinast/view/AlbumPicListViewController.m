@@ -13,6 +13,8 @@
 #import "MJRefresh.h"
 #import "Api.h"
 #import "Function.h"
+#import "Comm_Observe.h"
+#import "CommAction.h"
 
 
 @interface AlbumPicListViewController ()<UIActionSheetDelegate,UIAlertViewDelegate>
@@ -22,6 +24,7 @@
 @implementation AlbumPicListViewController{
     
     NSMutableArray *TableViewData ;
+    CommAction *commAction;
     
 }
 
@@ -47,10 +50,21 @@
     [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
     self.NavBar.topItem.title = [self.Album objectForKey:@"title"];
     
+    
+    //Observer
+    commAction = [[CommAction alloc] init];
+    [commAction ObserverKey:@"AlbumPicListReflush" Callback:^(NSString *Key) {
+        if ([[[Comm_Observe sharedManager] AlbumPicListReflush] isEqualToString:@"1"]) {
+            [self loadDataFromServer];
+            [[Comm_Observe sharedManager] setAlbumPicListReflush:@"0"];
+        }
+    }];
 }
 
+
+
 -(void)viewWillAppear:(BOOL)animated{
-    [self loadDataFromServer];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -140,7 +154,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"编辑" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除图片" otherButtonTitles:@"编辑图片",@"图片排序", nil];
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"编辑" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"图片编辑",@"图片排序",@"设为封面",@"图片删除", nil];
     
     [as setTag:indexPath.row];
     [as showInView:[UIApplication sharedApplication].keyWindow];
@@ -179,11 +193,11 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    if(buttonIndex == 0){
+    if(buttonIndex == 3){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@" 确定删除图片？" message:@"图片删除将无法恢复" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"删除", nil];
         [alert setTag:[actionSheet tag]];
         [alert show];
-    }else if (buttonIndex == 1){
+    }else if (buttonIndex == 0){
         
         AlbumPicEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumPicEditViewController"];
         
@@ -191,12 +205,14 @@
         
         [self.navigationController pushViewController:vc animated:YES];
         
-    }else if (buttonIndex == 2){
+    }else if (buttonIndex == 1){
         
         [self.tableview setEditing:YES];
-        //UIBarButtonItem *Done = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ico_done_100.png"] style:UIBarButtonItemStylePlain target:self action:@selector(TableviewDone)];
-        //[self.NavBarRightButton setBackgroundImage:[UIImage imageNamed:@"ico_done_100.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [self.NavBarRightButton setImage:[UIImage imageNamed:@"ico_done_100.png"]];
+    }else if (buttonIndex == 2){
+        
+        
+        
     }
     
 }
@@ -256,6 +272,7 @@
 - (IBAction)NavLeftButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 
 

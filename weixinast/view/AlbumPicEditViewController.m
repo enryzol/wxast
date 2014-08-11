@@ -11,6 +11,7 @@
 #import "Common.h"
 #import "Function.h"
 #import "Api.h"
+#import "Comm_Observe.h"
 
 @interface AlbumPicEditViewController ()<UITextFieldDelegate,UITextViewDelegate>
 
@@ -62,7 +63,7 @@
 
 -(IBAction)selectimg:(id)sender{
     [super setKeepingCropAspectRatio:NO];
-    [super setCrop:CGRectMake(0, 0, 500, 500)];
+    [super setCrop:CGRectMake(0, 0, 5000, 5000)];
     [super selectimg:sender];
 }
 
@@ -74,10 +75,10 @@
     
     
     if(img == nil && self.PictureInfo == nil){
-        
         [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"添加失败" description:@"请添加一张图片" type:TWMessageBarMessageTypeError];
         return ;
     }
+    
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/SavePicture/?LToken=%@",[Api LToken]];
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
@@ -92,7 +93,6 @@
         [op addData:UIImageJPEGRepresentation(img, 1.0f) forKey:@"img"];
     }
     
-    
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         
         //id json = [completedOperation responseJSON];
@@ -100,6 +100,7 @@
         [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"图集" description:@"数据保存成功" type:TWMessageBarMessageTypeSuccess duration:1.0f];
         
         [[Function sharedManager] AlertViewHide];
+        [[Comm_Observe sharedManager] setAlbumPicListReflush:@"1"];
         
         if([self.PictureInfo objectForKey:@"sid"] == nil){
             [self.navigationController popViewControllerAnimated:YES];
@@ -151,6 +152,7 @@
     [UIView setAnimationDuration:animationDuration];
     CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
     self.view.frame = rect;
+    [UIView commitAnimations];
 }
 
 

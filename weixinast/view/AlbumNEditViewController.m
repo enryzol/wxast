@@ -17,6 +17,7 @@
 #import "AppDelegate.h"
 #import "Api.h"
 #import "Function.h"
+#import "Comm_Observe.h"
 
 @interface AlbumNEditViewController ()<CommonProtocol>
 
@@ -219,6 +220,7 @@
         //NSLog(@"%@",[completedOperation responseString]);
         [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"图集" description:@"数据保存成功" type:TWMessageBarMessageTypeSuccess duration:1.0f];
         
+        [[Comm_Observe sharedManager] setAlbumListReflush:@"1"];
         [[Function sharedManager] AlertViewHide];
         
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {

@@ -55,7 +55,7 @@
 -(void)loadDataFromServer{
     
     
-    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/Follow/?LToken=%@",[Api LToken]];
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/Block/?LToken=%@",[Api LToken]];
     
     NSLog(@"%@",url);
     
@@ -75,7 +75,6 @@
     } ErrorHander:^(NSError *error) {
         NSLog(@"%@",error);
         [self.tableview headerEndRefreshing];
-        
     }];
     
 }

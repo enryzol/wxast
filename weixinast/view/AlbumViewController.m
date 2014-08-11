@@ -16,8 +16,9 @@
 #import "AppDelegate.h"
 #import "Api.h"
 #import "Function.h"
+#import "Comm_Observe.h"
+#import "CommAction.h"
 
-#define AAAAA (NSInteger)101;
 
 @interface AlbumViewController () <UIActionSheetDelegate,UIAlertViewDelegate>
 
@@ -27,8 +28,7 @@
     
     NSMutableArray *TableViewData ;
     
-//    int ALERTVIEW_DELETE_ALBUM ;
-//    ALERTVIEW_DELETE_ALBUM = 101
+    CommAction * commAction;
 
 }
 
@@ -59,6 +59,17 @@
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
     [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
     
+    //[[Comm_Observe sharedManager] addObserver:self forKeyPath:@"AlbumListReflush" options:NSKeyValueObservingOptionNew context:nil];
+    
+    
+    //Observer
+    commAction = [[CommAction alloc] init];
+    [commAction ObserverKey:@"AlbumListReflush" Callback:^(NSString *Key) {
+        if([[[Comm_Observe sharedManager] AlbumListReflush] isEqualToString:@"1"]){
+            [self loadDataFromServer];
+            [[Comm_Observe sharedManager] setAlbumListReflush:@"0"];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -144,7 +155,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle: @"删除"otherButtonTitles:@"编辑",@"预览",@"分享", nil];
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"编辑",@"预览",@"分享",@"关闭",@"删除", nil];
     [as setTag:indexPath.row];
     [as showInView:[UIApplication sharedApplication].keyWindow];
 }
@@ -155,19 +166,16 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    
-    NSLog(@"%ld",(long)buttonIndex);
-    
     NSString *title = [NSString stringWithFormat:@"'%@'删除以后将无法还原",[[TableViewData objectAtIndex:[actionSheet tag]] objectForKey:@"title"]];
     
-    if(buttonIndex == 0){
+    if(buttonIndex == 4){
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"正在删除图集" message:title delegate:self cancelButtonTitle:@"暂不删除" otherButtonTitles:@"立即删除", nil];
         
         [alert setTag: [actionSheet tag] ];
         [alert show];
         
-    }else if (buttonIndex == 1){
+    }else if (buttonIndex == 0){
         
         AlbumNEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumNEditViewController"];
         [self.navigationController pushViewController:vc animated:YES];
@@ -209,10 +217,6 @@
 }
 
 
-
-
-
-
 #pragma mark - nav bar button
 
 - (IBAction)NavBarLeftButton:(id)sender {
@@ -228,7 +232,7 @@
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         
         [[Function sharedManager] AlertViewHide];
-        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"创建成功" description:@"目录已被新建" type:TWMessageBarMessageTypeInfo duration:2.0f];
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"创建成功" description:@"图集已被新建" type:TWMessageBarMessageTypeSuccess duration:2.0f];
         [self.abTableView headerBeginRefreshing];
         
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
@@ -237,7 +241,7 @@
         [[Function sharedManager] AlertViewHide];
     }];
     
-    [[Function sharedManager] AlertViewShow:@"正在创建新目录"];
+    [[Function sharedManager] AlertViewShow:@"正在创建新图集"];
     [ApplicationDelegate.Engin enqueueOperation:op];
     
     
