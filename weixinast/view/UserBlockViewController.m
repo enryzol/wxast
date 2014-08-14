@@ -14,12 +14,13 @@
 #import "Api.h"
 
 
-@interface UserBlockViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface UserBlockViewController ()<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate>
 
 @end
 
 @implementation UserBlockViewController{
     NSMutableArray *TableViewData;
+    UIActionSheet *deleteAS;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -67,8 +68,10 @@
         if([[Function sharedManager] CheckJSONNull:json[@"list"]]){
             TableViewData = json[@"list"];
             [self.tableview reloadData];
+        }else{
+            TableViewData = NULL;
         }
-        
+        [self.tableview reloadData];
         [self.tableview headerEndRefreshing];
         
         
@@ -121,19 +124,34 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitles:@"屏蔽该用户1小时",@"屏蔽该用户24小时",@"不再接收该用户消息", nil];
+    deleteAS = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitles:nil, nil];
     
-    [as showInView:[UIApplication sharedApplication].keyWindow];
+    deleteAS.tag = indexPath.row;
+    [deleteAS showInView:[UIApplication sharedApplication].keyWindow];
     
 }
-
 
 #pragma mark - actionsheet
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
+    if(buttonIndex == 0){
+        [self MessageBlock:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"wid"] Hour:@"0"];
+    }
 }
 
+-(void)MessageBlock:(NSString*)Mid Hour:(NSString*)hour{
+    
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/MessageBlock/?LToken=%@&wid=%@&block=%@",[Api LToken],Mid,hour];
+    
+    NSLog(@"%@",url);
+    
+    [[Function sharedManager] Post:url Params:nil Message:@"正在设置" CompletionHandler:^(MKNetworkOperation *completed) {
+        [self loadDataFromServer];
+    } ErrorHander:^(NSError *error) {
+        [self.tableview headerEndRefreshing];
+    }];
+    
+}
 
 
 /*

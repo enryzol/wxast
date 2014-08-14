@@ -13,9 +13,8 @@
 #import "BookViewController.h"
 
 #import <ShareSDK/ShareSDK.h>
-#import "ZBarReaderViewController.h"
 
-@interface HomeViewController ()<ZBarReaderDelegate>
+@interface HomeViewController ()
 
 @end
 
@@ -197,34 +196,12 @@
 }
 
 -(void)scanQRCode{
-    ZBarReaderViewController *reader = [ZBarReaderViewController new];
-    reader.readerDelegate = self;
-    ZBarImageScanner *scanner = reader.scanner;
-    
-    [scanner setSymbology: ZBAR_I25
-                   config: ZBAR_CFG_ENABLE
-                       to: 0];
-    
-    [self presentViewController:reader animated:YES completion:nil];
+
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
-    NSLog(@"info=%@",info);
-    // 得到条形码结果
-    id<NSFastEnumeration> results =
-    [info objectForKey: ZBarReaderControllerResults];
-    ZBarSymbol *symbol = nil;
-    for(symbol in results)
-        // EXAMPLE: just grab the first barcode
-        break;
-    NSString *code = [NSString stringWithString:symbol.data];
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    NSLog(@"code=%@",code);
-    
-    [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Success" description:code type:TWMessageBarMessageTypeSuccess duration:2.0f];
+
     
 }
 

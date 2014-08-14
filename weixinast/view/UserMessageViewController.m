@@ -84,7 +84,35 @@
         [self.tableview headerEndRefreshing];
     }];
     
+}
+
+-(void)loadMoreFromServer{
     
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/Message/?LToken=%@&count=%d",[Api LToken],[TableViewData count]];
+    
+    NSLog(@"%@",url);
+    
+    [[Function sharedManager] Post:url Params:nil Message:@"正在加载数据" CompletionHandler:^(MKNetworkOperation *completed) {
+        
+        id json = [completed responseJSON];
+        
+        if([[Function sharedManager] CheckJSONNull:json[@"list"]]){
+            NSMutableArray *More = json[@"list"];
+            
+            NSMutableArray *_Tmp = [TableViewData mutableCopy];
+            [_Tmp addObjectsFromArray:More];
+            TableViewData = _Tmp;
+            [self.tableview reloadData];
+            [self.tableview footerEndRefreshing];
+        }
+        
+        [self.tableview footerEndRefreshing];
+        
+    } ErrorHander:^(NSError *error) {
+        NSLog(@"%@",error);
+        [self.tableview footerEndRefreshing];
+        
+    }];
 }
 
 -(void)DeleteMessage:(NSString*)Mid{
@@ -137,7 +165,7 @@
 }
 
 -(void)footerReFreshing{
-    [self.tableview footerEndRefreshing];
+    [self loadMoreFromServer];
 }
 
 
@@ -167,9 +195,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitles:@"屏蔽该用户6小时",@"屏蔽该用户24小时",@"不再接收该用户消息",@"备注该用户", nil];
-    [as setTag:indexPath.row];
-    [as showInView:[UIApplication sharedApplication].keyWindow];
+    if(![[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"name"] isEqualToString:@"系统"]){
+        UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"屏蔽该用户24小时",@"不再接收该用户消息",@"备注该用户",@"删除", nil];
+        [as setTag:indexPath.row];
+        [as showInView:[UIApplication sharedApplication].keyWindow];
+    }
     
 }
 
@@ -178,34 +208,29 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    if (buttonIndex == 0) {
+    if (buttonIndex == 3) {
         [self DeleteMessage:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"mid"]];
         
-        NSLog(@"%d",actionSheet.tag);
+        NSLog(@"%ld",(long)actionSheet.tag);
+        
         NSMutableArray *tmp = [TableViewData mutableCopy];
         [tmp removeObjectAtIndex:actionSheet.tag];
         TableViewData = tmp;
         [self.tableview reloadData];
-    }else if (buttonIndex == 1){
         
-        [alertComfirm alertComfirmTitle:@"该操作将屏蔽用户消息6小时" Message:@"" SureHandler:^{
-            [self MessageBlock:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"mid"] Hour:@"6"];
-        }];
-        
-    }else if (buttonIndex == 2){
-        
+    }else if (buttonIndex == 0){
         
         [alertComfirm alertComfirmTitle:@"该操作将屏蔽用户消息24小时" Message:@"" SureHandler:^{
             [self MessageBlock:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"mid"] Hour:@"24"];
         }];
         
-    }else if (buttonIndex == 3){
+    }else if (buttonIndex == 1){
         
         [alertComfirm alertComfirmTitle:@"该操作永久屏蔽该用户消息" Message:@"" SureHandler:^{
             [self MessageBlock:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"mid"] Hour:@"9999"];
         }];
         
-    }else if (buttonIndex == 4){
+    }else if (buttonIndex == 2){
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"请设置备注内容" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         
         av.alertViewStyle = UIAlertViewStylePlainTextInput;

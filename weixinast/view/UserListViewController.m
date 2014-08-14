@@ -13,12 +13,13 @@
 #import "Function.h"
 #import "Api.h"
 
-@interface UserListViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate>
+@interface UserListViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UIAlertViewDelegate>
 
 @end
 
 @implementation UserListViewController{
     NSMutableArray *TableViewData;
+    UIAlertView *note;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -100,7 +101,6 @@
     
     [[Function sharedManager] Post:url Params:nil Message:@"正在加载数据" CompletionHandler:^(MKNetworkOperation *completed) {
         
-        NSLog(@"%@",[completed responseString]);
         id json = [completed responseJSON];
         
         if([[Function sharedManager] CheckJSONNull:json[@"list"]]){
@@ -120,7 +120,6 @@
         [self.tableview footerEndRefreshing];
         
     }];
-    
 }
 
 
@@ -161,12 +160,39 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-
+    note = [[UIAlertView alloc] initWithTitle:@"添加备注" message:@"对该用户添加备注，方便下次能快速识别该用户" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+    
+    note.alertViewStyle = UIAlertViewStylePlainTextInput;
+    note.tag = indexPath.row;
+    [note show];
     
 }
 
 
 #pragma mark - actionsheet
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (buttonIndex == 0) {
+        
+    }else if(buttonIndex == 1){
+        
+        NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/Setnote/?LToken=%@&wid=%@",[Api LToken],[[TableViewData objectAtIndex:alertView.tag] objectForKey:@"wid"]];
+        NSLog(@"%@",url);
+        NSDictionary *prama = @{@"note": [[alertView textFieldAtIndex:0] text]};
+        
+        [[Function sharedManager] Post:url Params:prama Message:@"正在保存数据" CompletionHandler:^(MKNetworkOperation *completed) {
+            
+        } ErrorHander:^(NSError *error) {
+            
+        }];
+        
+    }
+    
+    
+    
+}
+
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     

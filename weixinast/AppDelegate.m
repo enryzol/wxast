@@ -85,10 +85,20 @@
     NSLog(@"%@",self._deviceToken);
 }
 
+- (BOOL)application:(UIApplication *)application  handleOpenURL:(NSURL *)url{
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self];
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [ShareSDK handleOpenURL:url
+                 sourceApplication:sourceApplication
+                        annotation:annotation
+                        wxDelegate:self];
+}
+
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     
     [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"新留言" description:[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]type:TWMessageBarMessageTypeInfo  duration:2.0f];
-    
     
 }
 

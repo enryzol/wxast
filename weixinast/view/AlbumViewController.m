@@ -19,6 +19,7 @@
 #import "Comm_Observe.h"
 #import "CommAction.h"
 
+#import <ShareSDK/ShareSDK.h>
 
 @interface AlbumViewController () <UIActionSheetDelegate,UIAlertViewDelegate>
 
@@ -183,9 +184,13 @@
         
     }else if (buttonIndex == 2){
         
+        [actionSheet dismissWithClickedButtonIndex:0 animated:NO];
+        [self Share:actionSheet.tag];
         
     }
 }
+
+
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
@@ -217,10 +222,47 @@
 }
 
 
+#pragma mark - share
+
+-(void)Share:(NSInteger)index{
+    NSLog(@"share");
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"0"  ofType:@"png"];
+    
+    //构造分享内容
+    id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
+                                       defaultContent:@"默认分享内容，没内容时显示"
+                                                image:[ShareSDK imageWithPath:imagePath]
+                                                title:[[TableViewData objectAtIndex:index] objectForKey:@"title"]
+                                                  url:@"http://i.o-tap.cn/"
+                                          description:[[TableViewData objectAtIndex:index] objectForKey:@"desc"]
+                                            mediaType:SSPublishContentMediaTypeNews];
+    
+    [ShareSDK showShareActionSheet:nil
+                         shareList:nil
+                           content:publishContent
+                     statusBarTips:YES
+                       authOptions:nil
+                      shareOptions: nil
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                if (state == SSResponseStateSuccess)
+                                {
+                                    [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"分享成功" description:@"" type:TWMessageBarMessageTypeInfo];
+                                }
+                                else if (state == SSResponseStateFail)
+                                {
+                                    NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
+                                    [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"分享成功" description:@"" type:TWMessageBarMessageTypeError];
+                                }
+                            }];
+}
+
 #pragma mark - nav bar button
 
 - (IBAction)NavBarLeftButton:(id)sender {
+    
     [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 - (IBAction)NavBarRightButton:(id)sender {

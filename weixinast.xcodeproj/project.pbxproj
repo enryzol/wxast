@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F0084B21974068200946FB2 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0084B11974068200946FB2 /* Const.m */; };
 		5F0084BA197410C100946FB2 /* AlbumPicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0084B9197410C100946FB2 /* AlbumPicListViewController.m */; };
-		5F02E2D1196A86440066544C /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F02E2D0196A86440066544C /* BookViewController.m */; };
 		5F0FA5651973851A008E138E /* AlbumNEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA5641973851A008E138E /* AlbumNEditViewController.m */; };
 		5F0FA5681973C2F9008E138E /* DescEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA5671973C2F9008E138E /* DescEditViewController.m */; };
 		5F19FD3819592A9300143FCE /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F19FD2819592A9300143FCE /* MJRefresh.bundle */; };
@@ -56,6 +55,9 @@
 		5F341694198A1A6700EEAA1F /* Func_PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F341693198A1A6700EEAA1F /* Func_PickerView.m */; };
 		5FBF26831957F97000A587D6 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF26821957F97000A587D6 /* AlbumViewController.m */; };
 		5FD0A1121951694100D08304 /* RegController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD0A1111951694100D08304 /* RegController.m */; };
+		5FD1700A199C7EF60091A916 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD17009199C7EF60091A916 /* BookViewController.m */; };
+		5FD1700C199C81680091A916 /* v2-ico-add-pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1700B199C81680091A916 /* v2-ico-add-pic.png */; };
+		5FD1700E199C85C70091A916 /* v2-ico-add-pic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1700D199C85C70091A916 /* v2-ico-add-pic2.png */; };
 		5FD280B4196658F1005B1B3D /* HttpPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD280B3196658F1005B1B3D /* HttpPost.m */; };
 		5FD2C2B4195A5D9900E4DB3D /* icon-error.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2AC195A5D9900E4DB3D /* icon-error.png */; };
 		5FD2C2B5195A5D9900E4DB3D /* icon-error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2AD195A5D9900E4DB3D /* icon-error@2x.png */; };
@@ -65,13 +67,6 @@
 		5FD2C2B9195A5D9900E4DB3D /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2B1195A5D9900E4DB3D /* icon-success@2x.png */; };
 		5FD2C2BA195A5D9900E4DB3D /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C2B3195A5D9900E4DB3D /* TWMessageBarManager.m */; };
 		5FD2C2BD195A6A9D00E4DB3D /* AlbumEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C2BC195A6A9D00E4DB3D /* AlbumEditViewController.m */; };
-		5FD43BB3196F7D0600AE8DFC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5FD43B94196F7D0600AE8DFC /* .gitignore */; };
-		5FD43BB4196F7D0600AE8DFC /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD43BAC196F7D0600AE8DFC /* libzbar.a */; };
-		5FD43BB5196F7D0600AE8DFC /* README in Resources */ = {isa = PBXBuildFile; fileRef = 5FD43BAD196F7D0600AE8DFC /* README */; };
-		5FD43BB6196F7D0600AE8DFC /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD43BAF196F7D0600AE8DFC /* zbar-back.png */; };
-		5FD43BB7196F7D0600AE8DFC /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 5FD43BB0196F7D0600AE8DFC /* zbar-help.html */; };
-		5FD43BB8196F7D0600AE8DFC /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD43BB1196F7D0600AE8DFC /* zbar-helpicons.png */; };
-		5FD43BB9196F7D0600AE8DFC /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD43BB2196F7D0600AE8DFC /* zbar-samples.png */; };
 		5FD43BBB196F7DC500AE8DFC /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD43BBA196F7DC500AE8DFC /* libiconv.dylib */; };
 		5FD62386198B633E00961F71 /* SettingPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD62385198B633E00961F71 /* SettingPasswordViewController.m */; };
 		5FDA615E198F1EC500FE44FD /* UserBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA615D198F1EC500FE44FD /* UserBlockViewController.m */; };
@@ -166,6 +161,29 @@
 		5FF6CD1E1988987D00654304 /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6CD1D1988987D00654304 /* Function.m */; };
 		5FFA1C3F198611BA00F5A702 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA1C3E198611BA00F5A702 /* Api.m */; };
 		5FFD48611963B4F400B27054 /* objectInputAdjustAndUploadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD48601963B4F400B27054 /* objectInputAdjustAndUploadImage.m */; };
+		5FFF68FD1999B68200282BC7 /* QRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFF68FC1999B68200282BC7 /* QRcodeViewController.m */; };
+		8C5A1EEA1999A1DD0088A54B /* v2-ico-list-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EE61999A1DD0088A54B /* v2-ico-list-pic-130wh.png */; };
+		8C5A1EEB1999A1DD0088A54B /* v2-ico-list-set-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EE71999A1DD0088A54B /* v2-ico-list-set-130wh.png */; };
+		8C5A1EEC1999A1DD0088A54B /* v2-ico-list-date-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EE81999A1DD0088A54B /* v2-ico-list-date-130wh.png */; };
+		8C5A1EED1999A1DD0088A54B /* v2-ico-list-wechat-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EE91999A1DD0088A54B /* v2-ico-list-wechat-130wh.png */; };
+		8C5A1EF51999A6350088A54B /* v2-ico-msg-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EEE1999A6350088A54B /* v2-ico-msg-pic-130wh.png */; };
+		8C5A1EF61999A6350088A54B /* v2-ico-user-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EEF1999A6350088A54B /* v2-ico-user-pic-130wh.png */; };
+		8C5A1EF71999A6350088A54B /* v2-ico-list-date-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF01999A6350088A54B /* v2-ico-list-date-130wh.png */; };
+		8C5A1EF81999A6350088A54B /* v2-ico-list-set-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF11999A6350088A54B /* v2-ico-list-set-130wh.png */; };
+		8C5A1EF91999A6350088A54B /* v2-ico-list-wechat-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF21999A6350088A54B /* v2-ico-list-wechat-130wh.png */; };
+		8C5A1EFA1999A6350088A54B /* v2-ico-list-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF31999A6350088A54B /* v2-ico-list-pic-130wh.png */; };
+		8C5A1EFB1999A6350088A54B /* v2-ico-point-red-30wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF41999A6350088A54B /* v2-ico-point-red-30wh.png */; };
+		8C60F9DB19988BA000A81921 /* v2-logo-225wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D019988B9F00A81921 /* v2-logo-225wh.png */; };
+		8C60F9DC19988BA000A81921 /* v2-ico-list-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D119988B9F00A81921 /* v2-ico-list-pic-130wh.png */; };
+		8C60F9DD19988BA000A81921 /* v2-sline-grey-640w1h.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D219988B9F00A81921 /* v2-sline-grey-640w1h.png */; };
+		8C60F9DE19988BA000A81921 /* v2-bg-w-640w718h.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D319988BA000A81921 /* v2-bg-w-640w718h.png */; };
+		8C60F9DF19988BA000A81921 /* v2-line-g-640w6h.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D419988BA000A81921 /* v2-line-g-640w6h.png */; };
+		8C60F9E019988BA000A81921 /* v2-ico-id-192wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D519988BA000A81921 /* v2-ico-id-192wh.png */; };
+		8C60F9E119988BA000A81921 /* v2-1-main-look.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D619988BA000A81921 /* v2-1-main-look.jpg */; };
+		8C60F9E219988BA000A81921 /* v2-line-w-530w1h.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D719988BA000A81921 /* v2-line-w-530w1h.png */; };
+		8C60F9E319988BA000A81921 /* v2-bg-all.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D819988BA000A81921 /* v2-bg-all.png */; };
+		8C60F9E419988BA000A81921 /* v2-btn-g-xl.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D919988BA000A81921 /* v2-btn-g-xl.png */; };
+		8C60F9E519988BA000A81921 /* v2-1-login-look.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9DA19988BA000A81921 /* v2-1-login-look.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,8 +202,6 @@
 		5F0084B71974099300946FB2 /* CommonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonProtocol.h; path = common/delegate/CommonProtocol.h; sourceTree = "<group>"; };
 		5F0084B8197410C100946FB2 /* AlbumPicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumPicListViewController.h; path = view/AlbumPicListViewController.h; sourceTree = "<group>"; };
 		5F0084B9197410C100946FB2 /* AlbumPicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumPicListViewController.m; path = view/AlbumPicListViewController.m; sourceTree = "<group>"; };
-		5F02E2CF196A86440066544C /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookViewController.h; path = view/BookViewController.h; sourceTree = "<group>"; };
-		5F02E2D0196A86440066544C /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookViewController.m; path = view/BookViewController.m; sourceTree = "<group>"; };
 		5F0FA5631973851A008E138E /* AlbumNEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumNEditViewController.h; path = view/AlbumNEditViewController.h; sourceTree = "<group>"; };
 		5F0FA5641973851A008E138E /* AlbumNEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumNEditViewController.m; path = view/AlbumNEditViewController.m; sourceTree = "<group>"; };
 		5F0FA5661973C2F9008E138E /* DescEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DescEditViewController.h; path = view/DescEditViewController.h; sourceTree = "<group>"; };
@@ -267,6 +283,10 @@
 		5FBF26821957F97000A587D6 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumViewController.m; path = view/AlbumViewController.m; sourceTree = "<group>"; };
 		5FD0A1101951694100D08304 /* RegController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegController.h; path = view/RegController.h; sourceTree = "<group>"; };
 		5FD0A1111951694100D08304 /* RegController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegController.m; path = view/RegController.m; sourceTree = "<group>"; };
+		5FD17008199C7EF60091A916 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookViewController.h; path = view/BookViewController.h; sourceTree = "<group>"; };
+		5FD17009199C7EF60091A916 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookViewController.m; path = view/BookViewController.m; sourceTree = "<group>"; };
+		5FD1700B199C81680091A916 /* v2-ico-add-pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-add-pic.png"; sourceTree = "<group>"; };
+		5FD1700D199C85C70091A916 /* v2-ico-add-pic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-add-pic2.png"; sourceTree = "<group>"; };
 		5FD280B2196658F1005B1B3D /* HttpPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpPost.h; path = common/HttpPost.h; sourceTree = "<group>"; };
 		5FD280B3196658F1005B1B3D /* HttpPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpPost.m; path = common/HttpPost.m; sourceTree = "<group>"; };
 		5FD2C2AC195A5D9900E4DB3D /* icon-error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-error.png"; sourceTree = "<group>"; };
@@ -279,33 +299,6 @@
 		5FD2C2B3195A5D9900E4DB3D /* TWMessageBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMessageBarManager.m; sourceTree = "<group>"; };
 		5FD2C2BB195A6A9D00E4DB3D /* AlbumEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumEditViewController.h; path = view/AlbumEditViewController.h; sourceTree = "<group>"; };
 		5FD2C2BC195A6A9D00E4DB3D /* AlbumEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumEditViewController.m; path = view/AlbumEditViewController.m; sourceTree = "<group>"; };
-		5FD43B94196F7D0600AE8DFC /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		5FD43B98196F7D0600AE8DFC /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
-		5FD43B99196F7D0600AE8DFC /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
-		5FD43B9A196F7D0600AE8DFC /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		5FD43B9B196F7D0600AE8DFC /* ImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScanner.h; sourceTree = "<group>"; };
-		5FD43B9C196F7D0600AE8DFC /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processor.h; sourceTree = "<group>"; };
-		5FD43B9D196F7D0600AE8DFC /* Scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
-		5FD43B9E196F7D0600AE8DFC /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symbol.h; sourceTree = "<group>"; };
-		5FD43B9F196F7D0600AE8DFC /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
-		5FD43BA0196F7D0600AE8DFC /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
-		5FD43BA1196F7D0600AE8DFC /* zbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zbar.h; sourceTree = "<group>"; };
-		5FD43BA2196F7D0600AE8DFC /* ZBarCameraSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCameraSimulator.h; sourceTree = "<group>"; };
-		5FD43BA3196F7D0600AE8DFC /* ZBarCaptureReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCaptureReader.h; sourceTree = "<group>"; };
-		5FD43BA4196F7D0600AE8DFC /* ZBarHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarHelpController.h; sourceTree = "<group>"; };
-		5FD43BA5196F7D0600AE8DFC /* ZBarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImage.h; sourceTree = "<group>"; };
-		5FD43BA6196F7D0600AE8DFC /* ZBarImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImageScanner.h; sourceTree = "<group>"; };
-		5FD43BA7196F7D0600AE8DFC /* ZBarReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderController.h; sourceTree = "<group>"; };
-		5FD43BA8196F7D0600AE8DFC /* ZBarReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderView.h; sourceTree = "<group>"; };
-		5FD43BA9196F7D0600AE8DFC /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderViewController.h; sourceTree = "<group>"; };
-		5FD43BAA196F7D0600AE8DFC /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSDK.h; sourceTree = "<group>"; };
-		5FD43BAB196F7D0600AE8DFC /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSymbol.h; sourceTree = "<group>"; };
-		5FD43BAC196F7D0600AE8DFC /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
-		5FD43BAD196F7D0600AE8DFC /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		5FD43BAF196F7D0600AE8DFC /* zbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-back.png"; sourceTree = "<group>"; };
-		5FD43BB0196F7D0600AE8DFC /* zbar-help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zbar-help.html"; sourceTree = "<group>"; };
-		5FD43BB1196F7D0600AE8DFC /* zbar-helpicons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-helpicons.png"; sourceTree = "<group>"; };
-		5FD43BB2196F7D0600AE8DFC /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
 		5FD43BBA196F7DC500AE8DFC /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		5FD62384198B633E00961F71 /* SettingPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingPasswordViewController.h; path = view/SettingPasswordViewController.h; sourceTree = "<group>"; };
 		5FD62385198B633E00961F71 /* SettingPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingPasswordViewController.m; path = view/SettingPasswordViewController.m; sourceTree = "<group>"; };
@@ -427,6 +420,30 @@
 		5FFA1C3E198611BA00F5A702 /* Api.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Api.m; path = lib/Http/Api.m; sourceTree = "<group>"; };
 		5FFD485F1963B4F400B27054 /* objectInputAdjustAndUploadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = objectInputAdjustAndUploadImage.h; path = lib/Class/objectInputAdjustAndUploadImage.h; sourceTree = "<group>"; };
 		5FFD48601963B4F400B27054 /* objectInputAdjustAndUploadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = objectInputAdjustAndUploadImage.m; path = lib/Class/objectInputAdjustAndUploadImage.m; sourceTree = "<group>"; };
+		5FFF68FB1999B68200282BC7 /* QRcodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRcodeViewController.h; path = common/QRcodeViewController.h; sourceTree = "<group>"; };
+		5FFF68FC1999B68200282BC7 /* QRcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRcodeViewController.m; path = common/QRcodeViewController.m; sourceTree = "<group>"; };
+		8C5A1EE61999A1DD0088A54B /* v2-ico-list-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-pic-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EE71999A1DD0088A54B /* v2-ico-list-set-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-set-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EE81999A1DD0088A54B /* v2-ico-list-date-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-date-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EE91999A1DD0088A54B /* v2-ico-list-wechat-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-wechat-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EEE1999A6350088A54B /* v2-ico-msg-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-msg-pic-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EEF1999A6350088A54B /* v2-ico-user-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-user-pic-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EF01999A6350088A54B /* v2-ico-list-date-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-date-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EF11999A6350088A54B /* v2-ico-list-set-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-set-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EF21999A6350088A54B /* v2-ico-list-wechat-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-wechat-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EF31999A6350088A54B /* v2-ico-list-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-pic-130wh.png"; sourceTree = "<group>"; };
+		8C5A1EF41999A6350088A54B /* v2-ico-point-red-30wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-point-red-30wh.png"; sourceTree = "<group>"; };
+		8C60F9D019988B9F00A81921 /* v2-logo-225wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-logo-225wh.png"; sourceTree = "<group>"; };
+		8C60F9D119988B9F00A81921 /* v2-ico-list-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-pic-130wh.png"; sourceTree = "<group>"; };
+		8C60F9D219988B9F00A81921 /* v2-sline-grey-640w1h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-sline-grey-640w1h.png"; sourceTree = "<group>"; };
+		8C60F9D319988BA000A81921 /* v2-bg-w-640w718h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-bg-w-640w718h.png"; sourceTree = "<group>"; };
+		8C60F9D419988BA000A81921 /* v2-line-g-640w6h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-line-g-640w6h.png"; sourceTree = "<group>"; };
+		8C60F9D519988BA000A81921 /* v2-ico-id-192wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-id-192wh.png"; sourceTree = "<group>"; };
+		8C60F9D619988BA000A81921 /* v2-1-main-look.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "v2-1-main-look.jpg"; sourceTree = "<group>"; };
+		8C60F9D719988BA000A81921 /* v2-line-w-530w1h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-line-w-530w1h.png"; sourceTree = "<group>"; };
+		8C60F9D819988BA000A81921 /* v2-bg-all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-bg-all.png"; sourceTree = "<group>"; };
+		8C60F9D919988BA000A81921 /* v2-btn-g-xl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-btn-g-xl.png"; sourceTree = "<group>"; };
+		8C60F9DA19988BA000A81921 /* v2-1-login-look.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "v2-1-login-look.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,7 +452,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FD43BBB196F7DC500AE8DFC /* libiconv.dylib in Frameworks */,
-				5FD43BB4196F7D0600AE8DFC /* libzbar.a in Frameworks */,
 				5FE4D7DD196BCC1000B17A07 /* MessageUI.framework in Frameworks */,
 				5FE4D7DB196BCC0B00B17A07 /* AddressBook.framework in Frameworks */,
 				5FE4D7D9196BCC0400B17A07 /* AssetsLibrary.framework in Frameworks */,
@@ -507,7 +523,6 @@
 		5F19FD26195929EB00143FCE /* plugin */ = {
 			isa = PBXGroup;
 			children = (
-				5FD43B93196F7D0600AE8DFC /* ZBarSDK */,
 				5FE4D72A196BC7A400B17A07 /* ShareSDK */,
 				5FE44A92195BF177007E51E2 /* PEPhotoCropEditor */,
 				5FD2C2AA195A5D9900E4DB3D /* TWMessageBarManager */,
@@ -694,6 +709,7 @@
 		5FD0A10F195168E800D08304 /* tpl */ = {
 			isa = PBXGroup;
 			children = (
+				5FD17007199C7EAD0091A916 /* Book */,
 				5FD0A1101951694100D08304 /* RegController.h */,
 				5FD0A1111951694100D08304 /* RegController.m */,
 				5FDCEEB01953D07800057CB5 /* HomeViewController.h */,
@@ -708,8 +724,6 @@
 				5F0084B9197410C100946FB2 /* AlbumPicListViewController.m */,
 				5FDB116F195D38E100F3E370 /* AlbumPicEditViewController.h */,
 				5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */,
-				5F02E2CF196A86440066544C /* BookViewController.h */,
-				5F02E2D0196A86440066544C /* BookViewController.m */,
 				5F2390EB1971627A008F8911 /* NHomeViewController.h */,
 				5F2390EC1971627A008F8911 /* NHomeViewController.m */,
 				5F0FA5661973C2F9008E138E /* DescEditViewController.h */,
@@ -734,6 +748,15 @@
 			name = tpl;
 			sourceTree = "<group>";
 		};
+		5FD17007199C7EAD0091A916 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				5FD17008199C7EF60091A916 /* BookViewController.h */,
+				5FD17009199C7EF60091A916 /* BookViewController.m */,
+			);
+			name = Book;
+			sourceTree = "<group>";
+		};
 		5FD2C2AA195A5D9900E4DB3D /* TWMessageBarManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,73 +779,6 @@
 				5FD2C2B1195A5D9900E4DB3D /* icon-success@2x.png */,
 			);
 			path = Icons;
-			sourceTree = "<group>";
-		};
-		5FD43B93196F7D0600AE8DFC /* ZBarSDK */ = {
-			isa = PBXGroup;
-			children = (
-				5FD43B94196F7D0600AE8DFC /* .gitignore */,
-				5FD43B95196F7D0600AE8DFC /* Headers */,
-				5FD43BAC196F7D0600AE8DFC /* libzbar.a */,
-				5FD43BAD196F7D0600AE8DFC /* README */,
-				5FD43BAE196F7D0600AE8DFC /* Resources */,
-			);
-			name = ZBarSDK;
-			path = lib/ZBarSDK;
-			sourceTree = "<group>";
-		};
-		5FD43B95196F7D0600AE8DFC /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				5FD43B96196F7D0600AE8DFC /* ZBarSDK */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		5FD43B96196F7D0600AE8DFC /* ZBarSDK */ = {
-			isa = PBXGroup;
-			children = (
-				5FD43B97196F7D0600AE8DFC /* zbar */,
-				5FD43BA1196F7D0600AE8DFC /* zbar.h */,
-				5FD43BA2196F7D0600AE8DFC /* ZBarCameraSimulator.h */,
-				5FD43BA3196F7D0600AE8DFC /* ZBarCaptureReader.h */,
-				5FD43BA4196F7D0600AE8DFC /* ZBarHelpController.h */,
-				5FD43BA5196F7D0600AE8DFC /* ZBarImage.h */,
-				5FD43BA6196F7D0600AE8DFC /* ZBarImageScanner.h */,
-				5FD43BA7196F7D0600AE8DFC /* ZBarReaderController.h */,
-				5FD43BA8196F7D0600AE8DFC /* ZBarReaderView.h */,
-				5FD43BA9196F7D0600AE8DFC /* ZBarReaderViewController.h */,
-				5FD43BAA196F7D0600AE8DFC /* ZBarSDK.h */,
-				5FD43BAB196F7D0600AE8DFC /* ZBarSymbol.h */,
-			);
-			path = ZBarSDK;
-			sourceTree = "<group>";
-		};
-		5FD43B97196F7D0600AE8DFC /* zbar */ = {
-			isa = PBXGroup;
-			children = (
-				5FD43B98196F7D0600AE8DFC /* Decoder.h */,
-				5FD43B99196F7D0600AE8DFC /* Exception.h */,
-				5FD43B9A196F7D0600AE8DFC /* Image.h */,
-				5FD43B9B196F7D0600AE8DFC /* ImageScanner.h */,
-				5FD43B9C196F7D0600AE8DFC /* Processor.h */,
-				5FD43B9D196F7D0600AE8DFC /* Scanner.h */,
-				5FD43B9E196F7D0600AE8DFC /* Symbol.h */,
-				5FD43B9F196F7D0600AE8DFC /* Video.h */,
-				5FD43BA0196F7D0600AE8DFC /* Window.h */,
-			);
-			path = zbar;
-			sourceTree = "<group>";
-		};
-		5FD43BAE196F7D0600AE8DFC /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5FD43BAF196F7D0600AE8DFC /* zbar-back.png */,
-				5FD43BB0196F7D0600AE8DFC /* zbar-help.html */,
-				5FD43BB1196F7D0600AE8DFC /* zbar-helpicons.png */,
-				5FD43BB2196F7D0600AE8DFC /* zbar-samples.png */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		5FDCEEB31953D40900057CB5 /* icon */ = {
@@ -862,6 +818,8 @@
 				5FDD9AB219949C5400D9E816 /* Comm_Observe.m */,
 				5FDD9AB71994AC8100D9E816 /* CommAction.h */,
 				5FDD9AB81994AC8100D9E816 /* CommAction.m */,
+				5FFF68FB1999B68200282BC7 /* QRcodeViewController.h */,
+				5FFF68FC1999B68200282BC7 /* QRcodeViewController.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -869,6 +827,30 @@
 		5FE29D9B196FD9A600E51307 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				5FD1700B199C81680091A916 /* v2-ico-add-pic.png */,
+				5FD1700D199C85C70091A916 /* v2-ico-add-pic2.png */,
+				8C60F9D019988B9F00A81921 /* v2-logo-225wh.png */,
+				8C5A1EEE1999A6350088A54B /* v2-ico-msg-pic-130wh.png */,
+				8C5A1EEF1999A6350088A54B /* v2-ico-user-pic-130wh.png */,
+				8C5A1EF01999A6350088A54B /* v2-ico-list-date-130wh.png */,
+				8C5A1EF11999A6350088A54B /* v2-ico-list-set-130wh.png */,
+				8C5A1EF21999A6350088A54B /* v2-ico-list-wechat-130wh.png */,
+				8C5A1EF31999A6350088A54B /* v2-ico-list-pic-130wh.png */,
+				8C5A1EF41999A6350088A54B /* v2-ico-point-red-30wh.png */,
+				8C60F9D119988B9F00A81921 /* v2-ico-list-pic-130wh.png */,
+				8C60F9D219988B9F00A81921 /* v2-sline-grey-640w1h.png */,
+				8C60F9D319988BA000A81921 /* v2-bg-w-640w718h.png */,
+				8C5A1EE61999A1DD0088A54B /* v2-ico-list-pic-130wh.png */,
+				8C5A1EE71999A1DD0088A54B /* v2-ico-list-set-130wh.png */,
+				8C5A1EE81999A1DD0088A54B /* v2-ico-list-date-130wh.png */,
+				8C5A1EE91999A1DD0088A54B /* v2-ico-list-wechat-130wh.png */,
+				8C60F9D419988BA000A81921 /* v2-line-g-640w6h.png */,
+				8C60F9D519988BA000A81921 /* v2-ico-id-192wh.png */,
+				8C60F9D619988BA000A81921 /* v2-1-main-look.jpg */,
+				8C60F9D719988BA000A81921 /* v2-line-w-530w1h.png */,
+				8C60F9D819988BA000A81921 /* v2-bg-all.png */,
+				8C60F9D919988BA000A81921 /* v2-btn-g-xl.png */,
+				8C60F9DA19988BA000A81921 /* v2-1-login-look.jpg */,
 				5FE29D9C196FD9A600E51307 /* 0.png */,
 				5FE29D9D196FD9A600E51307 /* bg-btn_big.png */,
 				5FE29D9E196FD9A600E51307 /* bg_main.png */,
@@ -1122,28 +1104,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FE29DC1196FD9A600E51307 /* bg_main.png in Resources */,
+				8C60F9E219988BA000A81921 /* v2-line-w-530w1h.png in Resources */,
+				8C60F9DC19988BA000A81921 /* v2-ico-list-pic-130wh.png in Resources */,
+				8C60F9DD19988BA000A81921 /* v2-sline-grey-640w1h.png in Resources */,
 				5FE29DC4196FD9A600E51307 /* ico_album_100w.png in Resources */,
 				5FE29DD6196FD9A600E51307 /* ico_pw2_16w.png in Resources */,
 				5FE29DDB196FD9A600E51307 /* ico_stop_16w.png in Resources */,
-				5FD43BB7196F7D0600AE8DFC /* zbar-help.html in Resources */,
 				5F221AD519512CE4009F96DE /* Images.xcassets in Resources */,
 				5FE29DDC196FD9A600E51307 /* ico_user_100w.png in Resources */,
 				5FD2C2B6195A5D9900E4DB3D /* icon-info.png in Resources */,
 				5FD2C2B8195A5D9900E4DB3D /* icon-success.png in Resources */,
-				5FD43BB8196F7D0600AE8DFC /* zbar-helpicons.png in Resources */,
 				5FE29DC8196FD9A600E51307 /* ico_disc_16w.png in Resources */,
+				8C5A1EFA1999A6350088A54B /* v2-ico-list-pic-130wh.png in Resources */,
 				5FE29DCC196FD9A600E51307 /* ico_help_100w.png in Resources */,
+				8C5A1EF71999A6350088A54B /* v2-ico-list-date-130wh.png in Resources */,
 				5FE29DD9196FD9A600E51307 /* ico_squ_100w.png in Resources */,
+				8C5A1EFB1999A6350088A54B /* v2-ico-point-red-30wh.png in Resources */,
 				5FE29DE0196FD9A600E51307 /* line_1px.png in Resources */,
 				5FE4039E196C12B400CBB434 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				5F221AC719512CE4009F96DE /* InfoPlist.strings in Resources */,
+				8C60F9E419988BA000A81921 /* v2-btn-g-xl.png in Resources */,
 				5FE29DD5196FD9A600E51307 /* ico_mgsbox_red_100w.png in Resources */,
-				5FD43BB3196F7D0600AE8DFC /* .gitignore in Resources */,
+				8C60F9E319988BA000A81921 /* v2-bg-all.png in Resources */,
 				5FE29DD1196FD9A600E51307 /* ico_link_16w.png in Resources */,
 				5FE29DD2196FD9A600E51307 /* ico_list_100w.png in Resources */,
+				8C60F9DE19988BA000A81921 /* v2-bg-w-640w718h.png in Resources */,
 				5FDB117A195D48FF00F3E370 /* Main3.5.storyboard in Resources */,
+				8C5A1EF51999A6350088A54B /* v2-ico-msg-pic-130wh.png in Resources */,
 				5FE4039B196C12B400CBB434 /* Resource.bundle in Resources */,
-				5FD43BB9196F7D0600AE8DFC /* zbar-samples.png in Resources */,
 				5FE29DC2196FD9A600E51307 /* bg_top.png in Resources */,
 				5FE29DC9196FD9A600E51307 /* ico_done_100.png in Resources */,
 				5FE29DD4196FD9A600E51307 /* ico_mgsbox_100w.png in Resources */,
@@ -1152,23 +1140,32 @@
 				5FE29DD0196FD9A600E51307 /* ico_label_16w.png in Resources */,
 				5FD2C2B9195A5D9900E4DB3D /* icon-success@2x.png in Resources */,
 				5FE29DDD196FD9A600E51307 /* id_big.png in Resources */,
+				8C60F9DB19988BA000A81921 /* v2-logo-225wh.png in Resources */,
+				5FD1700E199C85C70091A916 /* v2-ico-add-pic2.png in Resources */,
+				8C5A1EEB1999A1DD0088A54B /* v2-ico-list-set-130wh.png in Resources */,
 				5FE29DCD196FD9A600E51307 /* ico_id_16w.png in Resources */,
 				5FE4039A196C12B400CBB434 /* ShareSDKLocalizable.strings in Resources */,
+				8C60F9E119988BA000A81921 /* v2-1-main-look.jpg in Resources */,
 				5F19FD3819592A9300143FCE /* MJRefresh.bundle in Resources */,
+				8C60F9E519988BA000A81921 /* v2-1-login-look.jpg in Resources */,
+				5FD1700C199C81680091A916 /* v2-ico-add-pic.png in Resources */,
+				8C5A1EF61999A6350088A54B /* v2-ico-user-pic-130wh.png in Resources */,
 				5FE403A4196C12B400CBB434 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				5FE29DC7196FD9A600E51307 /* ico_book_100w.png in Resources */,
 				5FE29DCA196FD9A600E51307 /* ico_edit_100w.png in Resources */,
 				5FE29DDA196FD9A600E51307 /* ico_star_88w.png in Resources */,
+				8C60F9E019988BA000A81921 /* v2-ico-id-192wh.png in Resources */,
 				5FE29DC6196FD9A600E51307 /* ico_arrowright_100w.png in Resources */,
+				8C5A1EEA1999A1DD0088A54B /* v2-ico-list-pic-130wh.png in Resources */,
 				5FE29DE1196FD9A600E51307 /* line_bgbottom.png in Resources */,
 				5FE29DCF196FD9A600E51307 /* ico_key_16w.png in Resources */,
 				5FE29DD7196FD9A600E51307 /* ico_pw_16w.png in Resources */,
-				5FD43BB6196F7D0600AE8DFC /* zbar-back.png in Resources */,
 				5FE29D9A196FD89A00E51307 /* Sne.storyboard in Resources */,
 				5FE44AA1195BF177007E51E2 /* PEPhotoCropEditor.bundle in Resources */,
-				5FD43BB5196F7D0600AE8DFC /* README in Resources */,
+				8C5A1EEC1999A1DD0088A54B /* v2-ico-list-date-130wh.png in Resources */,
 				5FE29DCE196FD9A600E51307 /* ico_info_88w.png in Resources */,
 				5FE29DD8196FD9A600E51307 /* ico_setting_100w.png in Resources */,
+				8C60F9DF19988BA000A81921 /* v2-line-g-640w6h.png in Resources */,
 				5F221AD019512CE4009F96DE /* Main.storyboard in Resources */,
 				5FE29DDE196FD9A600E51307 /* img_mask.png in Resources */,
 				5FE29DBF196FD9A600E51307 /* 0.png in Resources */,
@@ -1178,6 +1175,9 @@
 				5FE29DDF196FD9A600E51307 /* img_tmp.jpg in Resources */,
 				5FD2C2B7195A5D9900E4DB3D /* icon-info@2x.png in Resources */,
 				5FE29DD3196FD9A600E51307 /* ico_mgs_100w.png in Resources */,
+				8C5A1EF81999A6350088A54B /* v2-ico-list-set-130wh.png in Resources */,
+				8C5A1EF91999A6350088A54B /* v2-ico-list-wechat-130wh.png in Resources */,
+				8C5A1EED1999A1DD0088A54B /* v2-ico-list-wechat-130wh.png in Resources */,
 				5FE29DC5196FD9A600E51307 /* ico_arrowleft_100w.png in Resources */,
 				5FE403A0196C12B400CBB434 /* WeiboSDK.bundle in Resources */,
 			);
@@ -1213,13 +1213,13 @@
 				5FD0A1121951694100D08304 /* RegController.m in Sources */,
 				5FFD48611963B4F400B27054 /* objectInputAdjustAndUploadImage.m in Sources */,
 				5F19FD3E19592A9300143FCE /* UIScrollView+MJRefresh.m in Sources */,
+				5FD1700A199C7EF60091A916 /* BookViewController.m in Sources */,
 				5FDA6161198F5B9700FE44FD /* Func_AlertComfirm.m in Sources */,
 				5FDA615E198F1EC500FE44FD /* UserBlockViewController.m in Sources */,
 				5F341694198A1A6700EEAA1F /* Func_PickerView.m in Sources */,
 				5F221AD319512CE4009F96DE /* ViewController.m in Sources */,
 				5F19FD6119594D1100143FCE /* NSString+MKNetworkKitAdditions.m in Sources */,
 				5FDCEEB61953D4BF00057CB5 /* ButtonHomeNav.m in Sources */,
-				5F02E2D1196A86440066544C /* BookViewController.m in Sources */,
 				5F0FA5651973851A008E138E /* AlbumNEditViewController.m in Sources */,
 				5F19FD7519596AD300143FCE /* AlbumTableViewCell.m in Sources */,
 				5F34168B1989E0C400EEAA1F /* SettingPushViewController.m in Sources */,
@@ -1249,6 +1249,7 @@
 				5F19FD6019594D1100143FCE /* NSDictionary+RequestEncoding.m in Sources */,
 				5FE44AA0195BF177007E51E2 /* PECropViewController.m in Sources */,
 				5F19FD6519594D1100143FCE /* MKNetworkOperation.m in Sources */,
+				5FFF68FD1999B68200282BC7 /* QRcodeViewController.m in Sources */,
 				5F19FD3919592A9300143FCE /* MJRefreshBaseView.m in Sources */,
 				5F0FA5681973C2F9008E138E /* DescEditViewController.m in Sources */,
 				5F0084B21974068200946FB2 /* Const.m in Sources */,

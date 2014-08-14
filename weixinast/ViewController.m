@@ -14,6 +14,8 @@
 #import "Api.h"
 #import "Function.h"
 
+#import <ShareSDK/ShareSDK.h>
+
 @interface ViewController ()
 
 @end
@@ -129,7 +131,7 @@
 
 -(void)openRegView{
     
-    
+
     RegController *vw = [self.storyboard instantiateViewControllerWithIdentifier:@"RegController"];
     
     vw.modalPresentationStyle = UIModalPresentationFormSheet;
@@ -137,6 +139,7 @@
     [self presentViewController:vw animated:YES completion:^{}];
     
 }
+
 
 
 - (IBAction)LoginAct:(id)sender {
