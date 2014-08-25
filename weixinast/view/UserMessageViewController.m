@@ -88,7 +88,7 @@
 
 -(void)loadMoreFromServer{
     
-    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/Message/?LToken=%@&count=%d",[Api LToken],[TableViewData count]];
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/User/Message/?LToken=%@&count=%lu",[Api LToken],(unsigned long)[TableViewData count]];
     
     NSLog(@"%@",url);
     
@@ -107,6 +107,7 @@
         }
         
         [self.tableview footerEndRefreshing];
+        [Api CheckLoginStatus:self];
         
     } ErrorHander:^(NSError *error) {
         NSLog(@"%@",error);

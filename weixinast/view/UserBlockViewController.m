@@ -71,9 +71,8 @@
         }else{
             TableViewData = NULL;
         }
-        [self.tableview reloadData];
         [self.tableview headerEndRefreshing];
-        
+        [Api CheckLoginStatus:self];
         
     } ErrorHander:^(NSError *error) {
         NSLog(@"%@",error);

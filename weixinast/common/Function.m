@@ -8,6 +8,7 @@
 
 #import "Function.h"
 #import "AppDelegate.h"
+#import "Comm_Observe.h"
 
 @implementation Function{
     UIAlertView *alertView;
@@ -57,6 +58,18 @@
     MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:Param httpMethod:@"POST" ssl:YES];
     
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        
+        id json = [completedOperation responseJSON];
+        if ([self CheckJSONNull:json]) {
+            
+            NSString *loginStatus = json[@"LoginStatus"];
+            if([loginStatus isEqualToString:@"false"]){
+                NSLog(@"LoginStatus - false");
+                [[Comm_Observe sharedManager] setLoginStatus:NO];
+            }
+            
+        }
+        
         NSLog(@"%@",[completedOperation responseString]);
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         
@@ -70,6 +83,17 @@
     MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:Param httpMethod:@"POST" ssl:YES];
     
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        
+        id json = [completedOperation responseJSON];
+        if ([self CheckJSONNull:json]) {
+            
+            NSString *loginStatus = json[@"LoginStatus"];
+            if([loginStatus isEqualToString:@"false"]){
+                NSLog(@"LoginStatus - false");
+                [[Comm_Observe sharedManager] setLoginStatus:NO];
+            }
+            
+        }
         
         completionHandler(completedOperation);
         
@@ -86,6 +110,18 @@
     
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         
+        id json = [completedOperation responseJSON];
+        
+        if ([self CheckJSONNull:json]) {
+            
+            NSString *loginStatus = json[@"LoginStatus"];
+            if([loginStatus isEqualToString:@"false"]){
+                NSLog(@"LoginStatus - false");
+                [[Comm_Observe sharedManager] setLoginStatus:NO];
+            }
+            
+        }
+        NSLog(@"%@",json);
         completionHandler(completedOperation);
         
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
@@ -102,6 +138,19 @@
     MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:Param httpMethod:@"POST" ssl:YES];
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         [self AlertViewHide];
+        
+        id json = [completedOperation responseJSON];
+        if ([self CheckJSONNull:json]) {
+            
+            NSString *loginStatus = json[@"LoginStatus"];
+            if([loginStatus isEqualToString:@"false"]){
+                NSLog(@"LoginStatus - false");
+                [[Comm_Observe sharedManager] setLoginStatus:NO];
+            }
+            
+        }
+        
+        
         completionHandler(completedOperation);
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         [self AlertViewHide];
@@ -109,7 +158,6 @@
     }];
     
     [ApplicationDelegate.Engin enqueueOperation:op];
-    
 }
 
 

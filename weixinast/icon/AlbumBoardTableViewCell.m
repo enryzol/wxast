@@ -41,7 +41,7 @@
 -(void)setImageWithURL:(NSString*)url{
     
     if([url isEqualToString:@""] || url == nil || [self.uniqueID isEqualToString:@""]){
-        self.Image.image = nil;
+        self.Image.image = [UIImage imageNamed:@"v2-ico-add-pic.png"];
         return ;
     }
     

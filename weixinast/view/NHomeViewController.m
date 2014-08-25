@@ -13,6 +13,7 @@
 #import "Function.h"
 #import "SettingViewController.h"
 #import "UserMessageViewController.h"
+#import "BookViewController.h"
 
 @interface NHomeViewController ()
 
@@ -73,7 +74,10 @@
 }
 
 - (IBAction)BookAction:(id)sender {
-    NSLog(@"UserAction");
+    
+    BookViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"BookViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (IBAction)UserAction:(id)sender {

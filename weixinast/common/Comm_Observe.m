@@ -24,6 +24,9 @@
     if (self = [super init]) {
         self.AlbumListReflush = @"0";
         self.AlbumPicListReflush = @"0";
+        self.BookEditViewControllerReflush = @"0";
+        self.BookPicViewControllerReflush = @"0";
+        self.LoginStatus = YES;
     }
     return self;
 }

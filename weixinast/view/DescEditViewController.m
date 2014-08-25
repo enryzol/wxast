@@ -39,7 +39,7 @@
     
     
     
-    NSLog(@"%@" , self.ContentStr);
+    NSLog(@"self.ContentStr -----%@" , self.ContentStr);
 }
 
 - (void)didReceiveMemoryWarning

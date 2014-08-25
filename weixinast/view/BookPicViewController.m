@@ -1,14 +1,14 @@
 //
-//  AlbumPicListViewController.m
+//  BookPicViewController.m
 //  weixinast
 //
-//  Created by Jackie on 14-7-14.
+//  Created by Jackie on 14-8-15.
 //  Copyright (c) 2014年 Jackie. All rights reserved.
 //
 
-#import "AlbumPicListViewController.h"
+#import "BookPicViewController.h"
 #import "AlbumBoardTableViewCell.h"
-#import "AlbumPicEditViewController.h"
+#import "BookPicEditViewController.h"
 #import "AppDelegate.h"
 #import "MJRefresh.h"
 #import "Api.h"
@@ -17,15 +17,15 @@
 #import "CommAction.h"
 
 
-@interface AlbumPicListViewController ()<UIActionSheetDelegate,UIAlertViewDelegate>
+@interface BookPicViewController ()<UIActionSheetDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation AlbumPicListViewController{
-    
+
+
+@implementation BookPicViewController{
     NSMutableArray *TableViewData ;
     CommAction *commAction;
-    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,27 +44,16 @@
     [self.tableview addHeaderWithTarget:self action:@selector(headerReFreshing)];
     [self.tableview addFooterWithTarget:self action:@selector(footerReFreshing)];
     
-    [self loadDataFromServer];
+    [self headerReFreshing];
     
-    [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
-    [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
-    self.NavBar.topItem.title = [self.Album objectForKey:@"title"];
-    
-    
-    //Observer
     commAction = [[CommAction alloc] init];
-    [commAction ObserverKey:@"AlbumPicListReflush" Callback:^(NSString *Key) {
-        if ([[[Comm_Observe sharedManager] AlbumPicListReflush] isEqualToString:@"1"]) {
-            [self loadDataFromServer];
-            [[Comm_Observe sharedManager] setAlbumPicListReflush:@"0"];
+    [commAction ObserverKey:@"BookPicViewControllerReflush" Callback:^(NSString *Key) {
+        if ([[[Comm_Observe sharedManager] BookPicViewControllerReflush] isEqualToString:@"1"]) {
+            [self headerReFreshing];
+            [[Comm_Observe sharedManager] setBookPicViewControllerReflush:@"0"];
         }
     }];
-}
 
-
-
--(void)viewWillAppear:(BOOL)animated{
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,35 +73,29 @@
 }
 */
 
+
 #pragma mark - load data
 
 -(void)loadDataFromServer{
     
-    
-    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/aglist/?LToken=%@&group=%@",[Api LToken],self.groupid];
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Book/piclist/?LToken=%@&beid=%@",[Api LToken],[self.Book objectForKey:@"beid"]];
     
     NSLog(@"%@",url);
     
     [[Function sharedManager] Post:url Params:nil CompletionHandler:^(MKNetworkOperation *completed) {
         
         id json = [completed responseJSON];
-        
-        if(TableViewData == nil){
-            TableViewData = [[NSMutableArray alloc] init];
-        }
-        
-        if([[Function sharedManager] CheckJSONNull:json[@"list"]]){
+        if ([[Function sharedManager] CheckJSONNull:json[@"list"]]) {
             TableViewData = json[@"list"];
             [self.tableview reloadData];
         }
-        
+        NSLog(@"--%@",[completed responseString]);
         [self.tableview headerEndRefreshing];
         [Api CheckLoginStatus:self];
         
     } ErrorHander:^(NSError *error) {
-        
+        [self.tableview headerEndRefreshing];
     }];
-    
 }
 
 #pragma mark - tableview
@@ -132,11 +115,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *CellIdentifier = @"AlbumBoardCell01";
+    static NSString *CellIdentifier = @"AlbumBoardCell";
     AlbumBoardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.Desc.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"desc"];
-    cell.Keyword.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"title"];
+    cell.Keyword.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"desc"];
+    cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"title"];
     
     NSString *url = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"img"];
     cell.uniqueID = url;
@@ -170,7 +153,7 @@
 }
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
     id buffer = [TableViewData objectAtIndex:sourceIndexPath.row];
-
+    
     NSMutableArray *ss = [TableViewData mutableCopy];
     
     [ss removeObjectAtIndex:sourceIndexPath.row];
@@ -194,82 +177,80 @@
         [alert show];
     }else if (buttonIndex == 0){
         
-        AlbumPicEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumPicEditViewController"];
-        
+        BookPicEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"BookPicEditViewController"];
         vc.PictureInfo = [TableViewData objectAtIndex:actionSheet.tag];
-        
         [self.navigationController pushViewController:vc animated:YES];
         
     }else if (buttonIndex == 1){
         
         [self.tableview setEditing:YES];
-        [self.NavBarRightButton setImage:[UIImage imageNamed:@"ico_done_100.png"]];
+        [self.NavBarRightButton setImage:[UIImage imageNamed:@"ico_done_100.png"] forState:UIControlStateNormal];
+        
     }else if (buttonIndex == 2){
         
-        
-        
+        NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Book/SetCover/?LToken=%@",[Api LToken]];
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        [params setValue:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"biid"] forKey:@"biid"];
+        [[Function sharedManager] Post:url Params:params];
+        [[Comm_Observe sharedManager] setBookEditViewControllerReflush:@"1"];
     }
     
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-
-        if(buttonIndex == 0){
-            //cancel
-            
-            NSLog(@"cancel");
-        }else{
-            //delete
-            NSLog(@"delete");
-            
-            NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/DeletePic/?LToken=%@&sid=%@",[Api LToken] , [[TableViewData objectAtIndex:alertView.tag] objectForKey:@"sid"]];
-            
-            [[Function sharedManager] Post:url Params:nil CompletionHandler:^(MKNetworkOperation *completed) {
-                [self loadDataFromServer];
-            }];
-            
-        }
     
-}
-
-
-- (IBAction)NavRightButtonAction:(id)sender {
-    
-    if(self.tableview.editing){
-        [self.NavBarRightButton setImage:[UIImage imageNamed:@"ico_add_100w.png"]];
-        [self.tableview setEditing:NO];
+    if(buttonIndex == 0){
+        //cancel
         
-        NSString *OrderBy = @"";
-
-        for (int i = 0; i < [TableViewData count]; i++){
-            //NSLog(@"%@",[TableViewData objectAtIndex:i]);
-            
-            OrderBy = [OrderBy stringByAppendingFormat:@"||%@#%d", [[TableViewData objectAtIndex:i] objectForKey:@"sid"], i+1];
-            
-        }
-        
-        NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/SaveOrderBy/?LToken=%@",[Api LToken]];
-        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-        [params setValue:OrderBy forKey:@"orderby"];
-        [[Function sharedManager] Post:url Params:params];
-        
+        NSLog(@"cancel");
     }else{
+        //delete
+        NSLog(@"delete");
         
+        NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Book/DeletePic/?LToken=%@&biid=%@",[Api LToken] , [[TableViewData objectAtIndex:alertView.tag] objectForKey:@"biid"]];
         
+        [[Function sharedManager] Post:url Params:nil CompletionHandler:^(MKNetworkOperation *completed) {
+            [self loadDataFromServer];
+        }];
         
-        //AlbumPicEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlbumPicEditViewController"];
-        //vc.groupid = self.groupid;
-        //[self.navigationController pushViewController:vc animated:YES];
-    
     }
     
     
 }
 
-- (IBAction)NavLeftButtonAction:(id)sender {
+
+- (IBAction)NavBarLeftButton:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
-}
+};
+- (IBAction)NavBarRightButton:(id)sender{
+    
+    if(self.tableview.editing){
+        [self.NavBarRightButton setImage:[UIImage imageNamed:@"ico_add_100w.png"] forState:UIControlStateNormal];
+        [self.tableview setEditing:NO];
+        
+        NSString *OrderBy = @"";
+        
+        for (int i = 0; i < [TableViewData count]; i++){
+            //NSLog(@"%@",[TableViewData objectAtIndex:i]);
+            OrderBy = [OrderBy stringByAppendingFormat:@"||%@#%d", [[TableViewData objectAtIndex:i] objectForKey:@"biid"], i+1];
+        }
+        
+        NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Book/SaveOrderBy/?LToken=%@",[Api LToken]];
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        [params setValue:OrderBy forKey:@"orderby"];
+        [[Function sharedManager] Post:url Params:params];
+    }else{
+        BookPicEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"BookPicEditViewController"];
+        vc.beid = [self.Book objectForKey:@"beid"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+};
+
+
+
+
 
 
 

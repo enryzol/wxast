@@ -54,7 +54,7 @@
     
     self.Name.text = [self.Album objectForKey:@"title"];
     
-    AlbumPic = [[ImageViewFromUrl alloc] initWithFrame:CGRectMake(210, 140, 70, 70) Url:[self.Album objectForKey:@"img"] Radius:10];
+    AlbumPic = [[ImageViewFromUrl alloc] initWithFrame:CGRectMake(220, 140, 75, 75) Url:[self.Album objectForKey:@"img"] Radius:10];
     
     [self.view addSubview:AlbumPic];
     
@@ -79,15 +79,9 @@
     
     NSLog(@"%@",url);
     
-    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:nil httpMethod:@"GET" ssl:YES];
-    
-    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+    [[Function sharedManager] Post:url Params:nil Message:@"正在加载数据,请稍候" CompletionHandler:^(MKNetworkOperation *completed) {
         
-        [[Function sharedManager] AlertViewHide];
-        
-        id json = [completedOperation responseJSON];
-        
-        NSLog(@"%@",[completedOperation responseString]);
+        id json = [completed responseJSON];
         
         [self.Keyword setText:json[@"keyword"]];
         [self.Desc setText:json[@"desc"]];
@@ -98,16 +92,12 @@
             [self.KeywordContainer setHidden:YES];
         }
         
-    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        [Api CheckLoginStatus:self];
         
-        NSLog(@"%@",error);
-        [[Function sharedManager] AlertViewHide];
+    } ErrorHander:^(NSError *error) {
         
     }];
     
-    [[Function sharedManager] AlertViewShow:@"正在加载数据,请稍候"];
-    
-    [ApplicationDelegate.Engin enqueueOperation:op];
 }
 
 
@@ -181,12 +171,11 @@
 
 - (IBAction)DescEditAction:(id)sender {
     DescEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DescEditViewController"];
+    vc.ContentStr = [NSString stringWithFormat:@"%@",self.Desc.text];
     vc.SubjectStr = @"公众平台 - 内容概要";
-    vc.ContentStr = self.Desc.text;
     vc.delegate = self;
+    NSLog(@"DescEditAction - %@",self.Desc.text);
     [self.navigationController pushViewController:vc animated:YES];
-    
-    
 }
 
 - (IBAction)NavBarLeftButton:(id)sender {

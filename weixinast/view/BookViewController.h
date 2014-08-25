@@ -10,4 +10,10 @@
 
 @interface BookViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UITableView *abTableView;
+
+- (IBAction)NavBarLeftButton:(id)sender;
+- (IBAction)NavBarRightButton:(id)sender;
+
 @end

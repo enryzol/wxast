@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F0084B21974068200946FB2 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0084B11974068200946FB2 /* Const.m */; };
 		5F0084BA197410C100946FB2 /* AlbumPicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0084B9197410C100946FB2 /* AlbumPicListViewController.m */; };
+		5F0BAFA619A04BB600E81F4D /* BookPicEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BAFA519A04BB600E81F4D /* BookPicEditViewController.m */; };
 		5F0FA5651973851A008E138E /* AlbumNEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA5641973851A008E138E /* AlbumNEditViewController.m */; };
 		5F0FA5681973C2F9008E138E /* DescEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA5671973C2F9008E138E /* DescEditViewController.m */; };
 		5F19FD3819592A9300143FCE /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F19FD2819592A9300143FCE /* MJRefresh.bundle */; };
@@ -157,6 +158,10 @@
 		5FE4D7D9196BCC0400B17A07 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4D7D8196BCC0400B17A07 /* AssetsLibrary.framework */; };
 		5FE4D7DB196BCC0B00B17A07 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4D7DA196BCC0B00B17A07 /* AddressBook.framework */; };
 		5FE4D7DD196BCC1000B17A07 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4D7DC196BCC1000B17A07 /* MessageUI.framework */; };
+		5FEAE172199DA29700514251 /* BookEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE171199DA29700514251 /* BookEditViewController.m */; };
+		5FEAE175199DD3A500514251 /* BookAdvanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE174199DD3A500514251 /* BookAdvanceViewController.m */; };
+		5FEAE178199DDA6000514251 /* BookWeixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE177199DDA6000514251 /* BookWeixinViewController.m */; };
+		5FEAE17B199DEEDB00514251 /* BookPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE17A199DEEDB00514251 /* BookPicViewController.m */; };
 		5FEF8B0919873EEC006E350C /* ImageViewFromUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF8B0819873EEC006E350C /* ImageViewFromUrl.m */; };
 		5FF6CD1E1988987D00654304 /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6CD1D1988987D00654304 /* Function.m */; };
 		5FFA1C3F198611BA00F5A702 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA1C3E198611BA00F5A702 /* Api.m */; };
@@ -202,6 +207,8 @@
 		5F0084B71974099300946FB2 /* CommonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonProtocol.h; path = common/delegate/CommonProtocol.h; sourceTree = "<group>"; };
 		5F0084B8197410C100946FB2 /* AlbumPicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumPicListViewController.h; path = view/AlbumPicListViewController.h; sourceTree = "<group>"; };
 		5F0084B9197410C100946FB2 /* AlbumPicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumPicListViewController.m; path = view/AlbumPicListViewController.m; sourceTree = "<group>"; };
+		5F0BAFA419A04BB600E81F4D /* BookPicEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookPicEditViewController.h; path = view/BookPicEditViewController.h; sourceTree = "<group>"; };
+		5F0BAFA519A04BB600E81F4D /* BookPicEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookPicEditViewController.m; path = view/BookPicEditViewController.m; sourceTree = "<group>"; };
 		5F0FA5631973851A008E138E /* AlbumNEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumNEditViewController.h; path = view/AlbumNEditViewController.h; sourceTree = "<group>"; };
 		5F0FA5641973851A008E138E /* AlbumNEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumNEditViewController.m; path = view/AlbumNEditViewController.m; sourceTree = "<group>"; };
 		5F0FA5661973C2F9008E138E /* DescEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DescEditViewController.h; path = view/DescEditViewController.h; sourceTree = "<group>"; };
@@ -412,6 +419,14 @@
 		5FE4D7D8196BCC0400B17A07 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		5FE4D7DA196BCC0B00B17A07 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5FE4D7DC196BCC1000B17A07 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5FEAE170199DA29700514251 /* BookEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookEditViewController.h; path = view/BookEditViewController.h; sourceTree = "<group>"; };
+		5FEAE171199DA29700514251 /* BookEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookEditViewController.m; path = view/BookEditViewController.m; sourceTree = "<group>"; };
+		5FEAE173199DD3A500514251 /* BookAdvanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookAdvanceViewController.h; path = view/BookAdvanceViewController.h; sourceTree = "<group>"; };
+		5FEAE174199DD3A500514251 /* BookAdvanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookAdvanceViewController.m; path = view/BookAdvanceViewController.m; sourceTree = "<group>"; };
+		5FEAE176199DDA6000514251 /* BookWeixinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookWeixinViewController.h; path = view/BookWeixinViewController.h; sourceTree = "<group>"; };
+		5FEAE177199DDA6000514251 /* BookWeixinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookWeixinViewController.m; path = view/BookWeixinViewController.m; sourceTree = "<group>"; };
+		5FEAE179199DEEDB00514251 /* BookPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookPicViewController.h; path = view/BookPicViewController.h; sourceTree = "<group>"; };
+		5FEAE17A199DEEDB00514251 /* BookPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookPicViewController.m; path = view/BookPicViewController.m; sourceTree = "<group>"; };
 		5FEF8B0719873EEC006E350C /* ImageViewFromUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewFromUrl.h; path = icon/ImageViewFromUrl.h; sourceTree = "<group>"; };
 		5FEF8B0819873EEC006E350C /* ImageViewFromUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewFromUrl.m; path = icon/ImageViewFromUrl.m; sourceTree = "<group>"; };
 		5FF6CD1C1988987D00654304 /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Function.h; path = common/Function.h; sourceTree = "<group>"; };
@@ -753,6 +768,16 @@
 			children = (
 				5FD17008199C7EF60091A916 /* BookViewController.h */,
 				5FD17009199C7EF60091A916 /* BookViewController.m */,
+				5FEAE170199DA29700514251 /* BookEditViewController.h */,
+				5FEAE171199DA29700514251 /* BookEditViewController.m */,
+				5FEAE173199DD3A500514251 /* BookAdvanceViewController.h */,
+				5FEAE174199DD3A500514251 /* BookAdvanceViewController.m */,
+				5FEAE176199DDA6000514251 /* BookWeixinViewController.h */,
+				5FEAE177199DDA6000514251 /* BookWeixinViewController.m */,
+				5FEAE179199DEEDB00514251 /* BookPicViewController.h */,
+				5FEAE17A199DEEDB00514251 /* BookPicViewController.m */,
+				5F0BAFA419A04BB600E81F4D /* BookPicEditViewController.h */,
+				5F0BAFA519A04BB600E81F4D /* BookPicEditViewController.m */,
 			);
 			name = Book;
 			sourceTree = "<group>";
@@ -1201,8 +1226,10 @@
 				5F19FD6619594D1100143FCE /* Reachability.m in Sources */,
 				5FDD9AB319949C5400D9E816 /* Comm_Observe.m in Sources */,
 				5FDB1171195D38E100F3E370 /* AlbumPicEditViewController.m in Sources */,
+				5FEAE175199DD3A500514251 /* BookAdvanceViewController.m in Sources */,
 				5F19FD3F19592A9300143FCE /* UIView+Extension.m in Sources */,
 				5F19FD431959482000143FCE /* Http.m in Sources */,
+				5FEAE17B199DEEDB00514251 /* BookPicViewController.m in Sources */,
 				5F19FD3B19592A9300143FCE /* MJRefreshFooterView.m in Sources */,
 				5FBF26831957F97000A587D6 /* AlbumViewController.m in Sources */,
 				5F34168E1989E3CC00EEAA1F /* SettingUserInfoViewController.m in Sources */,
@@ -1228,7 +1255,9 @@
 				5FE44A9F195BF177007E51E2 /* PECropView.m in Sources */,
 				5FE44A9E195BF177007E51E2 /* PECropRectView.m in Sources */,
 				5F19FD3C19592A9300143FCE /* MJRefreshHeaderView.m in Sources */,
+				5FEAE178199DDA6000514251 /* BookWeixinViewController.m in Sources */,
 				5FE44AA2195BF177007E51E2 /* PEResizeControl.m in Sources */,
+				5F0BAFA619A04BB600E81F4D /* BookPicEditViewController.m in Sources */,
 				5F19FD6219594D1100143FCE /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				5FE44AA3195BF177007E51E2 /* UIImage+PECrop.m in Sources */,
 				5FDB420C1975541B00C94840 /* UserMessageViewController.m in Sources */,
@@ -1253,6 +1282,7 @@
 				5F19FD3919592A9300143FCE /* MJRefreshBaseView.m in Sources */,
 				5F0FA5681973C2F9008E138E /* DescEditViewController.m in Sources */,
 				5F0084B21974068200946FB2 /* Const.m in Sources */,
+				5FEAE172199DA29700514251 /* BookEditViewController.m in Sources */,
 				5F221AC919512CE4009F96DE /* main.m in Sources */,
 				5FFA1C3F198611BA00F5A702 /* Api.m in Sources */,
 				5FF6CD1E1988987D00654304 /* Function.m in Sources */,

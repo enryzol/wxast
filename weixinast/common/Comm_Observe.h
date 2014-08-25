@@ -15,5 +15,9 @@
 
 @property NSString *AlbumListReflush;
 @property NSString *AlbumPicListReflush;
+@property NSString *BookEditViewControllerReflush;
+@property NSString *BookPicViewControllerReflush;
+
+@property BOOL LoginStatus ;
 
 @end

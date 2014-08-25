@@ -60,9 +60,6 @@
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
     [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
     
-    //[[Comm_Observe sharedManager] addObserver:self forKeyPath:@"AlbumListReflush" options:NSKeyValueObservingOptionNew context:nil];
-    
-    
     //Observer
     commAction = [[CommAction alloc] init];
     [commAction ObserverKey:@"AlbumListReflush" Callback:^(NSString *Key) {
@@ -88,33 +85,29 @@
 
 -(void)loadDataFromServer{
     
-    
-    
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/alist/?LToken=%@",[Api LToken]];
-    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:nil httpMethod:@"GET" ssl:YES];
     
-    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+    [[Function sharedManager] Post:url Params:nil CompletionHandler:^(MKNetworkOperation *completed) {
         
-        id json = [completedOperation responseJSON];
+        id json = [completed responseJSON];
         
         if(TableViewData == nil){
             TableViewData = [[NSMutableArray alloc] init];
         }
         
-        TableViewData = json;
-        
-        NSLog(@"AlbumViewController - loadDataFromServer - %@" , [completedOperation responseString]);
-        
-        [self.abTableView reloadData];
-        [self.abTableView headerEndRefreshing];
-        
-    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        if([[Function sharedManager] CheckJSONNull:json[@"list"]]){
+            TableViewData = json[@"list"];
+            
+            [self.abTableView reloadData];
+            
+        }
         
         [self.abTableView headerEndRefreshing];
+        [Api CheckLoginStatus:self];
         
+    } ErrorHander:^(NSError *error) {
+        [self.abTableView headerEndRefreshing];
     }];
-    
-    [ApplicationDelegate.Engin enqueueOperation:op];
     
 }
 
@@ -126,7 +119,6 @@
 
 -(void)footerReFreshing{
     [self.abTableView footerEndRefreshing];
-    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -156,7 +148,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"编辑",@"预览",@"分享",@"关闭",@"删除", nil];
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"编辑",@"预览",@"分享",@"删除", nil];
     [as setTag:indexPath.row];
     [as showInView:[UIApplication sharedApplication].keyWindow];
 }
@@ -169,7 +161,7 @@
     
     NSString *title = [NSString stringWithFormat:@"'%@'删除以后将无法还原",[[TableViewData objectAtIndex:[actionSheet tag]] objectForKey:@"title"]];
     
-    if(buttonIndex == 4){
+    if(buttonIndex == 3){
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"正在删除图集" message:title delegate:self cancelButtonTitle:@"暂不删除" otherButtonTitles:@"立即删除", nil];
         
@@ -251,8 +243,8 @@
                                 }
                                 else if (state == SSResponseStateFail)
                                 {
-                                    NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
-                                    [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"分享成功" description:@"" type:TWMessageBarMessageTypeError];
+                                    //NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
+                                    [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"分享失败" description:@"" type:TWMessageBarMessageTypeError];
                                 }
                             }];
 }
@@ -269,22 +261,15 @@
     
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/Add/?LToken=%@",[Api LToken]];
     
-    MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:nil httpMethod:@"GET" ssl:YES];
     
-    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
-        
+    [[Function sharedManager] Post:url Params:nil Message:@"正在创建新图集" CompletionHandler:^(MKNetworkOperation *completed) {
         [[Function sharedManager] AlertViewHide];
         [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"创建成功" description:@"图集已被新建" type:TWMessageBarMessageTypeSuccess duration:2.0f];
         [self.abTableView headerBeginRefreshing];
-        
-    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
-        
+    } ErrorHander:^(NSError *error) {
         [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"创建失败" description:@"无法连接至服务器" type:TWMessageBarMessageTypeError duration:2.0f];
         [[Function sharedManager] AlertViewHide];
     }];
-    
-    [[Function sharedManager] AlertViewShow:@"正在创建新图集"];
-    [ApplicationDelegate.Engin enqueueOperation:op];
     
     
 }

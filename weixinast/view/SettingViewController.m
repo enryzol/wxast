@@ -34,7 +34,7 @@
     // Do any additional setup after loading the view.
     NSLog(@"viewDidLoad");
     
-    
+    [Api CheckLoginStatus:self];
 }
 
 - (void)didReceiveMemoryWarning
