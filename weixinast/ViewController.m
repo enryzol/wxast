@@ -133,11 +133,11 @@
 -(void)openRegView{
     
 
-    RegController *vw = [self.storyboard instantiateViewControllerWithIdentifier:@"RegController"];
+    //RegController *vw = [self.storyboard instantiateViewControllerWithIdentifier:@"RegController"];
     
-    vw.modalPresentationStyle = UIModalPresentationFormSheet;
+    //vw.modalPresentationStyle = UIModalPresentationFormSheet;
     
-    [self presentViewController:vw animated:YES completion:^{}];
+    //[self presentViewController:vw animated:YES completion:^{}];
     
 }
 
