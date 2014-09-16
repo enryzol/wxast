@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *imgview;
 @property (weak, nonatomic) IBOutlet UINavigationBar *NavBar;
 @property (weak, nonatomic) IBOutlet ImageViewFromUrl *ImagePreView;
+@property (weak, nonatomic) IBOutlet UIButton *selectButton;
 
 @property (weak, nonatomic) NSDictionary *PictureInfo;
 @property (weak, nonatomic) NSString *beid;

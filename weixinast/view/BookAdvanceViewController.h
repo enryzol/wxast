@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *Endtime;
 @property (weak, nonatomic) IBOutlet UITextField *CountPerTime;
 @property (weak, nonatomic) IBOutlet UISwitch *UserBookTime;
+@property (weak, nonatomic) IBOutlet UITextField *BookContact;
 
 
 - (IBAction)bgTap:(id)sender;

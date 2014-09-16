@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F0084B21974068200946FB2 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0084B11974068200946FB2 /* Const.m */; };
 		5F0084BA197410C100946FB2 /* AlbumPicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0084B9197410C100946FB2 /* AlbumPicListViewController.m */; };
+		5F025A7619B58E8600E12306 /* BookDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F025A7519B58E8600E12306 /* BookDataViewController.m */; };
 		5F0BAFA619A04BB600E81F4D /* BookPicEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BAFA519A04BB600E81F4D /* BookPicEditViewController.m */; };
 		5F0FA5651973851A008E138E /* AlbumNEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA5641973851A008E138E /* AlbumNEditViewController.m */; };
 		5F0FA5681973C2F9008E138E /* DescEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FA5671973C2F9008E138E /* DescEditViewController.m */; };
@@ -68,6 +69,7 @@
 		5FD2C2B9195A5D9900E4DB3D /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2C2B1195A5D9900E4DB3D /* icon-success@2x.png */; };
 		5FD2C2BA195A5D9900E4DB3D /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C2B3195A5D9900E4DB3D /* TWMessageBarManager.m */; };
 		5FD2C2BD195A6A9D00E4DB3D /* AlbumEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2C2BC195A6A9D00E4DB3D /* AlbumEditViewController.m */; };
+		5FD2E02519C032C1000DE075 /* ico_trash_24wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2E02419C032C1000DE075 /* ico_trash_24wh.png */; };
 		5FD43BBB196F7DC500AE8DFC /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD43BBA196F7DC500AE8DFC /* libiconv.dylib */; };
 		5FD62386198B633E00961F71 /* SettingPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD62385198B633E00961F71 /* SettingPasswordViewController.m */; };
 		5FDA615E198F1EC500FE44FD /* UserBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA615D198F1EC500FE44FD /* UserBlockViewController.m */; };
@@ -162,6 +164,17 @@
 		5FEAE175199DD3A500514251 /* BookAdvanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE174199DD3A500514251 /* BookAdvanceViewController.m */; };
 		5FEAE178199DDA6000514251 /* BookWeixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE177199DDA6000514251 /* BookWeixinViewController.m */; };
 		5FEAE17B199DEEDB00514251 /* BookPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE17A199DEEDB00514251 /* BookPicViewController.m */; };
+		5FEBCAB319B6BC0C003AF913 /* BookDataEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEBCAB219B6BC0C003AF913 /* BookDataEditViewController.m */; };
+		5FEC22C019AB0D7700DDF0C4 /* QBAssetsCollectionCheckmarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22AD19AB0D7700DDF0C4 /* QBAssetsCollectionCheckmarkView.m */; };
+		5FEC22C119AB0D7700DDF0C4 /* QBAssetsCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22AF19AB0D7700DDF0C4 /* QBAssetsCollectionFooterView.m */; };
+		5FEC22C219AB0D7700DDF0C4 /* QBAssetsCollectionOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22B119AB0D7700DDF0C4 /* QBAssetsCollectionOverlayView.m */; };
+		5FEC22C319AB0D7700DDF0C4 /* QBAssetsCollectionVideoIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22B319AB0D7700DDF0C4 /* QBAssetsCollectionVideoIndicatorView.m */; };
+		5FEC22C419AB0D7700DDF0C4 /* QBAssetsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22B519AB0D7700DDF0C4 /* QBAssetsCollectionViewCell.m */; };
+		5FEC22C519AB0D7700DDF0C4 /* QBAssetsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22B719AB0D7700DDF0C4 /* QBAssetsCollectionViewController.m */; };
+		5FEC22C619AB0D7700DDF0C4 /* QBAssetsCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22B919AB0D7700DDF0C4 /* QBAssetsCollectionViewLayout.m */; };
+		5FEC22C719AB0D7700DDF0C4 /* QBImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22BB19AB0D7700DDF0C4 /* QBImagePickerController.m */; };
+		5FEC22C819AB0D7700DDF0C4 /* QBImagePickerGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22BD19AB0D7700DDF0C4 /* QBImagePickerGroupCell.m */; };
+		5FEC22C919AB0D7700DDF0C4 /* QBImagePickerThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22BF19AB0D7700DDF0C4 /* QBImagePickerThumbnailView.m */; };
 		5FEF8B0919873EEC006E350C /* ImageViewFromUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF8B0819873EEC006E350C /* ImageViewFromUrl.m */; };
 		5FF6CD1E1988987D00654304 /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6CD1D1988987D00654304 /* Function.m */; };
 		5FFA1C3F198611BA00F5A702 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA1C3E198611BA00F5A702 /* Api.m */; };
@@ -207,6 +220,8 @@
 		5F0084B71974099300946FB2 /* CommonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonProtocol.h; path = common/delegate/CommonProtocol.h; sourceTree = "<group>"; };
 		5F0084B8197410C100946FB2 /* AlbumPicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumPicListViewController.h; path = view/AlbumPicListViewController.h; sourceTree = "<group>"; };
 		5F0084B9197410C100946FB2 /* AlbumPicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumPicListViewController.m; path = view/AlbumPicListViewController.m; sourceTree = "<group>"; };
+		5F025A7419B58E8600E12306 /* BookDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDataViewController.h; path = view/BookDataViewController.h; sourceTree = "<group>"; };
+		5F025A7519B58E8600E12306 /* BookDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDataViewController.m; path = view/BookDataViewController.m; sourceTree = "<group>"; };
 		5F0BAFA419A04BB600E81F4D /* BookPicEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookPicEditViewController.h; path = view/BookPicEditViewController.h; sourceTree = "<group>"; };
 		5F0BAFA519A04BB600E81F4D /* BookPicEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookPicEditViewController.m; path = view/BookPicEditViewController.m; sourceTree = "<group>"; };
 		5F0FA5631973851A008E138E /* AlbumNEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumNEditViewController.h; path = view/AlbumNEditViewController.h; sourceTree = "<group>"; };
@@ -306,6 +321,7 @@
 		5FD2C2B3195A5D9900E4DB3D /* TWMessageBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMessageBarManager.m; sourceTree = "<group>"; };
 		5FD2C2BB195A6A9D00E4DB3D /* AlbumEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumEditViewController.h; path = view/AlbumEditViewController.h; sourceTree = "<group>"; };
 		5FD2C2BC195A6A9D00E4DB3D /* AlbumEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumEditViewController.m; path = view/AlbumEditViewController.m; sourceTree = "<group>"; };
+		5FD2E02419C032C1000DE075 /* ico_trash_24wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_trash_24wh.png; sourceTree = "<group>"; };
 		5FD43BBA196F7DC500AE8DFC /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		5FD62384198B633E00961F71 /* SettingPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingPasswordViewController.h; path = view/SettingPasswordViewController.h; sourceTree = "<group>"; };
 		5FD62385198B633E00961F71 /* SettingPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingPasswordViewController.m; path = view/SettingPasswordViewController.m; sourceTree = "<group>"; };
@@ -427,6 +443,28 @@
 		5FEAE177199DDA6000514251 /* BookWeixinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookWeixinViewController.m; path = view/BookWeixinViewController.m; sourceTree = "<group>"; };
 		5FEAE179199DEEDB00514251 /* BookPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookPicViewController.h; path = view/BookPicViewController.h; sourceTree = "<group>"; };
 		5FEAE17A199DEEDB00514251 /* BookPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookPicViewController.m; path = view/BookPicViewController.m; sourceTree = "<group>"; };
+		5FEBCAB119B6BC0C003AF913 /* BookDataEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDataEditViewController.h; path = view/BookDataEditViewController.h; sourceTree = "<group>"; };
+		5FEBCAB219B6BC0C003AF913 /* BookDataEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDataEditViewController.m; path = view/BookDataEditViewController.m; sourceTree = "<group>"; };
+		5FEC22AC19AB0D7700DDF0C4 /* QBAssetsCollectionCheckmarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetsCollectionCheckmarkView.h; sourceTree = "<group>"; };
+		5FEC22AD19AB0D7700DDF0C4 /* QBAssetsCollectionCheckmarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAssetsCollectionCheckmarkView.m; sourceTree = "<group>"; };
+		5FEC22AE19AB0D7700DDF0C4 /* QBAssetsCollectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetsCollectionFooterView.h; sourceTree = "<group>"; };
+		5FEC22AF19AB0D7700DDF0C4 /* QBAssetsCollectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAssetsCollectionFooterView.m; sourceTree = "<group>"; };
+		5FEC22B019AB0D7700DDF0C4 /* QBAssetsCollectionOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetsCollectionOverlayView.h; sourceTree = "<group>"; };
+		5FEC22B119AB0D7700DDF0C4 /* QBAssetsCollectionOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAssetsCollectionOverlayView.m; sourceTree = "<group>"; };
+		5FEC22B219AB0D7700DDF0C4 /* QBAssetsCollectionVideoIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetsCollectionVideoIndicatorView.h; sourceTree = "<group>"; };
+		5FEC22B319AB0D7700DDF0C4 /* QBAssetsCollectionVideoIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAssetsCollectionVideoIndicatorView.m; sourceTree = "<group>"; };
+		5FEC22B419AB0D7700DDF0C4 /* QBAssetsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetsCollectionViewCell.h; sourceTree = "<group>"; };
+		5FEC22B519AB0D7700DDF0C4 /* QBAssetsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAssetsCollectionViewCell.m; sourceTree = "<group>"; };
+		5FEC22B619AB0D7700DDF0C4 /* QBAssetsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetsCollectionViewController.h; sourceTree = "<group>"; };
+		5FEC22B719AB0D7700DDF0C4 /* QBAssetsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAssetsCollectionViewController.m; sourceTree = "<group>"; };
+		5FEC22B819AB0D7700DDF0C4 /* QBAssetsCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetsCollectionViewLayout.h; sourceTree = "<group>"; };
+		5FEC22B919AB0D7700DDF0C4 /* QBAssetsCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAssetsCollectionViewLayout.m; sourceTree = "<group>"; };
+		5FEC22BA19AB0D7700DDF0C4 /* QBImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerController.h; sourceTree = "<group>"; };
+		5FEC22BB19AB0D7700DDF0C4 /* QBImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerController.m; sourceTree = "<group>"; };
+		5FEC22BC19AB0D7700DDF0C4 /* QBImagePickerGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerGroupCell.h; sourceTree = "<group>"; };
+		5FEC22BD19AB0D7700DDF0C4 /* QBImagePickerGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerGroupCell.m; sourceTree = "<group>"; };
+		5FEC22BE19AB0D7700DDF0C4 /* QBImagePickerThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerThumbnailView.h; sourceTree = "<group>"; };
+		5FEC22BF19AB0D7700DDF0C4 /* QBImagePickerThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerThumbnailView.m; sourceTree = "<group>"; };
 		5FEF8B0719873EEC006E350C /* ImageViewFromUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewFromUrl.h; path = icon/ImageViewFromUrl.h; sourceTree = "<group>"; };
 		5FEF8B0819873EEC006E350C /* ImageViewFromUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewFromUrl.m; path = icon/ImageViewFromUrl.m; sourceTree = "<group>"; };
 		5FF6CD1C1988987D00654304 /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Function.h; path = common/Function.h; sourceTree = "<group>"; };
@@ -466,10 +504,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE4D7D9196BCC0400B17A07 /* AssetsLibrary.framework in Frameworks */,
 				5FD43BBB196F7DC500AE8DFC /* libiconv.dylib in Frameworks */,
 				5FE4D7DD196BCC1000B17A07 /* MessageUI.framework in Frameworks */,
 				5FE4D7DB196BCC0B00B17A07 /* AddressBook.framework in Frameworks */,
-				5FE4D7D9196BCC0400B17A07 /* AssetsLibrary.framework in Frameworks */,
 				5FE4039F196C12B400CBB434 /* libSinaWeiboSDK.a in Frameworks */,
 				5FE4D7D7196BCBFD00B17A07 /* CoreText.framework in Frameworks */,
 				5FE4039C196C12B400CBB434 /* ShareSDKCoreService.framework in Frameworks */,
@@ -538,6 +576,7 @@
 		5F19FD26195929EB00143FCE /* plugin */ = {
 			isa = PBXGroup;
 			children = (
+				5FEC22AB19AB0D7700DDF0C4 /* QBImagePicker */,
 				5FE4D72A196BC7A400B17A07 /* ShareSDK */,
 				5FE44A92195BF177007E51E2 /* PEPhotoCropEditor */,
 				5FD2C2AA195A5D9900E4DB3D /* TWMessageBarManager */,
@@ -778,6 +817,10 @@
 				5FEAE17A199DEEDB00514251 /* BookPicViewController.m */,
 				5F0BAFA419A04BB600E81F4D /* BookPicEditViewController.h */,
 				5F0BAFA519A04BB600E81F4D /* BookPicEditViewController.m */,
+				5F025A7419B58E8600E12306 /* BookDataViewController.h */,
+				5F025A7519B58E8600E12306 /* BookDataViewController.m */,
+				5FEBCAB119B6BC0C003AF913 /* BookDataEditViewController.h */,
+				5FEBCAB219B6BC0C003AF913 /* BookDataEditViewController.m */,
 			);
 			name = Book;
 			sourceTree = "<group>";
@@ -898,6 +941,7 @@
 				5FE29DAF196FD9A600E51307 /* ico_list_100w.png */,
 				5FE29DB0196FD9A600E51307 /* ico_mgs_100w.png */,
 				5FE29DB1196FD9A600E51307 /* ico_mgsbox_100w.png */,
+				5FD2E02419C032C1000DE075 /* ico_trash_24wh.png */,
 				5FE29DB2196FD9A600E51307 /* ico_mgsbox_red_100w.png */,
 				5FE29DB3196FD9A600E51307 /* ico_pw2_16w.png */,
 				5FE29DB4196FD9A600E51307 /* ico_pw_16w.png */,
@@ -1037,6 +1081,34 @@
 				5FE4036B196C12B400CBB434 /* ShareSDK */,
 			);
 			name = ShareSDK;
+			sourceTree = "<group>";
+		};
+		5FEC22AB19AB0D7700DDF0C4 /* QBImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				5FEC22AC19AB0D7700DDF0C4 /* QBAssetsCollectionCheckmarkView.h */,
+				5FEC22AD19AB0D7700DDF0C4 /* QBAssetsCollectionCheckmarkView.m */,
+				5FEC22AE19AB0D7700DDF0C4 /* QBAssetsCollectionFooterView.h */,
+				5FEC22AF19AB0D7700DDF0C4 /* QBAssetsCollectionFooterView.m */,
+				5FEC22B019AB0D7700DDF0C4 /* QBAssetsCollectionOverlayView.h */,
+				5FEC22B119AB0D7700DDF0C4 /* QBAssetsCollectionOverlayView.m */,
+				5FEC22B219AB0D7700DDF0C4 /* QBAssetsCollectionVideoIndicatorView.h */,
+				5FEC22B319AB0D7700DDF0C4 /* QBAssetsCollectionVideoIndicatorView.m */,
+				5FEC22B419AB0D7700DDF0C4 /* QBAssetsCollectionViewCell.h */,
+				5FEC22B519AB0D7700DDF0C4 /* QBAssetsCollectionViewCell.m */,
+				5FEC22B619AB0D7700DDF0C4 /* QBAssetsCollectionViewController.h */,
+				5FEC22B719AB0D7700DDF0C4 /* QBAssetsCollectionViewController.m */,
+				5FEC22B819AB0D7700DDF0C4 /* QBAssetsCollectionViewLayout.h */,
+				5FEC22B919AB0D7700DDF0C4 /* QBAssetsCollectionViewLayout.m */,
+				5FEC22BA19AB0D7700DDF0C4 /* QBImagePickerController.h */,
+				5FEC22BB19AB0D7700DDF0C4 /* QBImagePickerController.m */,
+				5FEC22BC19AB0D7700DDF0C4 /* QBImagePickerGroupCell.h */,
+				5FEC22BD19AB0D7700DDF0C4 /* QBImagePickerGroupCell.m */,
+				5FEC22BE19AB0D7700DDF0C4 /* QBImagePickerThumbnailView.h */,
+				5FEC22BF19AB0D7700DDF0C4 /* QBImagePickerThumbnailView.m */,
+			);
+			name = QBImagePicker;
+			path = lib/QBImagePicker;
 			sourceTree = "<group>";
 		};
 		5FFD485B1963B34F00B27054 /* Class */ = {
@@ -1201,6 +1273,7 @@
 				5FD2C2B7195A5D9900E4DB3D /* icon-info@2x.png in Resources */,
 				5FE29DD3196FD9A600E51307 /* ico_mgs_100w.png in Resources */,
 				8C5A1EF81999A6350088A54B /* v2-ico-list-set-130wh.png in Resources */,
+				5FD2E02519C032C1000DE075 /* ico_trash_24wh.png in Resources */,
 				8C5A1EF91999A6350088A54B /* v2-ico-list-wechat-130wh.png in Resources */,
 				8C5A1EED1999A1DD0088A54B /* v2-ico-list-wechat-130wh.png in Resources */,
 				5FE29DC5196FD9A600E51307 /* ico_arrowleft_100w.png in Resources */,
@@ -1229,6 +1302,8 @@
 				5FEAE175199DD3A500514251 /* BookAdvanceViewController.m in Sources */,
 				5F19FD3F19592A9300143FCE /* UIView+Extension.m in Sources */,
 				5F19FD431959482000143FCE /* Http.m in Sources */,
+				5F025A7619B58E8600E12306 /* BookDataViewController.m in Sources */,
+				5FEC22C319AB0D7700DDF0C4 /* QBAssetsCollectionVideoIndicatorView.m in Sources */,
 				5FEAE17B199DEEDB00514251 /* BookPicViewController.m in Sources */,
 				5F19FD3B19592A9300143FCE /* MJRefreshFooterView.m in Sources */,
 				5FBF26831957F97000A587D6 /* AlbumViewController.m in Sources */,
@@ -1242,21 +1317,27 @@
 				5F19FD3E19592A9300143FCE /* UIScrollView+MJRefresh.m in Sources */,
 				5FD1700A199C7EF60091A916 /* BookViewController.m in Sources */,
 				5FDA6161198F5B9700FE44FD /* Func_AlertComfirm.m in Sources */,
+				5FEC22C719AB0D7700DDF0C4 /* QBImagePickerController.m in Sources */,
 				5FDA615E198F1EC500FE44FD /* UserBlockViewController.m in Sources */,
 				5F341694198A1A6700EEAA1F /* Func_PickerView.m in Sources */,
 				5F221AD319512CE4009F96DE /* ViewController.m in Sources */,
 				5F19FD6119594D1100143FCE /* NSString+MKNetworkKitAdditions.m in Sources */,
 				5FDCEEB61953D4BF00057CB5 /* ButtonHomeNav.m in Sources */,
 				5F0FA5651973851A008E138E /* AlbumNEditViewController.m in Sources */,
+				5FEC22C819AB0D7700DDF0C4 /* QBImagePickerGroupCell.m in Sources */,
 				5F19FD7519596AD300143FCE /* AlbumTableViewCell.m in Sources */,
 				5F34168B1989E0C400EEAA1F /* SettingPushViewController.m in Sources */,
+				5FEC22C019AB0D7700DDF0C4 /* QBAssetsCollectionCheckmarkView.m in Sources */,
 				5F19FD3A19592A9300143FCE /* MJRefreshConst.m in Sources */,
 				5FD2C2BA195A5D9900E4DB3D /* TWMessageBarManager.m in Sources */,
 				5FE44A9F195BF177007E51E2 /* PECropView.m in Sources */,
 				5FE44A9E195BF177007E51E2 /* PECropRectView.m in Sources */,
 				5F19FD3C19592A9300143FCE /* MJRefreshHeaderView.m in Sources */,
+				5FEBCAB319B6BC0C003AF913 /* BookDataEditViewController.m in Sources */,
+				5FEC22C519AB0D7700DDF0C4 /* QBAssetsCollectionViewController.m in Sources */,
 				5FEAE178199DDA6000514251 /* BookWeixinViewController.m in Sources */,
 				5FE44AA2195BF177007E51E2 /* PEResizeControl.m in Sources */,
+				5FEC22C219AB0D7700DDF0C4 /* QBAssetsCollectionOverlayView.m in Sources */,
 				5F0BAFA619A04BB600E81F4D /* BookPicEditViewController.m in Sources */,
 				5F19FD6219594D1100143FCE /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				5FE44AA3195BF177007E51E2 /* UIImage+PECrop.m in Sources */,
@@ -1264,8 +1345,10 @@
 				5F19FD6319594D1100143FCE /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				5FDD9AB91994AC8100D9E816 /* CommAction.m in Sources */,
 				5FD62386198B633E00961F71 /* SettingPasswordViewController.m in Sources */,
+				5FEC22C419AB0D7700DDF0C4 /* QBAssetsCollectionViewCell.m in Sources */,
 				5F0084BA197410C100946FB2 /* AlbumPicListViewController.m in Sources */,
 				5FDB420919754FD800C94840 /* UserViewController.m in Sources */,
+				5FEC22C919AB0D7700DDF0C4 /* QBImagePickerThumbnailView.m in Sources */,
 				5FDB420F19755EDE00C94840 /* UserListViewController.m in Sources */,
 				5F19FD5E19594D1100143FCE /* NSData+MKBase64.m in Sources */,
 				5F2390ED1971627A008F8911 /* NHomeViewController.m in Sources */,
@@ -1274,6 +1357,7 @@
 				5F2390F319718408008F8911 /* AlbumBoardTableViewCell.m in Sources */,
 				5F221ACD19512CE4009F96DE /* AppDelegate.m in Sources */,
 				5FDCEEB21953D07800057CB5 /* HomeViewController.m in Sources */,
+				5FEC22C619AB0D7700DDF0C4 /* QBAssetsCollectionViewLayout.m in Sources */,
 				5F3416821989D60500EEAA1F /* SettingViewController.m in Sources */,
 				5F19FD6019594D1100143FCE /* NSDictionary+RequestEncoding.m in Sources */,
 				5FE44AA0195BF177007E51E2 /* PECropViewController.m in Sources */,
@@ -1283,6 +1367,7 @@
 				5F0FA5681973C2F9008E138E /* DescEditViewController.m in Sources */,
 				5F0084B21974068200946FB2 /* Const.m in Sources */,
 				5FEAE172199DA29700514251 /* BookEditViewController.m in Sources */,
+				5FEC22C119AB0D7700DDF0C4 /* QBAssetsCollectionFooterView.m in Sources */,
 				5F221AC919512CE4009F96DE /* main.m in Sources */,
 				5FFA1C3F198611BA00F5A702 /* Api.m in Sources */,
 				5FF6CD1E1988987D00654304 /* Function.m in Sources */,

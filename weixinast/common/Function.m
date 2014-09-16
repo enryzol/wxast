@@ -37,6 +37,8 @@
 -(BOOL)CheckJSONNull:(id)Value{
     if(Value == (id)[NSNull null]){
         return false;
+    }else if([Value isKindOfClass:[NSString class]] && [Value isEqualToString:@""]){
+        return false;
     }else{
         return YES;
     }
@@ -44,10 +46,16 @@
 
 
 -(void)AlertViewShow:(NSString*)title{
-
     [alertView setTitle:title];
     [alertView show];
 }
+
+-(void)AlertViewSetTitle:(NSString*)title{
+    if(alertView != nil){
+        [alertView setTitle:title];
+    }
+}
+
 
 -(void)AlertViewHide{
     [alertView dismissWithClickedButtonIndex:0 animated:NO];
@@ -61,13 +69,7 @@
         
         id json = [completedOperation responseJSON];
         if ([self CheckJSONNull:json]) {
-            
-            NSString *loginStatus = json[@"LoginStatus"];
-            if([loginStatus isEqualToString:@"false"]){
-                NSLog(@"LoginStatus - false");
-                [[Comm_Observe sharedManager] setLoginStatus:NO];
-            }
-            
+            [self CheckLogin:json];
         }
         
         NSLog(@"%@",[completedOperation responseString]);
@@ -86,13 +88,7 @@
         
         id json = [completedOperation responseJSON];
         if ([self CheckJSONNull:json]) {
-            
-            NSString *loginStatus = json[@"LoginStatus"];
-            if([loginStatus isEqualToString:@"false"]){
-                NSLog(@"LoginStatus - false");
-                [[Comm_Observe sharedManager] setLoginStatus:NO];
-            }
-            
+            [self CheckLogin:json];
         }
         
         completionHandler(completedOperation);
@@ -113,13 +109,7 @@
         id json = [completedOperation responseJSON];
         
         if ([self CheckJSONNull:json]) {
-            
-            NSString *loginStatus = json[@"LoginStatus"];
-            if([loginStatus isEqualToString:@"false"]){
-                NSLog(@"LoginStatus - false");
-                [[Comm_Observe sharedManager] setLoginStatus:NO];
-            }
-            
+            [self CheckLogin:json];
         }
         NSLog(@"%@",json);
         completionHandler(completedOperation);
@@ -141,15 +131,8 @@
         
         id json = [completedOperation responseJSON];
         if ([self CheckJSONNull:json]) {
-            
-            NSString *loginStatus = json[@"LoginStatus"];
-            if([loginStatus isEqualToString:@"false"]){
-                NSLog(@"LoginStatus - false");
-                [[Comm_Observe sharedManager] setLoginStatus:NO];
-            }
-            
+            [self CheckLogin:json];
         }
-        
         
         completionHandler(completedOperation);
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
@@ -160,6 +143,25 @@
     [ApplicationDelegate.Engin enqueueOperation:op];
 }
 
+
+-(void)CheckLogin:(id)json{
+    
+    @try {
+        NSString *loginStatus = json[@"LoginStatus"];
+        if(loginStatus != nil && [loginStatus isEqualToString:@"false"]){
+            NSLog(@"LoginStatus - false");
+            [[Comm_Observe sharedManager] setLoginStatus:NO];
+        }
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception);
+    }
+    @finally {
+        
+    }
+    
+    
+}
 
 
 

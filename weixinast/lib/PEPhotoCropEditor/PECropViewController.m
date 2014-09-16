@@ -52,22 +52,22 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
 {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.toolbar.translucent = NO;
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+//    self.navigationController.navigationBar.translucent = NO;
+//    self.navigationController.toolbar.translucent = NO;
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self
                                                                                           action:@selector(cancel:)];
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-//                                                                                           target:self
-//                                                                                           action:@selector(done:)];
-    
-//    self.navigationController.toolbarHidden = self.toolbarHidden;
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                                               target:self
-                                                                                                               action:@selector(done:)];
+                                                                                           target:self
+                                                                                           action:@selector(done:)];
+    
+    //self.navigationController.toolbarHidden = self.toolbarHidden;
+    
+    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+    //                                                                                                           target:self
+    //                                                                                                           action:@selector(done:)];
     //[self.navigationController.navigationItem ri]
     self.cropView.image = self.image;
 }
@@ -153,7 +153,6 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
 
 - (void)cancel:(id)sender
 {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
     if ([self.delegate respondsToSelector:@selector(cropViewControllerDidCancel:)]) {
         [self.delegate cropViewControllerDidCancel:self];
     }
@@ -161,7 +160,6 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
 
 - (void)done:(id)sender
 {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
     if ([self.delegate respondsToSelector:@selector(cropViewController:didFinishCroppingImage:)]) {
         [self.delegate cropViewController:self didFinishCroppingImage:self.cropView.croppedImage];
     }

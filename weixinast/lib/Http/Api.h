@@ -13,6 +13,7 @@
 
 
 +(NSString*)LToken;
++(NSString*)Package;
 +(void)CheckLoginStatus:(id)sender;
 +(BOOL)CheckUser;
 

@@ -10,16 +10,20 @@
 #import "BookWeixinViewController.h"
 #import "BookAdvanceViewController.h"
 #import "BookPicViewController.h"
+#import "DescEditViewController.h"
 #import "Function.h"
 #import "Api.h"
 #import "Comm_Observe.h"
 #import "ImageViewFromUrl.h"
 
-@interface BookEditViewController ()
+@interface BookEditViewController ()<CommonProtocol>
 
 @end
 
-@implementation BookEditViewController
+@implementation BookEditViewController{
+    NSString *Modified;
+    NSString *Description ;
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +43,10 @@
     //self.title.text = [self.Book objectForKey:@"subject"];
     
     [self.Title setText:[self.Book objectForKey:@"subject"]];
+    [self.Desc setText:[self.Book objectForKey:@"content"]];
+    
+    
+    
     [self.ImgCover setImageWithURL:[self.Book objectForKey:@"cover"] Radius:10];
 }
 
@@ -51,6 +59,7 @@
             if ([[Function sharedManager] CheckJSONNull:json[@"info"]]) {
                 self.Book = json[@"info"];
                 [self.Title setText:[self.Book objectForKey:@"subject"]];
+                [self.Desc setText:[self.Book objectForKey:@"content"]];
                 [self.ImgCover setImageWithURL:[self.Book objectForKey:@"cover"] Radius:10];
             }
             [Api CheckLoginStatus:self];
@@ -94,9 +103,12 @@
 
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Book/SaveBook/?LToken=%@&beid=%@",[Api LToken] , [self.Book objectForKey:@"beid"]];
     
-    NSDictionary *param = @{@"title": self.Title.text,@"beid":[self.Book objectForKey:@"beid"]};
-    [[Function sharedManager] Post:url Params:param CompletionHandler:^(MKNetworkOperation *completed) {
+    NSDictionary *param = @{@"title": self.Title.text,@"beid":[self.Book objectForKey:@"beid"],@"desc":Description};
+    
+    [[Function sharedManager] Post:url Params:param Message:@"正在保存" CompletionHandler:^(MKNetworkOperation *completed) {
         NSLog(@"%@",[completed responseString]);
+    } ErrorHander:^(NSError *error) {
+        
     }];
     [self bgTap];
     
@@ -117,6 +129,23 @@
 - (IBAction)PicEdit:(id)sender {
     BookPicViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"BookPicViewController"];
     vc.Book = self.Book;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+-(void)CommonReturn:(NSString *)str Tag:(int)i{
+    self.Desc.text = str;
+    Description = str;
+}
+
+- (IBAction)Desc:(id)sender {
+    DescEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DescEditViewController"];
+    
+    vc.ContentStr = [self.Book objectForKey:@"content"];//[ stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@"{enter}"];
+    
+    vc.SubjectStr = @"预约描述";
+    vc.delegate = self;
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 

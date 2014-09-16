@@ -14,6 +14,7 @@
 + (id)sharedManager;
 
 @property NSString *AlbumListReflush;
+@property NSString *AlbumEditReflush;
 @property NSString *AlbumPicListReflush;
 @property NSString *BookEditViewControllerReflush;
 @property NSString *BookPicViewControllerReflush;

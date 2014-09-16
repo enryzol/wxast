@@ -28,6 +28,16 @@
     return LToken;
 }
 
++(NSString*)Package{
+    
+    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *Package = [userinfo objectForKey:@"user"];
+    
+    return Package[@"package"];
+    
+}
+
 +(void)CheckLoginStatus:(id)sender{
     
     UIViewController *vc = (UIViewController*)sender;

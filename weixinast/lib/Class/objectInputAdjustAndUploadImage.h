@@ -14,8 +14,6 @@
 
 -(IBAction)selectimg:(id)sender;
 
-
-
 @property (nonatomic) BOOL keepingCropAspectRatio;
 @property (nonatomic) CGRect Crop;
 

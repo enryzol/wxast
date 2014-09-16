@@ -12,6 +12,7 @@
 #import "Function.h"
 #import "Api.h"
 #import "Comm_Observe.h"
+#import "Common.h"
 
 @interface AlbumPicEditViewController ()<UITextFieldDelegate,UITextViewDelegate>
 
@@ -48,9 +49,6 @@
     
     [self.ImagePreView setImageWithURL:[self.PictureInfo objectForKey:@"img"] Radius:5];
     
-    NSLog(@"%@",self.PictureInfo);
-    
-    NSLog(@"%@",[self.PictureInfo objectForKey:@"sid"]);
     
 }
 
@@ -62,6 +60,9 @@
 
 
 -(IBAction)selectimg:(id)sender{
+    
+    [self bgTapClose:self];
+    
     [super setKeepingCropAspectRatio:NO];
     [super setCrop:CGRectMake(0, 0, 5000, 5000)];
     [super selectimg:sender];
@@ -129,13 +130,35 @@
     
 }
 
+- (void)keyboardWillShow:(NSNotification *)noti
+{
+    //键盘输入的界面调整
+    //键盘的高度
+    float height = 216.0;
+    CGRect frame = self.view.frame;
+    frame.size = CGSizeMake(frame.size.width, frame.size.height - height);
+    [UIView beginAnimations:@"Curl"context:nil];//动画开始
+    [UIView setAnimationDuration:0.30];
+    [UIView setAnimationDelegate:self];
+    [self.view setFrame:frame];
+    [UIView commitAnimations];
+    
+    
+}
 
 #pragma mark - crop view delegate
 - (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
     img = [[UIImage alloc] init];
-    img = croppedImage;
+    
+    if(croppedImage.size.width > 800){
+        img = [Common imageWithImage:croppedImage scaledToSize:CGSizeMake(500, croppedImage.size.height * 500 / croppedImage.size.width)];
+    }else{
+        img = croppedImage;
+    }
     
     [self.imgview setBackgroundImage:croppedImage forState:UIControlStateNormal] ;
 }

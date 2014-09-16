@@ -50,7 +50,7 @@
     // 判断是否支持相机
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
-        sheet  = [[UIActionSheet alloc] initWithTitle:@"选择图像" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"从电脑上传", @"从相册选择", @"拍照", nil];
+        sheet  = [[UIActionSheet alloc] initWithTitle:@"选择图像" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"拍照" ,@"从相册选择" , @"从电脑上传",@"取消", nil];
     }
     else {
         sheet = [[UIActionSheet alloc] initWithTitle:@"选择图像" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"从电脑上传",@"从相册选择", nil];
@@ -71,15 +71,15 @@
         // 判断是否支持相机
         if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             switch (buttonIndex) {
-                case 0:
+                case 3:
                     return;
-                case 1: //相册
-                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                    break;
                 case 2: //相册
                     sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
                     break;
-                case 3: //相机
+                case 1: //相册
+                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                    break;
+                case 0: //拍照
                     sourceType = UIImagePickerControllerSourceTypeCamera;
                     break;
             }
@@ -105,32 +105,36 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [picker dismissViewControllerAnimated:YES completion:^{}];
-    
-    PECropViewController *controller = [[PECropViewController alloc] init];
-    controller.delegate = self;
-    controller.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    controller.toolbarHidden = YES;
-    
-//    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-/*
-    CGFloat width  = image.size.width;
-    CGFloat height = image.size.height;
-    CGFloat length = MIN(width, height);
-*/    
-    controller.keepingCropAspectRatio = self.keepingCropAspectRatio;
-    
-    /*
-    controller.imageCropRect = CGRectMake((width - length) / 2,
-                                          (height - length) / 2,
-                                          320,
-                                          200 );
-    
-     */
-    
-    controller.imageCropRect = self.Crop;
-    
-    [self.navigationController pushViewController:controller animated:NO];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        PECropViewController *controller = [[PECropViewController alloc] init];
+        controller.delegate = self;
+        controller.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        controller.toolbarHidden = YES;
+        
+        //    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        /*
+         CGFloat width  = image.size.width;
+         CGFloat height = image.size.height;
+         CGFloat length = MIN(width, height);
+         */
+        controller.keepingCropAspectRatio = self.keepingCropAspectRatio;
+        
+        /*
+         controller.imageCropRect = CGRectMake((width - length) / 2,
+         (height - length) / 2,
+         320,
+         200 );
+         
+         */
+        
+        controller.imageCropRect = self.Crop;
+        
+        //[self.navigationController pushViewController:controller animated:NO];
+        
+        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:controller];
+        [self presentViewController:nc animated:YES completion:NULL];
+        
+    }];
     
 }
 
@@ -139,8 +143,11 @@
 
 - (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage
 {
-    [self.navigationController popViewControllerAnimated:YES];
+  //  [self.navigationController popViewControllerAnimated:YES];
  //   selectedimage = croppedImage;
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (void)cropViewControllerDidCancel:(PECropViewController *)controller{

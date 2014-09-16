@@ -38,11 +38,12 @@
     datePicker = [[UIDatePicker alloc] init];
     NSLocale *chineseLocale = [NSLocale localeWithLocaleIdentifier:@"zh_cn"];
     [datePicker setLocale:chineseLocale];
-    [datePicker setDatePickerMode:UIDatePickerModeDate];
+    [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
     [datePicker addTarget:self action:@selector(datePicker:) forControlEvents:UIControlEventValueChanged];
     
     [self.Count setText:[self.Book objectForKey:@"count"]];
     [self.CountPerTime setText:[self.Book objectForKey:@"countpretime"]];
+    [self.BookContact setText:[self.Book objectForKey:@"contact"]];
     [self.Endtime setText:[self.Book objectForKey:@"etime"]];
     self.Endtime.inputView = datePicker;
     
@@ -70,7 +71,7 @@
 
 -(void)datePicker:(UIDatePicker*)sender{
     NSDateFormatter * df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy-MM-dd"];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     [self.Endtime setText:[df stringFromDate:sender.date]];
 }
 
@@ -79,6 +80,7 @@
     [self.Endtime resignFirstResponder];
     [self.Count resignFirstResponder];
     [self.CountPerTime resignFirstResponder];
+    [self.BookContact resignFirstResponder];
 }
 
 - (IBAction)NavBarLeftButton:(id)sender{
@@ -90,6 +92,8 @@
     
     [param setValue:(self.UserBookTime.isOn)?@"1":@"0" forKey:@"UserBookTime"];
     [param setValue:self.Count.text forKey:@"Count"];
+    [param setValue:self.BookContact.text forKey:@"BookContact"];
+    
     [param setValue:self.CountPerTime.text forKey:@"CountPerTime"];
     [param setValue:self.Endtime.text forKey:@"EndTime"];
     [param setValue:[self.Book objectForKey:@"beid"] forKey:@"beid"];

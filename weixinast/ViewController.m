@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "Api.h"
 #import "Function.h"
+#import "Comm_Observe.h"
 
 #import <ShareSDK/ShareSDK.h>
 
@@ -171,6 +172,7 @@
             [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"登录失败" description:@"用户名或密码错误" type:TWMessageBarMessageTypeError duration:1.0f];
             
             return ;
+            
         }else if ([status isEqualToString:@"success"]){
             [[TWMessageBarManager sharedInstance] hideAllAnimated:NO];
             
@@ -187,6 +189,7 @@
             [userinfo setObject:User forKey:@"user"];
             [userinfo synchronize];
             
+            [[Comm_Observe sharedManager] setLoginStatus:YES];
             [self LoginSuccess];
             
         }

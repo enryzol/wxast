@@ -34,27 +34,18 @@
 }
 
 
-/* 
-#import "AppDelegate.h"
-NSString *url = [NSString stringWithFormat:@"http://lcm.appspeed.cn/mobile/group/i/Ts136918416475591/g/%d",self.pid];
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 1.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
-MKNetworkOperation *op = [[MKNetworkOperation alloc] initWithURLString:url params:nil httpMethod:@"GET"];
 
-[op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
-    
-    [completedOperation responseJSONWithCompletionHandler:^(id jsonObject) {
-        self.orderby.text = jsonObject[@"name"];
-        self.desc.text = jsonObject[@"desc"];
-        
-        self.imgview.image = [Common imageFromURL:jsonObject[@"img"]];
-    }];
-    
-} errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
-    
-}];
-
-[ApplicationDelegate.Engin enqueueOperation:op];
- */
 
 
 @end

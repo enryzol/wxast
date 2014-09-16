@@ -16,7 +16,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UITextField *Title;
-
+@property (weak, nonatomic) IBOutlet UITextField *Desc;
 @property (weak, nonatomic) IBOutlet ImageViewFromUrl *ImgCover;
 
 
@@ -26,5 +26,6 @@
 - (IBAction)AdvanceButton:(id)sender;
 - (IBAction)WeixinButton:(id)sender;
 - (IBAction)PicEdit:(id)sender;
+- (IBAction)Desc:(id)sender;
 
 @end

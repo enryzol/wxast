@@ -72,15 +72,16 @@
         
         if([[Function sharedManager] CheckJSONNull:json[@"info"]]){
             
-            
             self.Keyword.text = json[@"info"][@"keyword"];
             self.Title.text = json[@"info"][@"return"];
             [self.Desc setText:json[@"info"][@"desc"]];
 
-            [self.uploadimg setImageWithURL:json[@"info"][@"image"] Radius:3];
-            if(![json[@"info"][@"status"] isEqualToString:@"1"]){
-                [self.KeywordSwitch setOn:NO];
+            if([json[@"info"][@"status"] isEqualToString:@"1"]){
+                [self.KeywordSwitch setOn:YES];
             }
+            
+            [self.uploadimg setImageWithURL:json[@"info"][@"image"] Radius:3];
+
         }
         
     } ErrorHander:^(NSError *error) {
@@ -108,7 +109,9 @@
 
 - (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
     //[self.uploadimg setBackgroundImage:croppedImage forState:UIControlStateNormal];
     self.uploadimg.image = croppedImage;
     

@@ -41,6 +41,8 @@
     self.desc.text = [self.PictureInfo objectForKey:@"desc"];
     self.href.text = [self.PictureInfo objectForKey:@"title"];
     
+    self.desc.delegate = self;
+    self.href.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +64,7 @@
 
 
 -(IBAction)selectimg:(id)sender{
+    [self bgTapClose:self];
     [super setKeepingCropAspectRatio:NO];
     [super setCrop:CGRectMake(0, 0, 5000, 5000)];
     [super selectimg:sender];
@@ -152,6 +155,7 @@
     self.view.frame = rect;
     [UIView commitAnimations];
 }
+
 
 
 

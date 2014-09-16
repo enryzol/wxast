@@ -15,6 +15,7 @@
 
 +(UIImage*)imageFromURL:(NSString*)Url;
 
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
 
 @end

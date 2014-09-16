@@ -17,6 +17,7 @@
 #import "CommAction.h"
 #import "AlbumBoardTableViewCell.h"
 #import "BookEditViewController.h"
+#import "BookDataViewController.h"
 
 #import <ShareSDK/ShareSDK.h>
 
@@ -79,7 +80,7 @@
 -(void)loadDataFromServer{
 
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Book/alist/?LToken=%@",[Api LToken]];
-    
+    NSLog(@"%@",url);
     [[Function sharedManager] Post:url Params:nil CompletionHandler:^(MKNetworkOperation *completed) {
         id json = [completed responseJSON];
         
@@ -96,6 +97,10 @@
         [self.abTableView headerEndRefreshing];
     }];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self loadDataFromServer];
 }
 
 #pragma mark - table delegate
@@ -125,6 +130,12 @@
     AlbumBoardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.Name.text = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"subject"];
+    if( [[Function sharedManager]CheckJSONNull:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"status"]] && [[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"status"] isEqualToString:@"0"]){
+        cell.Keyword.text = @"状态：关闭";
+    }else{
+        cell.Keyword.text = @"状态：开启";
+    }
+    
     cell.uniqueID = [[TableViewData objectAtIndex:indexPath.row] objectForKey:@"cover"];
     
     [cell setImageWithURL:[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"cover"]];
@@ -133,8 +144,11 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"编辑",@"预览",@"分享",@"关闭",@"删除", nil];
+    NSString *status = @"关闭预约";
+    if([[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"status"] isEqualToString:@"0"]){
+        status = @"开启预约";
+    }
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"编辑",@"查看预约情况",@"预览",@"分享",status,@"删除",@"取消", nil];
     [as setTag:indexPath.row];
     [as showInView:[UIApplication sharedApplication].keyWindow];
 }
@@ -146,11 +160,11 @@
     
     NSString *title = [NSString stringWithFormat:@"'%@'删除以后将无法还原",[[TableViewData objectAtIndex:[actionSheet tag]] objectForKey:@"subject"]];
     
-    if(buttonIndex == 4){
+    if(buttonIndex == 5){
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"正在删除图集" message:title delegate:self cancelButtonTitle:@"暂不删除" otherButtonTitles:@"立即删除", nil];
         
-        [alert setTag: [actionSheet tag] ];
+        [alert setTag:[actionSheet tag]];
         [alert show];
         
     }else if (buttonIndex == 0){
@@ -158,11 +172,31 @@
         BookEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"BookEditViewController"];
         [self.navigationController pushViewController:vc animated:YES];
         vc.Book = [TableViewData objectAtIndex:[actionSheet tag]];
+    }else if(buttonIndex == 1){
         
-    }else if (buttonIndex == 2){
+        BookDataViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"BookDataViewController"];
+        vc.Book = [TableViewData objectAtIndex:[actionSheet tag]];
+        [self.navigationController pushViewController:vc animated:YES];
+    
+    }else if (buttonIndex == 3){
         
         [actionSheet dismissWithClickedButtonIndex:0 animated:NO];
         [self Share:actionSheet.tag];
+        
+    }else if(buttonIndex == 2){
+        
+        NSString *url = [NSString stringWithFormat:@"http://wx.o-tap.cn/mobile/bookindex/i/%@/beid/%@/",[Api Package],[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"beid"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        
+    }else if(buttonIndex == 4){
+        
+        NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Book/SetStatus/?LToken=%@",[Api LToken]];
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        [params setValue:[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"beid"] forKey:@"beid"];
+        [[Function sharedManager] Post:url Params:params CompletionHandler:^(MKNetworkOperation *completed) {
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"设置成功" description:@"" type:TWMessageBarMessageTypeInfo];
+            [self loadDataFromServer];
+        }];
         
     }
 }
@@ -197,16 +231,39 @@
 -(void)Share:(NSInteger)index{
     NSLog(@"share");
     
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"0"  ofType:@"png"];
     
-    //构造分享内容
-    id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
-                                       defaultContent:@"默认分享内容，没内容时显示"
-                                                image:[ShareSDK imageWithPath:imagePath]
-                                                title:[[TableViewData objectAtIndex:index] objectForKey:@"subject"]
-                                                  url:@"http://i.o-tap.cn/"
-                                          description:[[TableViewData objectAtIndex:index] objectForKey:@"desc"]
-                                            mediaType:SSPublishContentMediaTypeNews];
+    
+    NSString *url = [NSString stringWithFormat:@"http://wx.o-tap.cn/mobile/bookindex/i/%@/beid/%@/",[Api Package],[[TableViewData objectAtIndex:index] objectForKey:@"beid"]];
+    
+    //[ShareSDK imageWithUrl:(NSString *)]
+    NSString *Cover = [[TableViewData objectAtIndex:index] objectForKey:@"cover"];
+    
+    id<ISSContent> publishContent ;
+    
+    if([Cover isEqualToString:@""]){
+        
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"0"  ofType:@"png"];
+        //构造分享内容
+        publishContent = [ShareSDK content:@"分享内容"
+                                           defaultContent:@""
+                                                    image:[ShareSDK imageWithPath:imagePath]
+                                                    title:[[TableViewData objectAtIndex:index] objectForKey:@"subject"]
+                                                      url:url
+                                              description:[[TableViewData objectAtIndex:index] objectForKey:@"desc"]
+                                                mediaType:SSPublishContentMediaTypeNews];
+        
+    }else{
+        //构造分享内容
+        publishContent = [ShareSDK content:@"分享内容"
+                            defaultContent:@""
+                                     image:[ShareSDK imageWithUrl:Cover]
+                                     title:[[TableViewData objectAtIndex:index] objectForKey:@"subject"]
+                                       url:url
+                               description:[[TableViewData objectAtIndex:index] objectForKey:@"desc"]
+                                 mediaType:SSPublishContentMediaTypeNews];
+    }
+    
+    
     
     [ShareSDK showShareActionSheet:nil
                          shareList:nil
@@ -221,7 +278,7 @@
                                 }
                                 else if (state == SSResponseStateFail)
                                 {
-                                    //NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
+                                    NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
                                     [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"分享失败" description:@"" type:TWMessageBarMessageTypeError];
                                 }
                             }];

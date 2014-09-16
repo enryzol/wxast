@@ -35,7 +35,7 @@
  
     
     self.Subject.text = self.SubjectStr;
-    self.textarea.text = self.ContentStr;
+    self.textarea.text = [self.ContentStr stringByReplacingOccurrencesOfString: @"\\n" withString: @"\n"];
     
     
     
@@ -80,7 +80,9 @@
 
 - (IBAction)NavRightButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
-    [self.delegate CommonReturn:self.textarea.text Tag:1];
+    
+    NSString *s = [self.textarea.text stringByReplacingOccurrencesOfString: @"\n" withString: @"\r\n"];
+    [self.delegate CommonReturn:s Tag:1];
 }
 
 

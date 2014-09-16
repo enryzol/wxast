@@ -60,14 +60,14 @@
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
     [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
     
-    //Observer
-    commAction = [[CommAction alloc] init];
-    [commAction ObserverKey:@"AlbumListReflush" Callback:^(NSString *Key) {
-        if([[[Comm_Observe sharedManager] AlbumListReflush] isEqualToString:@"1"]){
-            [self loadDataFromServer];
-            [[Comm_Observe sharedManager] setAlbumListReflush:@"0"];
-        }
-    }];
+//    //Observer
+//    commAction = [[CommAction alloc] init];
+//    [commAction ObserverKey:@"AlbumListReflush" Callback:^(NSString *Key) {
+//        if([[[Comm_Observe sharedManager] AlbumListReflush] isEqualToString:@"1"]){
+//            [self loadDataFromServer];
+//            [[Comm_Observe sharedManager] setAlbumListReflush:@"0"];
+//        }
+//    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,11 +77,18 @@
 }
 
 
-- (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
-    return UIBarPositionTopAttached;
+-(void)viewDidAppear:(BOOL)animated{
+    
+    if([[[Comm_Observe sharedManager] AlbumListReflush] isEqualToString:@"1"]){
+        [self loadDataFromServer];
+        [[Comm_Observe sharedManager] setAlbumListReflush:@"0"];
+    }else{
+        [self loadDataFromServer];
+    }
+    
 }
 
-#pragma mark - load data 
+#pragma mark - load data
 
 -(void)loadDataFromServer{
     
@@ -101,6 +108,7 @@
             [self.abTableView reloadData];
             
         }
+        NSLog(@"%@",[completed responseString]);
         
         [self.abTableView headerEndRefreshing];
         [Api CheckLoginStatus:self];
@@ -179,6 +187,11 @@
         [actionSheet dismissWithClickedButtonIndex:0 animated:NO];
         [self Share:actionSheet.tag];
         
+    }else if(buttonIndex == 1){
+        
+        NSString *url = [NSString stringWithFormat:@"http://wx.o-tap.cn/mobile/album/i/%@/groupid/%@",[Api Package],[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"groupid"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        
     }
 }
 
@@ -217,16 +230,17 @@
 #pragma mark - share
 
 -(void)Share:(NSInteger)index{
-    NSLog(@"share");
     
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"0"  ofType:@"png"];
     
+    NSString *url = [NSString stringWithFormat:@"http://wx.o-tap.cn/mobile/album/i/%@/groupid/%@",[Api Package],[[TableViewData objectAtIndex:index] objectForKey:@"groupid"]];
+    
     //构造分享内容
     id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
-                                       defaultContent:@"默认分享内容，没内容时显示"
+                                       defaultContent:@""
                                                 image:[ShareSDK imageWithPath:imagePath]
                                                 title:[[TableViewData objectAtIndex:index] objectForKey:@"title"]
-                                                  url:@"http://i.o-tap.cn/"
+                                                  url:url
                                           description:[[TableViewData objectAtIndex:index] objectForKey:@"desc"]
                                             mediaType:SSPublishContentMediaTypeNews];
     
@@ -260,7 +274,6 @@
 - (IBAction)NavBarRightButton:(id)sender {
     
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/Add/?LToken=%@",[Api LToken]];
-    
     
     [[Function sharedManager] Post:url Params:nil Message:@"正在创建新图集" CompletionHandler:^(MKNetworkOperation *completed) {
         [[Function sharedManager] AlertViewHide];

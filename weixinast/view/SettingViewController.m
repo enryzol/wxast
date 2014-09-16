@@ -9,11 +9,12 @@
 #import "SettingViewController.h"
 #import "SettingPushViewController.h"
 #import "SettingUserInfoViewController.h"
+#import "DescEditViewController.h"
 #import "Function.h"
 #import "Api.h"
 
 
-@interface SettingViewController ()
+@interface SettingViewController ()<CommonProtocol>
 
 @end
 
@@ -72,6 +73,30 @@
     SettingUserInfoViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingUserInfoViewController"];
     
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)advice:(id)sender {
+    
+    DescEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DescEditViewController"];
+    vc.SubjectStr = @"意见反馈";
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+-(void)CommonReturn:(NSString *)str Tag:(int)i{
+    
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Setting/Advice/?LToken=%@",[Api LToken]];
+    NSDictionary *param = @{@"advice" : str};
+    
+    [[Function sharedManager] Post:url Params:param Message:@"正在提交您的意义建议" CompletionHandler:^(MKNetworkOperation *completed) {
+        
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"提交成功" description:@"" type:TWMessageBarMessageTypeSuccess duration:1.5f];
+        
+    } ErrorHander:^(NSError *error) {
+        
+    }];
+    
 }
 
 - (IBAction)Logout:(id)sender {

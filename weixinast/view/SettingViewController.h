@@ -15,5 +15,7 @@
 - (IBAction)MessagePush:(id)sender;
 - (IBAction)UserPush:(id)sender;
 - (IBAction)Logout:(id)sender;
+- (IBAction)advice:(id)sender;
+
 
 @end

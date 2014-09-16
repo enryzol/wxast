@@ -56,6 +56,8 @@
     
     AlbumPic = [[ImageViewFromUrl alloc] initWithFrame:CGRectMake(220, 140, 75, 75) Url:[self.Album objectForKey:@"img"] Radius:10];
     
+    AlbumPic.contentMode = UIViewContentModeScaleAspectFill;
+    
     [self.view addSubview:AlbumPic];
     
     NSLog(@"%@",Global_DescEditReturn);
@@ -69,6 +71,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    if(![[[Comm_Observe sharedManager] AlbumEditReflush] isEqualToString:@"0"]){
+        NSLog(@"AlbumEditReflush - %@",[[Comm_Observe sharedManager] AlbumEditReflush]);
+        [AlbumPic setImageWithURL:[[Comm_Observe sharedManager] AlbumEditReflush] Radius:10];
+        [[Comm_Observe sharedManager] setAlbumEditReflush:@"0"];
+    }
 }
 
 #pragma mark - load data
@@ -122,13 +132,16 @@
 
 - (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
     //[self.uploadimg setBackgroundImage:croppedImage forState:UIControlStateNormal];
     self.uploadimg.image = croppedImage;
     
     PostImgData = [[UIImage alloc] init];
     PostImgData = croppedImage;
 }
+
 #pragma mark -
 #pragma mark 解决虚拟键盘挡住UITextField的方法
 
@@ -167,7 +180,6 @@
 
 #pragma mark -
 #pragma mark 按钮动作
-
 
 - (IBAction)DescEditAction:(id)sender {
     DescEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DescEditViewController"];

@@ -1465,7 +1465,7 @@
     <resources>
         <image name="bg-btn_big.png" width="842" height="134"/>
         <image name="bg_main.png" width="960" height="834"/>
-        <image name="bg_top.png" width="960" height="240"/>
+        <image name="bg_top.png" width="640" height="160"/>
         <image name="ico_add_100w.png" width="24" height="24"/>
         <image name="ico_album_100w.png" width="100" height="100"/>
         <image name="ico_arrowleft_100w.png" width="24" height="24"/>
@@ -1493,7 +1493,7 @@
         <image name="img_mask.png" width="350" height="480"/>
         <image name="img_tmp.jpg" width="320" height="480"/>
         <image name="line_1px.png" width="700" height="1"/>
-        <image name="line_bgbottom.png" width="960" height="17"/>
+        <image name="line_bgbottom.png" width="640" height="6"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
