@@ -132,6 +132,11 @@
 
 -(void)openRegView{
     
+    
+    //
+    
+    NSString *url = [NSString stringWithFormat:@"http://dodo.o-tap.com/"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 
     //RegController *vw = [self.storyboard instantiateViewControllerWithIdentifier:@"RegController"];
     

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F221AB819512CE4009F96DE"
-               BuildableName = "&#x5fae;&#x4fe1;&#x515c;&#x515c;.app"
+               BuildableName = "&#x6a59;&#x679c;&#x515c;&#x515c;.app"
                BlueprintName = "weixinast"
                ReferencedContainer = "container:weixinast.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F221AB819512CE4009F96DE"
-            BuildableName = "&#x5fae;&#x4fe1;&#x515c;&#x515c;.app"
+            BuildableName = "&#x6a59;&#x679c;&#x515c;&#x515c;.app"
             BlueprintName = "weixinast"
             ReferencedContainer = "container:weixinast.xcodeproj">
          </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F221AB819512CE4009F96DE"
-            BuildableName = "&#x5fae;&#x4fe1;&#x515c;&#x515c;.app"
+            BuildableName = "&#x6a59;&#x679c;&#x515c;&#x515c;.app"
             BlueprintName = "weixinast"
             ReferencedContainer = "container:weixinast.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F221AB819512CE4009F96DE"
-            BuildableName = "&#x5fae;&#x4fe1;&#x515c;&#x515c;.app"
+            BuildableName = "&#x6a59;&#x679c;&#x515c;&#x515c;.app"
             BlueprintName = "weixinast"
             ReferencedContainer = "container:weixinast.xcodeproj">
          </BuildableReference>

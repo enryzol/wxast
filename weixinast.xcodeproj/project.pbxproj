@@ -75,7 +75,6 @@
 		5FDA615E198F1EC500FE44FD /* UserBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA615D198F1EC500FE44FD /* UserBlockViewController.m */; };
 		5FDA6161198F5B9700FE44FD /* Func_AlertComfirm.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA6160198F5B9700FE44FD /* Func_AlertComfirm.m */; };
 		5FDB1171195D38E100F3E370 /* AlbumPicEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */; };
-		5FDB117A195D48FF00F3E370 /* Main3.5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDB1178195D48FF00F3E370 /* Main3.5.storyboard */; };
 		5FDB420919754FD800C94840 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB420819754FD800C94840 /* UserViewController.m */; };
 		5FDB420C1975541B00C94840 /* UserMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB420B1975541B00C94840 /* UserMessageViewController.m */; };
 		5FDB420F19755EDE00C94840 /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB420E19755EDE00C94840 /* UserListViewController.m */; };
@@ -84,7 +83,6 @@
 		5FDCEEBA1953E5BB00057CB5 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCEEB91953E5BB00057CB5 /* Common.m */; };
 		5FDD9AB319949C5400D9E816 /* Comm_Observe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDD9AB219949C5400D9E816 /* Comm_Observe.m */; };
 		5FDD9AB91994AC8100D9E816 /* CommAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDD9AB81994AC8100D9E816 /* CommAction.m */; };
-		5FE29D9A196FD89A00E51307 /* Sne.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29D99196FD89A00E51307 /* Sne.storyboard */; };
 		5FE29DBF196FD9A600E51307 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29D9C196FD9A600E51307 /* 0.png */; };
 		5FE29DC0196FD9A600E51307 /* bg-btn_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29D9D196FD9A600E51307 /* bg-btn_big.png */; };
 		5FE29DC1196FD9A600E51307 /* bg_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE29D9E196FD9A600E51307 /* bg_main.png */; };
@@ -175,24 +173,20 @@
 		5FEC22C719AB0D7700DDF0C4 /* QBImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22BB19AB0D7700DDF0C4 /* QBImagePickerController.m */; };
 		5FEC22C819AB0D7700DDF0C4 /* QBImagePickerGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22BD19AB0D7700DDF0C4 /* QBImagePickerGroupCell.m */; };
 		5FEC22C919AB0D7700DDF0C4 /* QBImagePickerThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC22BF19AB0D7700DDF0C4 /* QBImagePickerThumbnailView.m */; };
+		5FEDE88819CA6F500054D301 /* Main3.5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FEDE88619CA6F500054D301 /* Main3.5.storyboard */; };
 		5FEF8B0919873EEC006E350C /* ImageViewFromUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF8B0819873EEC006E350C /* ImageViewFromUrl.m */; };
 		5FF6CD1E1988987D00654304 /* Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6CD1D1988987D00654304 /* Function.m */; };
 		5FFA1C3F198611BA00F5A702 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA1C3E198611BA00F5A702 /* Api.m */; };
 		5FFD48611963B4F400B27054 /* objectInputAdjustAndUploadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD48601963B4F400B27054 /* objectInputAdjustAndUploadImage.m */; };
 		5FFF68FD1999B68200282BC7 /* QRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFF68FC1999B68200282BC7 /* QRcodeViewController.m */; };
-		8C5A1EEA1999A1DD0088A54B /* v2-ico-list-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EE61999A1DD0088A54B /* v2-ico-list-pic-130wh.png */; };
 		8C5A1EEB1999A1DD0088A54B /* v2-ico-list-set-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EE71999A1DD0088A54B /* v2-ico-list-set-130wh.png */; };
 		8C5A1EEC1999A1DD0088A54B /* v2-ico-list-date-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EE81999A1DD0088A54B /* v2-ico-list-date-130wh.png */; };
-		8C5A1EED1999A1DD0088A54B /* v2-ico-list-wechat-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EE91999A1DD0088A54B /* v2-ico-list-wechat-130wh.png */; };
 		8C5A1EF51999A6350088A54B /* v2-ico-msg-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EEE1999A6350088A54B /* v2-ico-msg-pic-130wh.png */; };
 		8C5A1EF61999A6350088A54B /* v2-ico-user-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EEF1999A6350088A54B /* v2-ico-user-pic-130wh.png */; };
 		8C5A1EF71999A6350088A54B /* v2-ico-list-date-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF01999A6350088A54B /* v2-ico-list-date-130wh.png */; };
 		8C5A1EF81999A6350088A54B /* v2-ico-list-set-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF11999A6350088A54B /* v2-ico-list-set-130wh.png */; };
-		8C5A1EF91999A6350088A54B /* v2-ico-list-wechat-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF21999A6350088A54B /* v2-ico-list-wechat-130wh.png */; };
-		8C5A1EFA1999A6350088A54B /* v2-ico-list-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF31999A6350088A54B /* v2-ico-list-pic-130wh.png */; };
 		8C5A1EFB1999A6350088A54B /* v2-ico-point-red-30wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A1EF41999A6350088A54B /* v2-ico-point-red-30wh.png */; };
 		8C60F9DB19988BA000A81921 /* v2-logo-225wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D019988B9F00A81921 /* v2-logo-225wh.png */; };
-		8C60F9DC19988BA000A81921 /* v2-ico-list-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D119988B9F00A81921 /* v2-ico-list-pic-130wh.png */; };
 		8C60F9DD19988BA000A81921 /* v2-sline-grey-640w1h.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D219988B9F00A81921 /* v2-sline-grey-640w1h.png */; };
 		8C60F9DE19988BA000A81921 /* v2-bg-w-640w718h.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D319988BA000A81921 /* v2-bg-w-640w718h.png */; };
 		8C60F9DF19988BA000A81921 /* v2-line-g-640w6h.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C60F9D419988BA000A81921 /* v2-line-g-640w6h.png */; };
@@ -270,7 +264,7 @@
 		5F19FD6B19594D5000143FCE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5F19FD7319596AD200143FCE /* AlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumTableViewCell.h; path = icon/AlbumTableViewCell.h; sourceTree = "<group>"; };
 		5F19FD7419596AD300143FCE /* AlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumTableViewCell.m; path = icon/AlbumTableViewCell.m; sourceTree = "<group>"; };
-		5F221AB919512CE4009F96DE /* 微信兜兜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微信兜兜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F221AB919512CE4009F96DE /* 橙果兜兜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "橙果兜兜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F221ABC19512CE4009F96DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5F221ABE19512CE4009F96DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5F221AC019512CE4009F96DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -331,7 +325,6 @@
 		5FDA6160198F5B9700FE44FD /* Func_AlertComfirm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Func_AlertComfirm.m; path = common/Func_AlertComfirm.m; sourceTree = "<group>"; };
 		5FDB116F195D38E100F3E370 /* AlbumPicEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumPicEditViewController.h; path = view/AlbumPicEditViewController.h; sourceTree = "<group>"; };
 		5FDB1170195D38E100F3E370 /* AlbumPicEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumPicEditViewController.m; path = view/AlbumPicEditViewController.m; sourceTree = "<group>"; };
-		5FDB1179195D48FF00F3E370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main3.5.storyboard; sourceTree = "<group>"; };
 		5FDB420719754FD800C94840 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserViewController.h; path = view/UserViewController.h; sourceTree = "<group>"; };
 		5FDB420819754FD800C94840 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserViewController.m; path = view/UserViewController.m; sourceTree = "<group>"; };
 		5FDB420A1975541B00C94840 /* UserMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserMessageViewController.h; path = view/UserMessageViewController.h; sourceTree = "<group>"; };
@@ -348,7 +341,6 @@
 		5FDD9AB219949C5400D9E816 /* Comm_Observe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comm_Observe.m; path = common/Comm_Observe.m; sourceTree = "<group>"; };
 		5FDD9AB71994AC8100D9E816 /* CommAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommAction.h; path = common/CommAction.h; sourceTree = "<group>"; };
 		5FDD9AB81994AC8100D9E816 /* CommAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommAction.m; path = common/CommAction.m; sourceTree = "<group>"; };
-		5FE29D99196FD89A00E51307 /* Sne.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sne.storyboard; sourceTree = "<group>"; };
 		5FE29D9C196FD9A600E51307 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		5FE29D9D196FD9A600E51307 /* bg-btn_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-btn_big.png"; sourceTree = "<group>"; };
 		5FE29D9E196FD9A600E51307 /* bg_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_main.png; sourceTree = "<group>"; };
@@ -465,6 +457,7 @@
 		5FEC22BD19AB0D7700DDF0C4 /* QBImagePickerGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerGroupCell.m; sourceTree = "<group>"; };
 		5FEC22BE19AB0D7700DDF0C4 /* QBImagePickerThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerThumbnailView.h; sourceTree = "<group>"; };
 		5FEC22BF19AB0D7700DDF0C4 /* QBImagePickerThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerThumbnailView.m; sourceTree = "<group>"; };
+		5FEDE88719CA6F500054D301 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main3.5.storyboard; sourceTree = "<group>"; };
 		5FEF8B0719873EEC006E350C /* ImageViewFromUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewFromUrl.h; path = icon/ImageViewFromUrl.h; sourceTree = "<group>"; };
 		5FEF8B0819873EEC006E350C /* ImageViewFromUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewFromUrl.m; path = icon/ImageViewFromUrl.m; sourceTree = "<group>"; };
 		5FF6CD1C1988987D00654304 /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Function.h; path = common/Function.h; sourceTree = "<group>"; };
@@ -475,19 +468,14 @@
 		5FFD48601963B4F400B27054 /* objectInputAdjustAndUploadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = objectInputAdjustAndUploadImage.m; path = lib/Class/objectInputAdjustAndUploadImage.m; sourceTree = "<group>"; };
 		5FFF68FB1999B68200282BC7 /* QRcodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRcodeViewController.h; path = common/QRcodeViewController.h; sourceTree = "<group>"; };
 		5FFF68FC1999B68200282BC7 /* QRcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRcodeViewController.m; path = common/QRcodeViewController.m; sourceTree = "<group>"; };
-		8C5A1EE61999A1DD0088A54B /* v2-ico-list-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-pic-130wh.png"; sourceTree = "<group>"; };
 		8C5A1EE71999A1DD0088A54B /* v2-ico-list-set-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-set-130wh.png"; sourceTree = "<group>"; };
 		8C5A1EE81999A1DD0088A54B /* v2-ico-list-date-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-date-130wh.png"; sourceTree = "<group>"; };
-		8C5A1EE91999A1DD0088A54B /* v2-ico-list-wechat-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-wechat-130wh.png"; sourceTree = "<group>"; };
 		8C5A1EEE1999A6350088A54B /* v2-ico-msg-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-msg-pic-130wh.png"; sourceTree = "<group>"; };
 		8C5A1EEF1999A6350088A54B /* v2-ico-user-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-user-pic-130wh.png"; sourceTree = "<group>"; };
 		8C5A1EF01999A6350088A54B /* v2-ico-list-date-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-date-130wh.png"; sourceTree = "<group>"; };
 		8C5A1EF11999A6350088A54B /* v2-ico-list-set-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-set-130wh.png"; sourceTree = "<group>"; };
-		8C5A1EF21999A6350088A54B /* v2-ico-list-wechat-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-wechat-130wh.png"; sourceTree = "<group>"; };
-		8C5A1EF31999A6350088A54B /* v2-ico-list-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-pic-130wh.png"; sourceTree = "<group>"; };
 		8C5A1EF41999A6350088A54B /* v2-ico-point-red-30wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-point-red-30wh.png"; sourceTree = "<group>"; };
 		8C60F9D019988B9F00A81921 /* v2-logo-225wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-logo-225wh.png"; sourceTree = "<group>"; };
-		8C60F9D119988B9F00A81921 /* v2-ico-list-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-pic-130wh.png"; sourceTree = "<group>"; };
 		8C60F9D219988B9F00A81921 /* v2-sline-grey-640w1h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-sline-grey-640w1h.png"; sourceTree = "<group>"; };
 		8C60F9D319988BA000A81921 /* v2-bg-w-640w718h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-bg-w-640w718h.png"; sourceTree = "<group>"; };
 		8C60F9D419988BA000A81921 /* v2-line-g-640w6h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-line-g-640w6h.png"; sourceTree = "<group>"; };
@@ -666,7 +654,6 @@
 		5F221AB019512CE4009F96DE = {
 			isa = PBXGroup;
 			children = (
-				5FE29D99196FD89A00E51307 /* Sne.storyboard */,
 				5F221AC219512CE4009F96DE /* weixinast */,
 				5F221AE119512CE5009F96DE /* weixinastTests */,
 				5F221ABB19512CE4009F96DE /* Frameworks */,
@@ -677,7 +664,7 @@
 		5F221ABA19512CE4009F96DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F221AB919512CE4009F96DE /* 微信兜兜.app */,
+				5F221AB919512CE4009F96DE /* 橙果兜兜.app */,
 				5F221ADA19512CE5009F96DE /* weixinastTests.xctest */,
 			);
 			name = Products;
@@ -721,7 +708,7 @@
 				5F221ACB19512CE4009F96DE /* AppDelegate.h */,
 				5F221ACC19512CE4009F96DE /* AppDelegate.m */,
 				5F221ACE19512CE4009F96DE /* Main.storyboard */,
-				5FDB1178195D48FF00F3E370 /* Main3.5.storyboard */,
+				5FEDE88619CA6F500054D301 /* Main3.5.storyboard */,
 				5F221AD119512CE4009F96DE /* ViewController.h */,
 				5F221AD219512CE4009F96DE /* ViewController.m */,
 				5F221AD419512CE4009F96DE /* Images.xcassets */,
@@ -902,16 +889,11 @@
 				8C5A1EEF1999A6350088A54B /* v2-ico-user-pic-130wh.png */,
 				8C5A1EF01999A6350088A54B /* v2-ico-list-date-130wh.png */,
 				8C5A1EF11999A6350088A54B /* v2-ico-list-set-130wh.png */,
-				8C5A1EF21999A6350088A54B /* v2-ico-list-wechat-130wh.png */,
-				8C5A1EF31999A6350088A54B /* v2-ico-list-pic-130wh.png */,
 				8C5A1EF41999A6350088A54B /* v2-ico-point-red-30wh.png */,
-				8C60F9D119988B9F00A81921 /* v2-ico-list-pic-130wh.png */,
 				8C60F9D219988B9F00A81921 /* v2-sline-grey-640w1h.png */,
 				8C60F9D319988BA000A81921 /* v2-bg-w-640w718h.png */,
-				8C5A1EE61999A1DD0088A54B /* v2-ico-list-pic-130wh.png */,
 				8C5A1EE71999A1DD0088A54B /* v2-ico-list-set-130wh.png */,
 				8C5A1EE81999A1DD0088A54B /* v2-ico-list-date-130wh.png */,
-				8C5A1EE91999A1DD0088A54B /* v2-ico-list-wechat-130wh.png */,
 				8C60F9D419988BA000A81921 /* v2-line-g-640w6h.png */,
 				8C60F9D519988BA000A81921 /* v2-ico-id-192wh.png */,
 				8C60F9D619988BA000A81921 /* v2-1-main-look.jpg */,
@@ -1137,7 +1119,7 @@
 			);
 			name = weixinast;
 			productName = weixinast;
-			productReference = 5F221AB919512CE4009F96DE /* 微信兜兜.app */;
+			productReference = 5F221AB919512CE4009F96DE /* 橙果兜兜.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5F221AD919512CE5009F96DE /* weixinastTests */ = {
@@ -1202,7 +1184,6 @@
 			files = (
 				5FE29DC1196FD9A600E51307 /* bg_main.png in Resources */,
 				8C60F9E219988BA000A81921 /* v2-line-w-530w1h.png in Resources */,
-				8C60F9DC19988BA000A81921 /* v2-ico-list-pic-130wh.png in Resources */,
 				8C60F9DD19988BA000A81921 /* v2-sline-grey-640w1h.png in Resources */,
 				5FE29DC4196FD9A600E51307 /* ico_album_100w.png in Resources */,
 				5FE29DD6196FD9A600E51307 /* ico_pw2_16w.png in Resources */,
@@ -1212,7 +1193,6 @@
 				5FD2C2B6195A5D9900E4DB3D /* icon-info.png in Resources */,
 				5FD2C2B8195A5D9900E4DB3D /* icon-success.png in Resources */,
 				5FE29DC8196FD9A600E51307 /* ico_disc_16w.png in Resources */,
-				8C5A1EFA1999A6350088A54B /* v2-ico-list-pic-130wh.png in Resources */,
 				5FE29DCC196FD9A600E51307 /* ico_help_100w.png in Resources */,
 				8C5A1EF71999A6350088A54B /* v2-ico-list-date-130wh.png in Resources */,
 				5FE29DD9196FD9A600E51307 /* ico_squ_100w.png in Resources */,
@@ -1226,7 +1206,6 @@
 				5FE29DD1196FD9A600E51307 /* ico_link_16w.png in Resources */,
 				5FE29DD2196FD9A600E51307 /* ico_list_100w.png in Resources */,
 				8C60F9DE19988BA000A81921 /* v2-bg-w-640w718h.png in Resources */,
-				5FDB117A195D48FF00F3E370 /* Main3.5.storyboard in Resources */,
 				8C5A1EF51999A6350088A54B /* v2-ico-msg-pic-130wh.png in Resources */,
 				5FE4039B196C12B400CBB434 /* Resource.bundle in Resources */,
 				5FE29DC2196FD9A600E51307 /* bg_top.png in Resources */,
@@ -1253,11 +1232,10 @@
 				5FE29DDA196FD9A600E51307 /* ico_star_88w.png in Resources */,
 				8C60F9E019988BA000A81921 /* v2-ico-id-192wh.png in Resources */,
 				5FE29DC6196FD9A600E51307 /* ico_arrowright_100w.png in Resources */,
-				8C5A1EEA1999A1DD0088A54B /* v2-ico-list-pic-130wh.png in Resources */,
 				5FE29DE1196FD9A600E51307 /* line_bgbottom.png in Resources */,
 				5FE29DCF196FD9A600E51307 /* ico_key_16w.png in Resources */,
+				5FEDE88819CA6F500054D301 /* Main3.5.storyboard in Resources */,
 				5FE29DD7196FD9A600E51307 /* ico_pw_16w.png in Resources */,
-				5FE29D9A196FD89A00E51307 /* Sne.storyboard in Resources */,
 				5FE44AA1195BF177007E51E2 /* PEPhotoCropEditor.bundle in Resources */,
 				8C5A1EEC1999A1DD0088A54B /* v2-ico-list-date-130wh.png in Resources */,
 				5FE29DCE196FD9A600E51307 /* ico_info_88w.png in Resources */,
@@ -1274,8 +1252,6 @@
 				5FE29DD3196FD9A600E51307 /* ico_mgs_100w.png in Resources */,
 				8C5A1EF81999A6350088A54B /* v2-ico-list-set-130wh.png in Resources */,
 				5FD2E02519C032C1000DE075 /* ico_trash_24wh.png in Resources */,
-				8C5A1EF91999A6350088A54B /* v2-ico-list-wechat-130wh.png in Resources */,
-				8C5A1EED1999A1DD0088A54B /* v2-ico-list-wechat-130wh.png in Resources */,
 				5FE29DC5196FD9A600E51307 /* ico_arrowleft_100w.png in Resources */,
 				5FE403A0196C12B400CBB434 /* WeiboSDK.bundle in Resources */,
 			);
@@ -1418,14 +1394,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		5FDB1178195D48FF00F3E370 /* Main3.5.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5FDB1179195D48FF00F3E370 /* Base */,
-			);
-			name = Main3.5.storyboard;
-			sourceTree = "<group>";
-		};
 		5FE40377196C12B400CBB434 /* ShareSDKLocalizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1433,6 +1401,14 @@
 				5FE4037B196C12B400CBB434 /* zh-Hans */,
 			);
 			name = ShareSDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		5FEDE88619CA6F500054D301 /* Main3.5.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FEDE88719CA6F500054D301 /* Base */,
+			);
+			name = Main3.5.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1513,8 +1489,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: wenda huang (72AC8BNC4B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wenda huang (72AC8BNC4B)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Connection",
@@ -1534,8 +1510,8 @@
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/YiXinSDK",
 					"$(PROJECT_DIR)/weixinast/lib/ZBarSDK",
 				);
-				PRODUCT_NAME = "微信兜兜";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "橙果兜兜";
+				PROVISIONING_PROFILE = "C459027D-2F08-486F-833F-D806A11A896E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1545,8 +1521,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: wenda huang (6KBLBX2BKK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: wenda huang (6KBLBX2BKK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Connection",
@@ -1566,8 +1542,8 @@
 					"$(PROJECT_DIR)/weixinast/ShareSDK/Extend/YiXinSDK",
 					"$(PROJECT_DIR)/weixinast/lib/ZBarSDK",
 				);
-				PRODUCT_NAME = "微信兜兜";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "橙果兜兜";
+				PROVISIONING_PROFILE = "C459027D-2F08-486F-833F-D806A11A896E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
