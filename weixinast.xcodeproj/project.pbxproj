@@ -1511,7 +1511,7 @@
 					"$(PROJECT_DIR)/weixinast/lib/ZBarSDK",
 				);
 				PRODUCT_NAME = "橙果兜兜";
-				PROVISIONING_PROFILE = "C459027D-2F08-486F-833F-D806A11A896E";
+				PROVISIONING_PROFILE = "bf734dc9-c29f-4b33-ba05-9998685a1ad7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1543,7 +1543,7 @@
 					"$(PROJECT_DIR)/weixinast/lib/ZBarSDK",
 				);
 				PRODUCT_NAME = "橙果兜兜";
-				PROVISIONING_PROFILE = "C459027D-2F08-486F-833F-D806A11A896E";
+				PROVISIONING_PROFILE = "bf734dc9-c29f-4b33-ba05-9998685a1ad7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
