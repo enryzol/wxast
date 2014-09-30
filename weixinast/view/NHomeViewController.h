@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *LoginNameLabel;
 
 
+- (IBAction)Report:(id)sender;
 - (IBAction)MemberSettingAction:(id)sender;
 
 - (IBAction)AlbumAction:(id)sender;

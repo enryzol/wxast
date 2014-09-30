@@ -93,6 +93,11 @@
     
 }
 
+- (IBAction)Report:(id)sender{
+    NSString *url = [NSString stringWithFormat:@"http://dodo.o-tap.com/report/"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
 - (IBAction)SettingAction:(id)sender {
     
     NSLog(@"SettingAction");

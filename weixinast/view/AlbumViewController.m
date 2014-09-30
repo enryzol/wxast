@@ -18,10 +18,11 @@
 #import "Function.h"
 #import "Comm_Observe.h"
 #import "CommAction.h"
+#import "DescEditViewController.h"
 
 #import <ShareSDK/ShareSDK.h>
 
-@interface AlbumViewController () <UIActionSheetDelegate,UIAlertViewDelegate>
+@interface AlbumViewController () <UIActionSheetDelegate,UIAlertViewDelegate,CommonProtocol>
 
 @end
 
@@ -156,7 +157,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"编辑",@"预览",@"分享",@"删除", nil];
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"编辑",@"预览",@"分享",@"删除",@"举报违规内容", nil];
     [as setTag:indexPath.row];
     [as showInView:[UIApplication sharedApplication].keyWindow];
 }
@@ -192,6 +193,13 @@
         NSString *url = [NSString stringWithFormat:@"http://wx.o-tap.cn/mobile/album/i/%@/groupid/%@",[Api Package],[[TableViewData objectAtIndex:actionSheet.tag] objectForKey:@"groupid"]];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         
+    }else if(buttonIndex == 4){
+        
+        DescEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DescEditViewController"];
+        vc.SubjectStr = @"请输入简要的举报说明";
+        vc.delegate = self;
+        [self.navigationController pushViewController:vc animated:YES];
+        
     }
 }
 
@@ -199,31 +207,54 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    if(buttonIndex == 0){
-        //no delete
+    if(alertView.tag == 37113009){
         
-    }else if (buttonIndex == 1){
-        //delete
+
         
-        NSString *groupid = [[TableViewData objectAtIndex:[alertView tag]] objectForKey:@"groupid"];
-        
-        NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/Delete/?LToken=%@&groupid=%@",[Api LToken],groupid];
-        
-        MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:nil httpMethod:@"GET" ssl:YES];
-        
-        [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+    }else{
+        if(buttonIndex == 0){
+            //no delete
             
-            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"删除成功" description:@"目录已被删除" type:TWMessageBarMessageTypeInfo duration:2.0f];
-            [self.abTableView headerBeginRefreshing];
+        }else if (buttonIndex == 1){
+            //delete
             
-        } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+            NSString *groupid = [[TableViewData objectAtIndex:[alertView tag]] objectForKey:@"groupid"];
             
-            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"登录" description:@"登录失败，无法连接到服务器" type:TWMessageBarMessageTypeError duration:2.0f];
+            NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/Delete/?LToken=%@&groupid=%@",[Api LToken],groupid];
             
-        }];
-        
-        [ApplicationDelegate.Engin enqueueOperation:op];
+            MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:nil httpMethod:@"GET" ssl:YES];
+            
+            [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+                
+                [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"删除成功" description:@"目录已被删除" type:TWMessageBarMessageTypeInfo duration:2.0f];
+                [self.abTableView headerBeginRefreshing];
+                
+            } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+                
+                [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"登录" description:@"登录失败，无法连接到服务器" type:TWMessageBarMessageTypeError duration:2.0f];
+                
+            }];
+            
+            [ApplicationDelegate.Engin enqueueOperation:op];
+        }
     }
+    
+    
+}
+
+//Commom protocal
+
+-(void)CommonReturn:(NSString *)str Tag:(int)i{
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Setting/Report/?LToken=%@",[Api LToken]];
+    NSDictionary *param = @{@"report" : str};
+    
+    [[Function sharedManager] Post:url Params:param Message:@"正在举报，请稍后" CompletionHandler:^(MKNetworkOperation *completed) {
+        
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"举报成功" description:@"我们将在核实之后立即处理您所举报的内容" type:TWMessageBarMessageTypeSuccess duration:5.0f];
+        
+    } ErrorHander:^(NSError *error) {
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"举报失败" description:@"请查看您的网络，或者请登录官网举报相关内容" type:TWMessageBarMessageTypeError duration:2.0f];
+    }];
 }
 
 

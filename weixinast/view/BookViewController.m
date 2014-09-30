@@ -18,10 +18,11 @@
 #import "AlbumBoardTableViewCell.h"
 #import "BookEditViewController.h"
 #import "BookDataViewController.h"
+#import "DescEditViewController.h"
 
 #import <ShareSDK/ShareSDK.h>
 
-@interface BookViewController ()<UIActionSheetDelegate>{
+@interface BookViewController ()<UIActionSheetDelegate,CommonProtocol>{
     
     NSMutableArray *TableViewData ;
     
@@ -148,7 +149,7 @@
     if([[[TableViewData objectAtIndex:indexPath.row] objectForKey:@"status"] isEqualToString:@"0"]){
         status = @"开启预约";
     }
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"编辑",@"查看预约情况",@"预览",@"分享",status,@"删除",@"取消", nil];
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"图集操作" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"编辑",@"查看预约情况",@"预览",@"分享",status,@"删除",@"举报违规内容",@"取消", nil];
     [as setTag:indexPath.row];
     [as showInView:[UIApplication sharedApplication].keyWindow];
 }
@@ -198,6 +199,11 @@
             [self loadDataFromServer];
         }];
         
+    }else if(buttonIndex == 6){
+        DescEditViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DescEditViewController"];
+        vc.SubjectStr = @"请输入简要的举报说明";
+        vc.delegate = self;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -223,6 +229,23 @@
 
         
     }
+}
+
+//
+
+-(void)CommonReturn:(NSString *)str Tag:(int)i{
+    
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Setting/Report/?LToken=%@",[Api LToken]];
+    NSDictionary *param = @{@"report" : str};
+    
+    [[Function sharedManager] Post:url Params:param Message:@"正在举报，请稍后" CompletionHandler:^(MKNetworkOperation *completed) {
+        
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"举报成功" description:@"我们将在核实之后立即处理您所举报的内容" type:TWMessageBarMessageTypeSuccess duration:5.0f];
+        
+    } ErrorHander:^(NSError *error) {
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"举报失败" description:@"请查看您的网络，或者请登录官网举报相关内容" type:TWMessageBarMessageTypeError duration:2.0f];
+    }];
+    
 }
 
 

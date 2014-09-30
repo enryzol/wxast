@@ -147,6 +147,15 @@
 }
 
 
+-(IBAction)openProtocal{
+    NSString *url = [NSString stringWithFormat:@"http://dodo.o-tap.com/protocal/"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
+-(IBAction)openPrivacy:(id)sender{
+    NSString *url = [NSString stringWithFormat:@"http://dodo.o-tap.com/privacy/"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
 
 - (IBAction)LoginAct:(id)sender {
     

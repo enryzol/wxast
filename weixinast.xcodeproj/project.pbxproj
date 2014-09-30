@@ -158,6 +158,7 @@
 		5FE4D7D9196BCC0400B17A07 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4D7D8196BCC0400B17A07 /* AssetsLibrary.framework */; };
 		5FE4D7DB196BCC0B00B17A07 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4D7DA196BCC0B00B17A07 /* AddressBook.framework */; };
 		5FE4D7DD196BCC1000B17A07 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE4D7DC196BCC1000B17A07 /* MessageUI.framework */; };
+		5FE8D48F19DA420400E02F26 /* v2-ico-list-pic-130wh.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE8D48E19DA420400E02F26 /* v2-ico-list-pic-130wh.png */; };
 		5FEAE172199DA29700514251 /* BookEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE171199DA29700514251 /* BookEditViewController.m */; };
 		5FEAE175199DD3A500514251 /* BookAdvanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE174199DD3A500514251 /* BookAdvanceViewController.m */; };
 		5FEAE178199DDA6000514251 /* BookWeixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAE177199DDA6000514251 /* BookWeixinViewController.m */; };
@@ -427,6 +428,7 @@
 		5FE4D7D8196BCC0400B17A07 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		5FE4D7DA196BCC0B00B17A07 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5FE4D7DC196BCC1000B17A07 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5FE8D48E19DA420400E02F26 /* v2-ico-list-pic-130wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-ico-list-pic-130wh.png"; sourceTree = "<group>"; };
 		5FEAE170199DA29700514251 /* BookEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookEditViewController.h; path = view/BookEditViewController.h; sourceTree = "<group>"; };
 		5FEAE171199DA29700514251 /* BookEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookEditViewController.m; path = view/BookEditViewController.m; sourceTree = "<group>"; };
 		5FEAE173199DD3A500514251 /* BookAdvanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookAdvanceViewController.h; path = view/BookAdvanceViewController.h; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 				5FD1700B199C81680091A916 /* v2-ico-add-pic.png */,
 				5FD1700D199C85C70091A916 /* v2-ico-add-pic2.png */,
 				8C60F9D019988B9F00A81921 /* v2-logo-225wh.png */,
+				5FE8D48E19DA420400E02F26 /* v2-ico-list-pic-130wh.png */,
 				8C5A1EEE1999A6350088A54B /* v2-ico-msg-pic-130wh.png */,
 				8C5A1EEF1999A6350088A54B /* v2-ico-user-pic-130wh.png */,
 				8C5A1EF01999A6350088A54B /* v2-ico-list-date-130wh.png */,
@@ -1239,6 +1242,7 @@
 				5FE44AA1195BF177007E51E2 /* PEPhotoCropEditor.bundle in Resources */,
 				8C5A1EEC1999A1DD0088A54B /* v2-ico-list-date-130wh.png in Resources */,
 				5FE29DCE196FD9A600E51307 /* ico_info_88w.png in Resources */,
+				5FE8D48F19DA420400E02F26 /* v2-ico-list-pic-130wh.png in Resources */,
 				5FE29DD8196FD9A600E51307 /* ico_setting_100w.png in Resources */,
 				8C60F9DF19988BA000A81921 /* v2-line-g-640w6h.png in Resources */,
 				5F221AD019512CE4009F96DE /* Main.storyboard in Resources */,
@@ -1511,7 +1515,7 @@
 					"$(PROJECT_DIR)/weixinast/lib/ZBarSDK",
 				);
 				PRODUCT_NAME = "橙果兜兜";
-				PROVISIONING_PROFILE = "bf734dc9-c29f-4b33-ba05-9998685a1ad7";
+				PROVISIONING_PROFILE = "C459027D-2F08-486F-833F-D806A11A896E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1543,7 +1547,7 @@
 					"$(PROJECT_DIR)/weixinast/lib/ZBarSDK",
 				);
 				PRODUCT_NAME = "橙果兜兜";
-				PROVISIONING_PROFILE = "bf734dc9-c29f-4b33-ba05-9998685a1ad7";
+				PROVISIONING_PROFILE = "C459027D-2F08-486F-833F-D806A11A896E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

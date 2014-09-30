@@ -19,6 +19,9 @@
 
 
 
+- (IBAction)openProtocal;
+-(IBAction)openPrivacy:(id)sender;
+
 - (IBAction)bgTapClose:(id)sender;
 - (IBAction)LoginAct:(id)sender;
 
