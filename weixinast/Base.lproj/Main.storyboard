@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Gc6-7c-NK0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Gc6-7c-NK0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Reg Controller-->
@@ -1010,7 +1011,7 @@
             </objects>
             <point key="canvasLocation" x="237" y="2246"/>
         </scene>
-        <!--View Controller - Title-->
+        <!--Title-->
         <scene sceneID="PMK-bc-FWx">
             <objects>
                 <viewController storyboardIdentifier="s1" id="2Vm-vj-Hsa" customClass="ViewController" sceneMemberID="viewController">
@@ -1348,7 +1349,7 @@
             </objects>
             <point key="canvasLocation" x="1547" y="1894"/>
         </scene>
-        <!--View Controller - Title-->
+        <!--Title-->
         <scene sceneID="0SB-9t-YyB">
             <objects>
                 <viewController storyboardIdentifier="s2" id="ldw-RE-9pG" customClass="ViewController" sceneMemberID="viewController">
@@ -1510,7 +1511,7 @@
             </objects>
             <point key="canvasLocation" x="1894" y="1894"/>
         </scene>
-        <!--Desc Edit View Controller - Title-->
+        <!--Title-->
         <scene sceneID="D3S-iq-ZZN">
             <objects>
                 <viewController storyboardIdentifier="DescEditViewController" id="VUE-b5-ask" customClass="DescEditViewController" sceneMemberID="viewController">
@@ -1691,7 +1692,7 @@
             </objects>
             <point key="canvasLocation" x="3029" y="1894"/>
         </scene>
-        <!--Album Pic Edit View Controller - Title-->
+        <!--Title-->
         <scene sceneID="c8C-vc-4xC">
             <objects>
                 <viewController storyboardIdentifier="AlbumPicEditViewController" id="sjC-UL-nEH" customClass="AlbumPicEditViewController" sceneMemberID="viewController">
@@ -1792,7 +1793,7 @@
             </objects>
             <point key="canvasLocation" x="3540" y="1894"/>
         </scene>
-        <!--Setting User Info View Controller - Title-->
+        <!--Title-->
         <scene sceneID="QEA-t5-53T">
             <objects>
                 <viewController storyboardIdentifier="SettingUserInfoViewController" id="2EP-lL-KoY" customClass="SettingUserInfoViewController" sceneMemberID="viewController">
@@ -1929,7 +1930,7 @@
             </objects>
             <point key="canvasLocation" x="1073" y="3526"/>
         </scene>
-        <!--Setting View Controller - Title-->
+        <!--Title-->
         <scene sceneID="xfm-MH-qAF">
             <objects>
                 <viewController storyboardIdentifier="SettingViewController" id="P0h-31-KVQ" customClass="SettingViewController" sceneMemberID="viewController">
@@ -2061,7 +2062,7 @@
             </objects>
             <point key="canvasLocation" x="685" y="3526"/>
         </scene>
-        <!--Setting Push View Controller - Title-->
+        <!--Title-->
         <scene sceneID="Fek-d8-iTa">
             <objects>
                 <viewController storyboardIdentifier="SettingPushViewController" id="dhS-QK-upo" customClass="SettingPushViewController" sceneMemberID="viewController">
@@ -2233,7 +2234,7 @@
             </objects>
             <point key="canvasLocation" x="1411" y="3526"/>
         </scene>
-        <!--User List View Controller - Title-->
+        <!--Title-->
         <scene sceneID="0EY-rv-uIZ">
             <objects>
                 <viewController storyboardIdentifier="UserListViewController" id="1dm-vp-Rde" customClass="UserListViewController" sceneMemberID="viewController">
@@ -2384,7 +2385,7 @@
             </objects>
             <point key="canvasLocation" x="1182" y="2698"/>
         </scene>
-        <!--User View Controller - Title-->
+        <!--Title-->
         <scene sceneID="Quy-i4-OSb">
             <objects>
                 <viewController storyboardIdentifier="UserViewController" id="2fB-oh-0bs" customClass="UserViewController" sceneMemberID="viewController">
@@ -2475,7 +2476,7 @@
             </objects>
             <point key="canvasLocation" x="719" y="2698"/>
         </scene>
-        <!--User Message View Controller - Title-->
+        <!--Title-->
         <scene sceneID="ayq-d7-jo4">
             <objects>
                 <viewController storyboardIdentifier="UserMessageViewController" id="bIt-no-rfG" customClass="UserMessageViewController" sceneMemberID="viewController">
@@ -2573,7 +2574,7 @@
             </objects>
             <point key="canvasLocation" x="685" y="4238"/>
         </scene>
-        <!--Setting Password View Controller - Title-->
+        <!--Title-->
         <scene sceneID="9pt-9s-715">
             <objects>
                 <viewController storyboardIdentifier="SettingPasswordViewController" id="JSE-Bh-tkm" customClass="SettingPasswordViewController" sceneMemberID="viewController">
@@ -2662,7 +2663,7 @@
             </objects>
             <point key="canvasLocation" x="1815" y="3526"/>
         </scene>
-        <!--User Block View Controller - Title-->
+        <!--Title-->
         <scene sceneID="yjT-fp-ueO">
             <objects>
                 <viewController storyboardIdentifier="UserBlockViewController" id="vS4-PY-1qh" customClass="UserBlockViewController" sceneMemberID="viewController">
@@ -2766,7 +2767,7 @@
             </objects>
             <point key="canvasLocation" x="1622" y="2698"/>
         </scene>
-        <!--Book View Controller - Title-->
+        <!--Title-->
         <scene sceneID="1Ld-lg-qfE">
             <objects>
                 <viewController storyboardIdentifier="BookViewController" id="tNg-b8-OuM" customClass="BookViewController" sceneMemberID="viewController">
@@ -3336,7 +3337,7 @@
             </objects>
             <point key="canvasLocation" x="1864" y="4944"/>
         </scene>
-        <!--Book Pic Edit View Controller - Title-->
+        <!--Title-->
         <scene sceneID="t04-uz-7ni">
             <objects>
                 <viewController storyboardIdentifier="BookPicEditViewController" id="XxN-b9-zz0" customClass="BookPicEditViewController" sceneMemberID="viewController">
@@ -3429,7 +3430,7 @@
             </objects>
             <point key="canvasLocation" x="2683" y="4944"/>
         </scene>
-        <!--Book Pic View Controller - Title-->
+        <!--Title-->
         <scene sceneID="iTO-Pv-aBw">
             <objects>
                 <viewController storyboardIdentifier="BookPicViewController" id="fsy-Pe-sT6" customClass="BookPicViewController" sceneMemberID="viewController">
@@ -3535,7 +3536,7 @@
             </objects>
             <point key="canvasLocation" x="2284" y="4944"/>
         </scene>
-        <!--Book Data View Controller - Title-->
+        <!--Title-->
         <scene sceneID="iCk-Rf-PRu">
             <objects>
                 <viewController storyboardIdentifier="BookDataViewController" id="feS-vk-CL8" customClass="BookDataViewController" sceneMemberID="viewController">

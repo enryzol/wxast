@@ -186,7 +186,8 @@
     }else if (buttonIndex == 2){
         
         [actionSheet dismissWithClickedButtonIndex:0 animated:NO];
-        [self Share:actionSheet.tag];
+        
+        [self performSelector:@selector(Share:) withObject:nil afterDelay:0.5f];
         
     }else if(buttonIndex == 1){
         
@@ -262,18 +263,38 @@
 
 -(void)Share:(NSInteger)index{
     
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"0"  ofType:@"png"];
+    
+    
     
     NSString *url = [NSString stringWithFormat:@"http://wx.o-tap.cn/mobile/album/i/%@/groupid/%@",[Api Package],[[TableViewData objectAtIndex:index] objectForKey:@"groupid"]];
     
-    //构造分享内容
-    id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
-                                       defaultContent:@""
-                                                image:[ShareSDK imageWithPath:imagePath]
-                                                title:[[TableViewData objectAtIndex:index] objectForKey:@"title"]
-                                                  url:url
-                                          description:[[TableViewData objectAtIndex:index] objectForKey:@"desc"]
-                                            mediaType:SSPublishContentMediaTypeNews];
+    NSString *Cover = [[TableViewData objectAtIndex:index] objectForKey:@"img"];
+    
+    
+    id<ISSContent> publishContent ;
+    if([Cover isEqualToString:@""]){
+        //构造分享内容
+        
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"0"  ofType:@"png"];
+        
+        publishContent = [ShareSDK content:@"分享内容"
+                                           defaultContent:@""
+                                                    image:[ShareSDK imageWithPath:imagePath]
+                                                    title:[[TableViewData objectAtIndex:index] objectForKey:@"title"]
+                                                      url:url
+                                              description:[[TableViewData objectAtIndex:index] objectForKey:@"desc"]
+                                                mediaType:SSPublishContentMediaTypeNews];
+
+        
+    }else{
+        publishContent = [ShareSDK content:@"分享内容"
+                            defaultContent:@""
+                                     image:[ShareSDK imageWithUrl:Cover]
+                                     title:[[TableViewData objectAtIndex:index] objectForKey:@"title"]
+                                       url:url
+                               description:[[TableViewData objectAtIndex:index] objectForKey:@"desc"]
+                                 mediaType:SSPublishContentMediaTypeNews];
+    }
     
     [ShareSDK showShareActionSheet:nil
                          shareList:nil
@@ -303,6 +324,7 @@
 }
 
 - (IBAction)NavBarRightButton:(id)sender {
+    
     
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/Add/?LToken=%@",[Api LToken]];
     

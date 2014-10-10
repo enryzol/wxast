@@ -182,7 +182,9 @@
     }else if (buttonIndex == 3){
         
         [actionSheet dismissWithClickedButtonIndex:0 animated:NO];
-        [self Share:actionSheet.tag];
+        
+        [self performSelector:@selector(Share:) withObject:nil afterDelay:0.5f];
+        //[self Share:actionSheet.tag];
         
     }else if(buttonIndex == 2){
         
