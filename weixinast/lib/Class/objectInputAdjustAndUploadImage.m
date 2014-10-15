@@ -175,7 +175,7 @@
 {
     //键盘输入的界面调整
     //键盘的高度
-    float height = 216.0;
+    float height = 256.0;
     CGRect frame = self.view.frame;
     frame.size = CGSizeMake(frame.size.width, frame.size.height - height);
     [UIView beginAnimations:@"Curl"context:nil];//动画开始
@@ -202,7 +202,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     CGRect frame = textField.frame;
-    int offset = frame.origin.y + 32 - (self.view.frame.size.height - 216.0);//键盘高度216
+    int offset = frame.origin.y + 32 - (self.view.frame.size.height - 256.0);//键盘高度216
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
     [UIView setAnimationDuration:animationDuration];
@@ -218,7 +218,7 @@
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
     CGRect frame = textView.frame;
-    int offset = frame.origin.y + 140 - (self.view.frame.size.height - 216.0);//键盘高度216
+    int offset = frame.origin.y + 140 - (self.view.frame.size.height - 256.0);//键盘高度216
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
     [UIView setAnimationDuration:animationDuration];

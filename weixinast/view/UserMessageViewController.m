@@ -41,7 +41,7 @@
     [self.tableview addHeaderWithTarget:self action:@selector(headerReFreshing)];
     [self.tableview addFooterWithTarget:self action:@selector(footerReFreshing)];
     
-    [self loadDataFromServer];
+    
     
     [self.NavBar setFrame:CGRectMake(0, 0, 320, 64)];
     [self.NavBar setBackgroundImage:[UIImage imageNamed:@"bg_top.png"] forBarMetrics:UIBarMetricsDefault];
@@ -53,6 +53,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self loadDataFromServer];
 }
 
 

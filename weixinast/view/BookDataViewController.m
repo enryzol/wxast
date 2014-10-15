@@ -47,13 +47,17 @@
     [self.BookStatus setText:[NSString stringWithFormat:@"预约总数  %@ / %@",[self.Book objectForKey:@"booked"] ,[self.Book objectForKey:@"count"]]];
     
     [self.tableview addHeaderWithTarget:self action:@selector(headerReFreshing)];
-    [self loadDataFromServer];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self loadDataFromServer];
 }
 
 /*

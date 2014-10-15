@@ -135,14 +135,14 @@
     
     //
     
-    NSString *url = [NSString stringWithFormat:@"http://dodo.o-tap.com/"];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    //NSString *url = [NSString stringWithFormat:@"http://dodo.o-tap.com/"];
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 
-    //RegController *vw = [self.storyboard instantiateViewControllerWithIdentifier:@"RegController"];
+    RegController *vw = [self.storyboard instantiateViewControllerWithIdentifier:@"RegController"];
     
-    //vw.modalPresentationStyle = UIModalPresentationFormSheet;
+    vw.modalPresentationStyle = UIModalPresentationFormSheet;
     
-    //[self presentViewController:vw animated:YES completion:^{}];
+    [self presentViewController:vw animated:YES completion:^{}];
     
 }
 

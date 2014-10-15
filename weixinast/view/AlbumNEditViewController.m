@@ -64,8 +64,9 @@
     
     keywordIsOn = @"1";
     
-    [self loadDataFromServer];
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -74,11 +75,14 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    
     if(![[[Comm_Observe sharedManager] AlbumEditReflush] isEqualToString:@"0"]){
         NSLog(@"AlbumEditReflush - %@",[[Comm_Observe sharedManager] AlbumEditReflush]);
         [AlbumPic setImageWithURL:[[Comm_Observe sharedManager] AlbumEditReflush] Radius:10];
         [[Comm_Observe sharedManager] setAlbumEditReflush:@"0"];
     }
+     [self loadDataFromServer];
+    
 }
 
 #pragma mark - load data
@@ -87,7 +91,7 @@
     
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/KeywordFromAlbum/?LToken=%@&groupid=%@",[Api LToken],[self.Album objectForKey:@"groupid"]];
     
-    NSLog(@"%@",url);
+    //NSLog(@"%@",url);
     
     [[Function sharedManager] Post:url Params:nil Message:@"正在加载数据,请稍候" CompletionHandler:^(MKNetworkOperation *completed) {
         
@@ -107,6 +111,8 @@
     } ErrorHander:^(NSError *error) {
         
     }];
+    
+    
     
 }
 

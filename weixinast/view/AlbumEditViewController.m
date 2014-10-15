@@ -76,7 +76,6 @@
     //
 //    [self.uploadimg addTarget:self action:@selector(UesrImageClicked) forControlEvents:UIControlEventTouchDown];
     
-    [self LoadFromServer];
     
 }
 
@@ -84,6 +83,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self LoadFromServer];
 }
 
 -(IBAction)selectimg:(id)sender{

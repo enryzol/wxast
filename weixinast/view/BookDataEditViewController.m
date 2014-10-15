@@ -48,13 +48,17 @@
     self.date.inputView = dp;
     
     
-    [self loadDataFromServer];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self loadDataFromServer];
 }
 
 

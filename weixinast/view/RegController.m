@@ -7,6 +7,9 @@
 //
 
 #import "RegController.h"
+#import "AppDelegate.h"
+#import "Api.h"
+#import "Function.h"
 
 @interface RegController ()
 
@@ -36,10 +39,8 @@
     
 }
 
--(void) closeWindow{
-    
+-(IBAction) closeWindow{
     [self dismissViewControllerAnimated:YES completion:^{}];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,9 +75,65 @@
     [UIView setAnimationDuration:animationDuration];
     CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
     self.view.frame = rect;
+    
+    [UIView commitAnimations];
 }
 
+
+- (IBAction)Protocol:(id)sender {
+    NSString *url = [NSString stringWithFormat:@"http://dodo.o-tap.com/protocal/"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
 
 - (IBAction)RegNewAction:(id)sender {
+    NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Check/Register/"];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setValue:self.Account.text forKey:@"Account"];
+    [params setValue:self.Password.text forKey:@"Password"];
+    [params setValue:self.Bpassword.text forKey:@"Bpassword"];
+    [params setValue:self.Email.text forKey:@"Email"];
+    [params setValue:ApplicationDelegate._deviceToken forKey:@"deviceToken"];
+    
+    NSLog(@"%@",params);
+    
+    [[Function sharedManager] Post:url Params:params Message:@"正在注册新账号" CompletionHandler:^(MKNetworkOperation *completed) {
+       
+        id json = [completed responseJSON];
+        if([json[@"status"] isEqualToString:@"success"]){
+            
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"注册成功" description:@"请直接登录" type:TWMessageBarMessageTypeInfo duration:1.5f];
+            [self closeWindow];
+            
+        }else{
+            
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"注册失败" description:json[@"errormsg"] type:TWMessageBarMessageTypeInfo duration:2.5f];
+            
+        }
+        
+        
+    } ErrorHander:^(NSError *error) {
+        
+        	[[TWMessageBarManager sharedInstance] showMessageWithTitle:@"操作失败" description:@"请检查网络后重试" type:TWMessageBarMessageTypeInfo duration:1.5f];
+        
+    }];
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

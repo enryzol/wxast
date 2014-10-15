@@ -103,13 +103,24 @@
 
     NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Book/SaveBook/?LToken=%@&beid=%@",[Api LToken] , [self.Book objectForKey:@"beid"]];
     
-    NSDictionary *param = @{@"title": self.Title.text,@"beid":[self.Book objectForKey:@"beid"],@"desc":Description};
+    //NSLog(@"%@",self.Book);
+    //NSString *beid = [self.Book objectForKey:@"beid"];
+    //NSMutableDictionary *param = @{@"title": self.Title.text , @"beid": @"1" , @"desc":Description};
+    
+    
+    NSMutableDictionary * param  = [[NSMutableDictionary alloc] init];
+    
+    [param setValue:Description forKey:@"desc"];
+    [param setValue:self.Title.text forKey:@"title"];
+    [param setValue:[self.Book objectForKey:@"beid"] forKey:@"beid"];
+    
     
     [[Function sharedManager] Post:url Params:param Message:@"正在保存" CompletionHandler:^(MKNetworkOperation *completed) {
         NSLog(@"%@",[completed responseString]);
     } ErrorHander:^(NSError *error) {
         
     }];
+    
     [self bgTap];
     
 };

@@ -19,8 +19,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *Email;
 
 
+- (IBAction)Protocol:(id)sender;
+
 - (IBAction)RegNewAction:(id)sender;
 
 - (IBAction)bgTapClose:(id)sender;
+
+-(IBAction) closeWindow;
 
 @end
