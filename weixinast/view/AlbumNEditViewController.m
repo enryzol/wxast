@@ -28,6 +28,8 @@
     ImageViewFromUrl *AlbumPic ;
     UIImage *PostImgData;
     NSString * keywordIsOn;
+    
+    int isInit ;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -60,11 +62,11 @@
     
     [self.view addSubview:AlbumPic];
     
-    NSLog(@"%@",Global_DescEditReturn);
-    
     keywordIsOn = @"1";
     
+    isInit  = 0;
     
+    NSLog(@"isInit - %d" , isInit);
 }
 
 
@@ -81,7 +83,29 @@
         [AlbumPic setImageWithURL:[[Comm_Observe sharedManager] AlbumEditReflush] Radius:10];
         [[Comm_Observe sharedManager] setAlbumEditReflush:@"0"];
     }
-     [self loadDataFromServer];
+    //[self loadDataFromServer];
+    
+    if(isInit == 0){
+        isInit = 1;
+        NSLog(@"loadDataFromServer - %d" , isInit);
+        [self loadDataFromServer];
+    }else{
+        NSLog(@"stringWithFormat - %d" , isInit);
+        
+        NSString *url = [NSString stringWithFormat:@"/Device/iPhone/Album/KeywordFromAlbum/?LToken=%@&groupid=%@",[Api LToken],[self.Album objectForKey:@"groupid"]];
+        
+        
+        [[Function sharedManager] Post:url Params:nil CompletionHandler:^(MKNetworkOperation *completed) {
+            
+            id json = [completed responseJSON];
+            [self.uploadimg setImageWithURL:json[@"image"] Radius:3];
+            
+        } ErrorHander:^(NSError *error) {
+            
+        }];
+
+    }
+    
     
 }
 

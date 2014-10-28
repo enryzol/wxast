@@ -12,6 +12,7 @@
 
 @implementation Function{
     UIAlertView *alertView;
+    UIAlertController * AlertController;
 }
 
 
@@ -29,6 +30,7 @@
         
         alertView = [[UIAlertView alloc] initWithTitle:nil message:@"" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
 
+        //AlertController = [	UIAlertController  alertControllerWithTitle:<#(NSString *)#> message:<#(NSString *)#> preferredStyle:<#(UIAlertControllerStyle)#>]
     }
     return self;
 }
@@ -46,8 +48,15 @@
 
 
 -(void)AlertViewShow:(NSString*)title{
+//    if(alertView == nil){
+//        NSLog(@"asdfasdfasf alertView = null ");
+//    }
+    
+//    alertView = nil;
+//    alertView  = [[UIAlertView alloc] initWithTitle:nil message:title delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
     [alertView setTitle:title];
     [alertView show];
+
 }
 
 -(void)AlertViewSetTitle:(NSString*)title{
@@ -59,6 +68,17 @@
 
 -(void)AlertViewHide{
     [alertView dismissWithClickedButtonIndex:0 animated:NO];
+//   [alertView removeFromSuperview];
+//    if(![alertView isHidden]){
+//        
+//        double delayInSeconds = 2.0;
+//        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//            NSLog(@"asdfasdfasf AlertViewHide");
+//            [alertView dismissWithClickedButtonIndex:0 animated:NO];
+//        });
+//
+//    }
 }
 
 -(void)Post:(NSString*)url Params:(NSDictionary*)Param{
@@ -126,6 +146,7 @@
     [self AlertViewShow:message];
     
     MKNetworkOperation *op = [ApplicationDelegate.Engin operationWithPath:url params:Param httpMethod:@"POST" ssl:YES];
+    
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         [self AlertViewHide];
         
@@ -139,6 +160,8 @@
         [self AlertViewHide];
         ErrorHander(error);
     }];
+    
+    
     
     [ApplicationDelegate.Engin enqueueOperation:op];
 }
